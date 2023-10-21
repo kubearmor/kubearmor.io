@@ -63,12 +63,11 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: "img/docusaurus-social-card.jpg",
+      image: "img/kubearmor/kubearmor-social-card.jpg",
       navbar: {
-        title: "My Site",
         logo: {
-          alt: "My Site Logo",
-          src: "img/logo.svg",
+          alt: "KubeArmor Logo",
+          src: "img/kubearmor/kubearmor-light-bg.svg",
         },
         items: [
           {
