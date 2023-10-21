@@ -63,21 +63,31 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: "img/docusaurus-social-card.jpg",
+      image: "img/kubearmor/kubearmor-social-card.jpg",
       navbar: {
-        title: "My Site",
         logo: {
-          alt: "My Site Logo",
-          src: "img/logo.svg",
+          alt: "KubeArmor Logo",
+          src: "img/kubearmor/kubearmor-light-bg.svg",
         },
         items: [
+          // {
+          //   type: "docSidebar",
+          //   sidebarId: "tutorialSidebar",
+          //   position: "left",
+          //   label: "Tutorial",
+          // },
           {
-            type: "docSidebar",
-            sidebarId: "tutorialSidebar",
+            to: "/",
+            label: "Home",
             position: "left",
-            label: "Tutorial",
           },
           { to: "/blog", label: "Blog", position: "left" },
+          {
+            to: "https://docs.kubearmor.io/kubearmor/",
+            label: "Documentation",
+            position: "left",
+          },
+          { to: "/community", label: "Community", position: "left" },
           {
             href: "https://github.com/facebook/docusaurus",
             label: "GitHub",
@@ -133,6 +143,11 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+      colorMode: {
+        defaultMode: "light",
+        disableSwitch: true,
+        respectPrefersColorScheme: false,
       },
     }),
 };
