@@ -1,30 +1,82 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
+ *__linkny CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is__link CSS framework designed to
  * work well for content-centric websites.
  */
 
 /* You can override the default Infima variables here. */
+@font-face {
+  font-family: "Poppins-Bold";
+  src: local("Poppins-Bold"), url("../../static/font/Poppins/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins-SemiBold";
+  src: local("Poppins-SemiBold"), url("../../static/font/Poppins/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins-Medium";
+  src: local("Poppins-Medium"), url("../../static/font/Poppins/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins-Regular";
+  src: local("Poppins-Regular"), url("../../static/font/Poppins/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "RobotoMono-Bold";
+  src: local("RobotoMono-Bold"), url("../../static/font/RobotoMono/RobotoMono-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "RobotoMono-Regular";
+  src: local("RobotoMono-Regular"), url("../../static/font/RobotoMono/RobotoMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SourceCodePro-SemiBold";
+  src: local("SourceCodePro-SemiBold"), url("../../static/font/SourceCodePro/SourceCodePro-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --color-primary: #082C74;
+  --color-primary-light: #5297FE;
+  --color-bg: #F9FBFF;
+  --color-font-header: #0F0F0F;
+  --color-font-sub: #3F4E64;
+  --color-font-tweet-link: #5F1EFE;
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-footer-field: #B8CCE1;
+  --color-gradient: linear-gradient(180deg, #0A4195 0%, #5297FE 100%);
+  --font-main-bold: "Poppins-Bold";
+  --font-main-semibold: "Poppins-SemiBold";
+  --font-main-medium: "Poppins-Medium";
+  --font-main-regular: "Poppins-Regular";
+  --font-terminal-bold: "RobotoMono-Bold";
+  --font-terminal-regular: "RobotoMono-Regular";
+  --font-codeblock: "SourceCodePro-SemiBold";
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+.navbar {
+  background-color: rgba(249, 251, 255, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 0 5.625rem 0;
+}
+.navbar__link {
+  font-family: var(--font-main-medium);
+  font-size: 1rem;
+  color: var(--color-black);
+}
+.navbar__link--active, .navbar__link:hover {
+  color: var(--color-primary-light);
 }
