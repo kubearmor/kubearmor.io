@@ -30,8 +30,9 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`KubeArmor`}
-      description="Description will go into a meta tag in <head />">
+      title={`Runtime Security Enforcement `}
+      description="Description will go into a meta tag in <head />"
+    >
       <HomepageHeader />
       <main>
         <HomepageFeatures />
