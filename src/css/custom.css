@@ -71,6 +71,7 @@
   background-color: rgba(249, 251, 255, 0.6);
   backdrop-filter: blur(10px);
   padding: 0 5.625rem 0;
+  height: 4.5rem;
 }
 .navbar__link {
   font-family: var(--font-main-medium);
@@ -79,4 +80,9 @@
 }
 .navbar__link--active, .navbar__link:hover {
   color: var(--color-primary-light);
+}
+.navbar-sidebar__item {
+  height: 100vh;
+  width: 100%;
+  z-index: 999;
 }
