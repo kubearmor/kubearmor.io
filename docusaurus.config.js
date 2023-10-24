@@ -1,6 +1,6 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-
+// import React from "react";
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
@@ -131,6 +131,7 @@ const config = {
       },
     },
   ],
+  stylesheets: ["./src/css/custom.css"],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -162,9 +163,16 @@ const config = {
           },
           { to: "/community", label: "Community", position: "left" },
           {
-            href: "https://github.com/facebook/docusaurus",
-            label: "GitHub",
+            type: "custom-GitHubStarButton",
             position: "right",
+            itemProp: 44,
+            anotherProp: "xyz",
+          },
+          {
+            type: "custom-SlackIconButton",
+            position: "right",
+            itemProp: 45,
+            anotherProp: "abc",
           },
         ],
       },
