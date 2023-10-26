@@ -86,3 +86,9 @@
   width: 100%;
   z-index: 999;
 }
+
+@media screen and (max-width: 996px) {
+  .navbar {
+      padding: 0 2rem 0;
+  }
+}
