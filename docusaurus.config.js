@@ -7,8 +7,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "KubeArmor",
-  tagline:
-    "KubeArmor is a runtime Kubernetes security engine. It uses eBPF and Linux Security Modules(LSM) for fortifying workloads based on Cloud Containers, IoT/Edge, and 5G networks. It enforces policy-based controls.",
+  tagline: "Runtime Security Enforcement",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
