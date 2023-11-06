@@ -20,7 +20,6 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "kubearmor", // Usually your GitHub org/user name.
   projectName: "kubearmor.io", // Usually your repo name.
-  deploymentBranch: "main",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   trailingSlash: false,
