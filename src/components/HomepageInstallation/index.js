@@ -1,6 +1,6 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./styles.module.css";
-import installationImage from "../../../static/img/installation/installation-illustration.webp";
+import installationImage from "../../../static/img/installation/Installation-illustration.png";
 import { FaCirclePlay, FaRegCopy } from "react-icons/fa6";
 import RedirectButton from "../RedirectButton";
 
