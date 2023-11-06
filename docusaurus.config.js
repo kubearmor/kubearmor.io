@@ -45,6 +45,9 @@ const config = {
             "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
         blog: {
+          blogTitle: "Blogs",
+          blogDescription: "A KubeArmor powered blog!",
+          postsPerPage: "ALL",
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -124,6 +127,16 @@ const config = {
       attributes: {
         rel: "preload",
         href: "/font/SourceCodePro/SourceCodePro-SemiBold.ttf",
+        as: "font",
+        type: "font/ttf",
+        crossorigin: "anonymous",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "preload",
+        href: "/font/SourceCodePro/SourceCodePro-Medium.ttf",
         as: "font",
         type: "font/ttf",
         crossorigin: "anonymous",

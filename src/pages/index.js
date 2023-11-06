@@ -8,6 +8,12 @@ import HomepageHeader from "@site/src/components/HomepageHeader";
 
 import styles from "./index.module.css";
 import HomepageArchitecture from "../components/HomepageArchitecture";
+import HomepageInstallation from "../components/HomepageInstallation";
+import HomepageUseCases from "../components/HomepageUseCases";
+import HomepageMarketplaces from "../components/HomepageMarketplaces";
+import HomepageExpansions from "../components/HomepageExpansions";
+import HomepageVersionChangelog from "../components/HomepageVersionChangelog";
+import HomepageBlogs from "../components/HomepageBlogs";
 
 // function HomepageHeader() {
 //   const {siteConfig} = useDocusaurusContext();
@@ -39,6 +45,12 @@ export default function Home() {
       <main>
         <HomepageArchitecture />
         <HomepageFeatures />
+        <HomepageInstallation />
+        <HomepageUseCases />
+        <HomepageMarketplaces />
+        <HomepageVersionChangelog />
+        <HomepageExpansions />
+        <HomepageBlogs />
       </main>
     </Layout>
   );
