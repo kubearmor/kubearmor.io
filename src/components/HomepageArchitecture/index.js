@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./styles.module.css";
-import ArchitectureImage from "../../../static/img/architecture/architecture-illustration.svg";
+import architectureImage from "../../../static/img/architecture/architecture-illustration.webp";
 
 export default function HomepageArchitecture() {
   return (
@@ -15,7 +15,7 @@ export default function HomepageArchitecture() {
         Containers, IoT/Edge, and 5G networks. It enforces policy-based
         controls.
       </p>
-      <ArchitectureImage className={styles.architectureImage} aria-label="architecture image"/>
+      <img className={styles.architectureImage} aria-label="architecture image" src={architectureImage} alt="architecture image"/>
     </section>
   );
 }
