@@ -46,7 +46,10 @@ export default function HomepageVersionChangelog() {
       </h1>
       <div className={styles.versionSlider}>
         <Slider {...settings}>
-          <Link className={styles.container}>
+          <Link
+            to="https://github.com/kubearmor/KubeArmor/wiki/v1.0.0-Release-Blog"
+            className={styles.container}
+          >
             <div className={styles.containerWrapper}>
               <img
                 src={versionImage1}
@@ -59,7 +62,10 @@ export default function HomepageVersionChangelog() {
               <p className={styles.containerDate}>Nov 6, 2023</p>
             </div>
           </Link>
-          <Link className={styles.container}>
+          <Link
+            to="https://github.com/kubearmor/KubeArmor/wiki/v0.11-Release-Blog"
+            className={styles.container}
+          >
             <div className={styles.containerWrapper}>
               <img
                 src={versionImage2}
@@ -69,10 +75,13 @@ export default function HomepageVersionChangelog() {
             </div>
             <div className={styles.containerText}>
               <h4 className={styles.containerTitle}>KubeArmor v0.11 Release</h4>
-              <p className={styles.containerDate}>Aug 19, 2023</p>
+              <p className={styles.containerDate}>Aug 17, 2023</p>
             </div>
           </Link>
-          <Link className={styles.container}>
+          <Link
+            to="https://github.com/kubearmor/KubeArmor/wiki/v0.10-Release-Blog"
+            className={styles.container}
+          >
             <div className={styles.containerWrapper}>
               <img
                 src={versionImage3}
@@ -82,10 +91,13 @@ export default function HomepageVersionChangelog() {
             </div>
             <div className={styles.containerText}>
               <h4 className={styles.containerTitle}>KubeArmor v0.10 Release</h4>
-              <p className={styles.containerDate}>June 11, 2023</p>
+              <p className={styles.containerDate}>Jul 4, 2023</p>
             </div>
           </Link>
-          <Link className={styles.container}>
+          <Link
+            to="https://github.com/kubearmor/KubeArmor/wiki/v0.9-Release-Blog"
+            className={styles.container}
+          >
             <div className={styles.containerWrapper}>
               <img
                 src={versionImage4}
@@ -95,7 +107,7 @@ export default function HomepageVersionChangelog() {
             </div>
             <div className={styles.containerText}>
               <h4 className={styles.containerTitle}>KubeArmor v0.9 Release</h4>
-              <p className={styles.containerDate}>April 6, 2023</p>
+              <p className={styles.containerDate}>Mar 9, 2023</p>
             </div>
           </Link>
         </Slider>

@@ -3,6 +3,8 @@
 // import React from "react";
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const url = "https://kubearmor.github.io";
+const baseUrl = "/kubearmor.io/";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -189,48 +191,54 @@ const config = {
       },
       footer: {
         style: "dark",
+        logo: {
+          alt: "KubeArmor Official Logo",
+          src: "img/kubearmor/kubearmor-dark-bg.svg",
+          href: `${url + baseUrl}`,
+          width: 160,
+          height: 51,
+        },
         links: [
           {
-            title: "Docs",
-            items: [
-              {
-                label: "Tutorial",
-                to: "/docs/intro",
-              },
-            ],
-          },
-          {
-            title: "Community",
-            items: [
-              {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
-              },
-              {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
-              },
-            ],
-          },
-          {
-            title: "More",
+            title: "Organization",
             items: [
               {
                 label: "Blog",
                 to: "/blog",
               },
               {
+                label: "Documentation",
+                to: "https://docs.kubearmor.io/kubearmor/",
+              },
+              {
+                label: "Community",
+                to: `${url + baseUrl}/community`,
+              },
+            ],
+          },
+          {
+            title: "Socials",
+            items: [
+              {
+                label: "Twitter",
+                to: "https://twitter.com/KubeArmor",
+              },
+              {
                 label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
+                to: "https://github.com/facebook/docusaurus",
+              },
+              {
+                label: "Slack",
+                to: "https://join.slack.com/t/kubearmor/shared_invite/zt-1ltmqdbc6-rSHw~LM6MesZZasmP2hAcA/",
+              },
+              {
+                label: "LinkedIn",
+                to: "https://www.linkedin.com/company/kubearmor/",
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} KubeArmor, Powered By AccuKnox.`,
       },
       prism: {
         theme: lightCodeTheme,

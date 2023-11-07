@@ -1,28 +1,12 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import styles from "./styles.module.css";
 import installationImage from "../../../static/img/installation/Installation-illustration.png";
 import { FaCirclePlay, FaRegCopy } from "react-icons/fa6";
 import RedirectButton from "../RedirectButton";
+import Link from "@docusaurus/Link";
 
 export default function HomepageInstallation() {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const playerRef = useRef(null);
   const videoId = "CH0qtp5DAhs";
-  useEffect(() => {
-    const player = playerRef.current;
-
-    if (player) {
-      const onReady = () => {
-        player.addEventListener("onReady", onReady);
-      };
-
-      player.addEventListener("onReady", onReady);
-
-      return () => {
-        player.removeEventListener("onReady", onReady);
-      };
-    }
-  }, [playerRef]);
   const code = `
 export HELM_EXPERIMENTAL_OCI=1
 
@@ -54,9 +38,6 @@ helm install kubearmor \\
   const handleClick = () => {
     copyToClipboard(code);
     window.alert("Code Copied Successfully!");
-  };
-  const closePlayer = () => {
-    setIsPlaying(false);
   };
   return (
     <section className={`installation ${styles.installation}`}>
@@ -95,24 +76,13 @@ helm install kubearmor \\
             src={installationImage}
             alt="installation image"
           />
-          <button
+          <Link
             className={styles.installationVideo}
-            onClick={() => setIsPlaying(true)}
+            to={`https://www.youtube.com/embed/${videoId}`}
           >
             <FaCirclePlay className={styles.playIcon} size={32} />
             Watch Installation Video
-          </button>
-          {isPlaying && (
-            <div className={styles.youtubeOverlay} onClick={closePlayer}>
-              <div className={styles.youtubePlayer}>
-                <iframe
-                  src={`https://www.youtube.com/embed/${videoId}`}
-                  title="YouTube Player"
-                  allowFullScreen
-                />
-              </div>
-            </div>
-          )}
+          </Link>
         </div>
       </div>
     </section>

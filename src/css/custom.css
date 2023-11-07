@@ -7,64 +7,75 @@
 /* You can override the default Infima variables here. */
 @font-face {
   font-family: "Poppins-Bold";
-  src: local("Poppins-Bold"), url("../../static/font/Poppins/Poppins-Bold.ttf") format("truetype");
+  src: local("Poppins-Bold"),
+    url("../../static/font/Poppins/Poppins-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "Poppins-SemiBold";
-  src: local("Poppins-SemiBold"), url("../../static/font/Poppins/Poppins-SemiBold.ttf") format("truetype");
+  src: local("Poppins-SemiBold"),
+    url("../../static/font/Poppins/Poppins-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "Poppins-Medium";
-  src: local("Poppins-Medium"), url("../../static/font/Poppins/Poppins-Medium.ttf") format("truetype");
+  src: local("Poppins-Medium"),
+    url("../../static/font/Poppins/Poppins-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "Poppins-Regular";
-  src: local("Poppins-Regular"), url("../../static/font/Poppins/Poppins-Regular.ttf") format("truetype");
+  src: local("Poppins-Regular"),
+    url("../../static/font/Poppins/Poppins-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "RobotoMono-Bold";
-  src: local("RobotoMono-Bold"), url("../../static/font/RobotoMono/RobotoMono-Bold.ttf") format("truetype");
+  src: local("RobotoMono-Bold"),
+    url("../../static/font/RobotoMono/RobotoMono-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "RobotoMono-Regular";
-  src: local("RobotoMono-Regular"), url("../../static/font/RobotoMono/RobotoMono-Regular.ttf") format("truetype");
+  src: local("RobotoMono-Regular"),
+    url("../../static/font/RobotoMono/RobotoMono-Regular.ttf")
+      format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "SourceCodePro-SemiBold";
-  src: local("SourceCodePro-SemiBold"), url("../../static/font/SourceCodePro/SourceCodePro-SemiBold.ttf") format("truetype");
+  src: local("SourceCodePro-SemiBold"),
+    url("../../static/font/SourceCodePro/SourceCodePro-SemiBold.ttf")
+      format("truetype");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "SourceCodePro-Medium";
-  src: local("SourceCodePro-Medium"), url("../../static/font/SourceCodePro/SourceCodePro-Medium.ttf") format("truetype");
+  src: local("SourceCodePro-Medium"),
+    url("../../static/font/SourceCodePro/SourceCodePro-Medium.ttf")
+      format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 :root {
-  --color-primary: #082C74;
-  --color-primary-light: #5297FE;
-  --color-bg: #F9FBFF;
-  --color-font-header: #0F0F0F;
-  --color-font-sub: #3F4E64;
-  --color-font-tweet-link: #5F1EFE;
-  --color-white: #FFFFFF;
+  --color-primary: #082c74;
+  --color-primary-light: #5297fe;
+  --color-bg: #f9fbff;
+  --color-font-header: #0f0f0f;
+  --color-font-sub: #3f4e64;
+  --color-font-tweet-link: #5f1efe;
+  --color-white: #ffffff;
   --color-black: #000000;
-  --color-code-block: #181E25;
-  --color-footer-field: #B8CCE1;
-  --color-gradient: linear-gradient(180deg, #0A4195 0%, #5297FE 100%);
+  --color-code-block: #181e25;
+  --color-footer-field: #b8cce1;
+  --color-gradient: linear-gradient(180deg, #0a4195 0%, #5297fe 100%);
   --font-main-bold: "Poppins-Bold";
   --font-main-semibold: "Poppins-SemiBold";
   --font-main-medium: "Poppins-Medium";
@@ -85,7 +96,8 @@
   font-size: 1rem;
   color: var(--color-black);
 }
-.navbar__link--active, .navbar__link:hover {
+.navbar__link--active,
+.navbar__link:hover {
   color: var(--color-primary-light);
 }
 .navbar-sidebar__item {
@@ -97,9 +109,42 @@
 .slick-slide {
   padding: 0.5rem 1rem 3rem;
 }
-
+.footer {
+  background-color: var(--color-primary);
+}
+.container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.margin-bottom--sm {
+  height: auto !important;
+  width: 60% !important;
+}
+.footerLogoLink_src-theme-Footer-Logo-styles-module {
+  opacity: 1 !important;
+  cursor: pointer;
+}
+.footer__logo {
+  opacity: 1;
+  height: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+.footer__bottom {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+.footer__copyright {
+  align-self: center !important;
+  text-align: left;
+}
+.footer__links {
+  width: 40% !important;
+}
 @media screen and (max-width: 996px) {
   .navbar {
-      padding: 0 2rem 0;
+    padding: 0 2rem 0;
   }
 }
