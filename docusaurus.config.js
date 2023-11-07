@@ -4,7 +4,7 @@
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const url = "https://kubearmor.github.io";
-const baseUrl = "/";
+const baseUrl = "/kubearmor.io/";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -16,12 +16,12 @@ const config = {
   url: "https://kubearmor.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/",
+  baseUrl: "/kubearmor.io/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "kubearmor", // Usually your GitHub org/user name.
-  projectName: "kubearmor.github.io", // Usually your repo name.
+  projectName: "kubearmor.io", // Usually your repo name.
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   trailingSlash: false,

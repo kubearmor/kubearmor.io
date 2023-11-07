@@ -126,7 +126,7 @@
   cursor: pointer;
 }
 .footer__logo {
-  opacity: 1;
+  opacity: 1 !important;
   height: 100% !important;
   width: 100% !important;
   margin: 0 !important;
