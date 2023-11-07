@@ -23,7 +23,7 @@ export default function HomepageExpansions() {
           <RedirectButton
             redirectColor="var(--color-primary)"
             redirectText="Learn More"
-            redirectLink="https://aws.amazon.com/marketplaceImage/pp/prodview-5npox4ixz64qk"
+            redirectLink="https://open-horizon.github.io/docs/kubearmor-integration/docs/README/"
           />
         </div>
         <div className={styles.container}>
@@ -41,7 +41,7 @@ export default function HomepageExpansions() {
           <RedirectButton
             redirectColor="var(--color-primary)"
             redirectText="Learn More"
-            redirectLink="https://aws.amazon.com/marketplaceImage/pp/prodview-5npox4ixz64qk"
+            redirectLink="https://nephio.org/publications/"
           />
         </div>
       </div>

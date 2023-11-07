@@ -37,6 +37,10 @@
   cursor: pointer;
 }
 
+.container:hover {
+  text-decoration: none !important;
+}
+
 .containerWrapper {
   width: 40%;
   height: 100%;

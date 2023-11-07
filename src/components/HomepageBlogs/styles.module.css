@@ -36,6 +36,9 @@
   margin-top: 2rem;
   cursor: pointer;
 }
+.container:hover {
+  text-decoration: none !important;
+}
 
 .containerWrapper {
   width: 100%;

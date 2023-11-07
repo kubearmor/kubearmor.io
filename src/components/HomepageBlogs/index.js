@@ -46,7 +46,10 @@ export default function HomepageBlogs() {
       </h1>
       <div className={styles.blogsSlider}>
         <Slider {...settings}>
-          <Link className={styles.container}>
+          <Link
+            to="https://github.com/kubearmor/KubeArmor/wiki/v0.11-Release-Blog"
+            className={styles.container}
+          >
             <div className={styles.containerWrapper}>
               <img
                 src={blogsImage1}
@@ -65,11 +68,14 @@ export default function HomepageBlogs() {
                 <p className={styles.containerAuthor}>
                   by <span className={styles.author}>Shubham Tatvamasi</span>
                 </p>
-                <p className={styles.containerDate}>Aug 11, 2023</p>
+                <p className={styles.containerDate}>Aug 17, 2023</p>
               </div>
             </div>
           </Link>
-          <Link className={styles.container}>
+          <Link
+            to="https://github.com/kubearmor/KubeArmor/wiki/KubeArmor-support-for-Oracle-Container-Engine-for-Kubernetes-(OKE)"
+            className={styles.container}
+          >
             <div className={styles.containerWrapper}>
               <img
                 src={blogsImage2}
@@ -93,7 +99,10 @@ export default function HomepageBlogs() {
               </div>
             </div>
           </Link>
-          <Link className={styles.container}>
+          <Link
+            to="https://github.com/kubearmor/KubeArmor/wiki/Introduction-to-Linux-Security-Modules-(LSMs)"
+            className={styles.container}
+          >
             <div className={styles.containerWrapper}>
               <img
                 src={blogsImage3}
@@ -112,11 +121,14 @@ export default function HomepageBlogs() {
                 <p className={styles.containerAuthor}>
                   by <span className={styles.author}>Barun Acharya</span>
                 </p>
-                <p className={styles.containerDate}>April 6, 2023</p>
+                <p className={styles.containerDate}>June 23, 2023</p>
               </div>
             </div>
           </Link>
-          <Link className={styles.container}>
+          <Link
+            to="https://github.com/kubearmor/KubeArmor/wiki/KubeArmor-Performance-Benchmarking-Data"
+            className={styles.container}
+          >
             <div className={styles.containerWrapper}>
               <img
                 src={blogsImage4}
@@ -128,14 +140,14 @@ export default function HomepageBlogs() {
               <div className={styles.containerMain}>
                 <p className={styles.containerTags}>LSM</p>
                 <h4 className={styles.containerTitle}>
-                  Unraveling BPF LSM Superpowers
+                  KubeArmor Performance Benchmarking Data
                 </h4>
               </div>
               <div className={styles.containerData}>
                 <p className={styles.containerAuthor}>
-                  by <span className={styles.author}>Barun Acharya</span>
+                  by <span className={styles.author}>Rudraksh Pareek</span>
                 </p>
-                <p className={styles.containerDate}>July 10, 2023</p>
+                <p className={styles.containerDate}>Mar 13, 2023</p>
               </div>
             </div>
           </Link>
