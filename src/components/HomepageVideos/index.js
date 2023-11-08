@@ -5,6 +5,30 @@ import "slick-carousel/slick/slick-theme.css";
 import styles from "./styles.module.css";
 import { CustomPrevArrow, CustomNextArrow } from "../CustomArrows";
 import { FaPlay } from "react-icons/fa6";
+import { videos } from "./videos";
+import videoContent from "./content.json";
+import Link from "@docusaurus/Link";
+
+function Item(props) {
+  const Image = props.image;
+
+  const truncatedTitle =
+    props.title.length > 36
+      ? props.title.substring(0, 36) + "..." // Truncate the title
+      : props.title;
+
+  return (
+    <Link className={styles.container} to={props.video}>
+      <div className={styles.containerContent}>
+        <FaPlay color="var(--color-white)" size={20} className={styles.containerIcon} />
+        <p className={styles.containerTitle}>{truncatedTitle}</p>
+      </div>
+      {Image && (
+        <img src={Image} alt={props.alt} className={styles.containerImage} />
+      )}
+    </Link>
+  );
+}
 
 export default function HomepageVideos() {
   const settings = {
@@ -42,9 +66,15 @@ export default function HomepageVideos() {
       </h1>
       <div className={styles.videosSlider}>
         <Slider {...settings}>
-          <Link className={styles.container}>
-            <div className={styles.containerContent}></div>
-          </Link>
+          {videoContent.map((item) => (
+            <Item
+              key={item.id}
+              title={item.title}
+              alt={item.alt}
+              video={item.video}
+              image={videos[item.image]}
+            />
+          ))}
         </Slider>
       </div>
     </section>
