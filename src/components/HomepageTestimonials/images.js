@@ -1,9 +1,9 @@
 import Tweet1 from "../../../static/img/tweets/tw1.png";
 import Tweet2 from "../../../static/img/tweets/tw2.png";
-import Tweet3 from "../../../static/img/tweets/tw3.png";
-import Tweet4 from "../../../static/img/tweets/tw4.png";
+import Tweet3 from "../../../static/img/tweets/tw3.jpg";
+import Tweet4 from "../../../static/img/tweets/tw4.jpg";
 import Tweet5 from "../../../static/img/tweets/tw5.png";
-import Tweet6 from "../../../static/img/tweets/tw6.png";
+import Tweet6 from "../../../static/img/tweets/tw6.jpg";
 
 export const images = {
   tweet1: Tweet1,

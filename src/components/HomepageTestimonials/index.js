@@ -10,10 +10,12 @@ function Item(props) {
   return (
     <Link className={styles.container} to={props.url}>
       <div className={styles.containerHeader}>
-        <div className={styles.containerImage}>
-          {Image && <img src={Image} alt="tweet" className={styles.image} />}
+        <div className={styles.containerUser}>
+          <div className={styles.containerImage}>
+            {Image && <img src={Image} alt="tweet" className={styles.image} />}
+          </div>
+          <h4 className={styles.containerTitle}>{props.header}</h4>
         </div>
-        <h4 className={styles.containerTitle}>{props.header}</h4>
         <FaXTwitter size={20} color="var(--color-black)" />
       </div>
       <p className={styles.containerDescription}>{props.description}</p>
