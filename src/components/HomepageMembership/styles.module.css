@@ -1,0 +1,46 @@
+.membership {
+  display: flex;
+  flex-direction: column;
+  padding: 10rem 5.625rem 0;
+}
+.members {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+.membershipTitle {
+  font-family: var(--font-main-medium);
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--color-font-header);
+  align-self: center;
+}
+.member {
+  width: auto;
+  height: 4rem;
+  cursor: pointer;
+}
+@media screen and (max-width: 1080px) {
+  .membership {
+    padding: 10rem 2rem 0;
+  }
+  .member {
+    height: 3rem;
+  }
+}
+@media screen and (max-width: 880px) {
+  .member {
+    height: 2rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  .member {
+    height: 3rem;
+  }
+  .members {
+    flex-direction: column;
+    gap: 2rem
+  }
+}

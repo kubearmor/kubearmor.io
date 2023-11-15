@@ -18,6 +18,7 @@ import HomepageVideos from "../components/HomepageVideos";
 import HomepageTestimonials from "../components/HomepageTestimonials";
 import HomepageAdopters from "../components/HomepageAdopters";
 import HomepageCommunity from "../components/HomepageCommunity";
+import HomepageMembership from "../components/HomepageMembership";
 
 // function HomepageHeader() {
 //   const {siteConfig} = useDocusaurusContext();
@@ -59,6 +60,7 @@ export default function Home() {
         <HomepageTestimonials />
         <HomepageAdopters />
         <HomepageCommunity />
+        <HomepageMembership />
       </main>
     </Layout>
   );
