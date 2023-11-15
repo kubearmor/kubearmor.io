@@ -11,13 +11,15 @@ function Item(props) {
   const Icon = props.icon;
 
   return (
-    <>
+    <div className={styles.content}>
       <div className={styles.iconContainer}>
         {Icon && <Icon className={styles.icon} />}
       </div>
-      <h3 className={styles.contentHeader}>{props.feature}</h3>
-      <p className={styles.contentDescription}>{props.description}</p>
-    </>
+      <div className={styles.contentWrapper}>
+        <h3 className={styles.contentHeader}>{props.feature}</h3>
+        <p className={styles.contentDescription}>{props.description}</p>
+      </div>
+    </div>
   );
 }
 
@@ -26,8 +28,8 @@ export default function HomepageFeatures() {
     <section className={`features ${styles.features}`}>
       <h2 className={styles.featuresTitle}>FEATURES</h2>
       <h1 className={styles.featuresHeader}>What Makes KubeArmor Unique?</h1>
-      <div className={`features-container ${styles.container}`}>
-        <div className={`features-progress-bar ${styles.progressBar}`}>0%</div>
+      <div className={`features-container ${styles.container} `}>
+        {/* <div className={`features-progress-bar ${styles.progressBar}`}>0%</div> */}
         <div className={`features-content ${styles.containerContent}`}>
           {featuresContent.map((item) => (
             <Item
@@ -38,11 +40,11 @@ export default function HomepageFeatures() {
             />
           ))}
         </div>
-        <img
+        {/* <img
           src={featuresImage}
           className={styles.featuresImage}
           alt="feature image"
-        />
+        /> */}
       </div>
       <div className={styles.creator}>
         Created By

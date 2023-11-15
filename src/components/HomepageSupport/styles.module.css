@@ -1,0 +1,70 @@
+.support {
+  background: var(--color-primary);
+  margin: 16rem 5.625rem 8rem;
+  border: none;
+  border-radius: 2rem;
+  height: 30rem;
+  display: flex;
+  overflow: hidden;
+}
+.supportImage {
+  background-size: 100% 100%;
+  background-image: url(../../../static/img/cloud-support/Cloud-support.webp);
+  width: 100%;
+  padding: 2.25rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.supportText {
+  width: 50%;
+}
+.supportHeader {
+  font-family: var(--font-main-semibold);
+  font-weight: 600;
+  font-size: 3rem;
+  color: var(--color-white);
+}
+.supportDescription {
+  font-family: var(--font-main-regular);
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--color-footer-field);
+}
+.supportCTA {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: 50%;
+}
+@media screen and (max-width: 1080px) {
+  .support {
+    margin: 10rem 2rem 8rem;
+  }
+}
+@media screen and (max-width: 880px) {
+  .supportText,
+  .supportCTA {
+    width: 80%;
+  }
+  .supportImage {
+    background: var(--color-primary);
+  }
+}
+@media screen and (max-width: 550px) {
+  .supportText,
+  .supportCTA {
+    width: 100%;
+  }
+  .supportHeader {
+    font-size: 2rem;
+  }
+  .supportDescription {
+    font-size: 1rem;
+  }
+  .supportCTA {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -15,6 +15,11 @@ import HomepageExpansions from "../components/HomepageExpansions";
 import HomepageVersionChangelog from "../components/HomepageVersionChangelog";
 import HomepageBlogs from "../components/HomepageBlogs";
 import HomepageVideos from "../components/HomepageVideos";
+import HomepageTestimonials from "../components/HomepageTestimonials";
+import HomepageAdopters from "../components/HomepageAdopters";
+import HomepageCommunity from "../components/HomepageCommunity";
+import HomepageMembership from "../components/HomepageMembership";
+import HomepageSupport from "../components/HomepageSupport";
 
 // function HomepageHeader() {
 //   const {siteConfig} = useDocusaurusContext();
@@ -53,6 +58,11 @@ export default function Home() {
         <HomepageExpansions />
         <HomepageBlogs />
         <HomepageVideos />
+        <HomepageTestimonials />
+        <HomepageAdopters />
+        <HomepageCommunity />
+        <HomepageMembership />
+        <HomepageSupport />
       </main>
     </Layout>
   );
