@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./styles.module.css";
-import Card from "./card";
+import Card from "./Card";
 import { FaStar } from "react-icons/fa6";
 import communityLogo1 from "../../../static/img/community/community-github.webp";
 import communityLogo2 from "../../../static/img/community/community-slack.webp";
