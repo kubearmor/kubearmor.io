@@ -1,6 +1,7 @@
 .adopters {
   display: flex;
   flex-direction: column;
+  background: var(--color-bg);
 }
 .adoptersLogos {
   display: flex;
