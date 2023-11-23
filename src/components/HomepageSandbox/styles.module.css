@@ -4,6 +4,7 @@
   padding: 16rem 2rem 0;
   align-items: center;
   justify-content: center;
+  background: var(--color-bg);
 }
 .sandboxText {
   font-family: var(--font-main-medium);

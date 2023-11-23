@@ -1,43 +1,43 @@
 [
   {
     "id": 1,
-    "title": "How to Install KubeArmor? | Oct 2021",
-    "video": "https://www.youtube.com/watch?v=2OK3e87b5jA",
+    "title": "Kubernetes Clusters Defense with KubeArmor | Demo",
+    "video": "https://www.youtube.com/watch?v=7fx4U0PLL6w",
     "alt": "video 1",
     "image": "video1"
   },
   {
     "id": 2,
-    "title": "KubeArmor Working Demo",
-    "video": "https://www.youtube.com/watch?v=u1PpRsk03Ao",
+    "title": "Secure Workloads on GCOOS: KubeArmor's Shielding Strategies",
+    "video": "https://www.youtube.com/watch?v=9L28xhRl5u4",
     "alt": "video 2",
     "image": "video2"
   },
   {
     "id": 3,
-    "title": "KubeArmor Explanation",
-    "video": "https://www.youtube.com/watch?v=NS8XC78wSME",
+    "title": "How to Install KubeArmor - Complete Guide",
+    "video": "https://www.youtube.com/watch?v=CH0qtp5DAhs",
     "alt": "video 3",
     "image": "video3"
   },
   {
     "id": 4,
-    "title": "Kubernetes Clusters Defense with KubeArmor | Demo & QnA",
-    "video": "https://www.youtube.com/watch?v=7fx4U0PLL6w",
+    "title": "How to Install KubeArmor? | Oct 2021",
+    "video": "https://www.youtube.com/watch?v=2OK3e87b5jA",
     "alt": "video 4",
     "image": "video4"
   },
   {
     "id": 5,
-    "title": "Secure Workloads on GCOOS: KubeArmor's Shielding Strategies",
-    "video": "https://www.youtube.com/watch?v=9L28xhRl5u4",
+    "title": "KubeArmor Working Demo",
+    "video": "https://www.youtube.com/watch?v=u1PpRsk03Ao",
     "alt": "video 5",
     "image": "video5"
   },
   {
     "id": 6,
-    "title": "How to Install KubeArmor - Complete Guide",
-    "video": "https://www.youtube.com/watch?v=CH0qtp5DAhs",
+    "title": "KubeArmor Explanation",
+    "video": "https://www.youtube.com/watch?v=NS8XC78wSME",
     "alt": "video 6",
     "image": "video6"
   },
