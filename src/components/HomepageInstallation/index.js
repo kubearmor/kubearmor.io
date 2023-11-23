@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./styles.module.css";
-import installationImage from "../../../static/img/installation/Installation-illustration.png";
+import installationImage from "../../../static/img/installation/Installation-illustration.webp";
 import { FaCirclePlay, FaRegCopy } from "react-icons/fa6";
 import RedirectButton from "../RedirectButton";
 import Link from "@docusaurus/Link";

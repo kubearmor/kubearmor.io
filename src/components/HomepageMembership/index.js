@@ -4,44 +4,57 @@ import membershipLogo1 from "../../../static/img/os-membership/membership-cncf.p
 import membershipLogo2 from "../../../static/img/os-membership/membership-lf.png";
 import membershipLogo3 from "../../../static/img/os-membership/membership-nephio.png";
 import membershipLogo4 from "../../../static/img/os-membership/membership-openssf.png";
+import membershipLogo5 from "../../../static/img/os-membership/membership-nsf.png";
+import membershipLogo6 from "../../../static/img/os-membership/membership-se.png";
+import Link from "@docusaurus/Link";
 
 export default function HomepageMembership() {
   return (
     <section className={`membership ${styles.membership}`}>
       <h3 className={styles.membershipTitle}>Open Source Membership</h3>
       <div className={styles.members}>
-        <img
-          className={styles.member}
-          onClick={(e) => {
-            window.location.href = "https://www.cncf.io/";
-          }}
-          src={membershipLogo1}
-          alt="member logo"
-        />
-        <img
-          className={styles.member}
-          onClick={(e) => {
-            window.location.href = "https://lfx.linuxfoundation.org/";
-          }}
-          src={membershipLogo2}
-          alt="member logo"
-        />
-        <img
-          className={styles.member}
-          onClick={(e) => {
-            window.location.href = "https://nephio.org/";
-          }}
-          src={membershipLogo3}
-          alt="member logo"
-        />
-        <img
-          className={styles.member}
-          onClick={(e) => {
-            window.location.href = "https://openssf.org/";
-          }}
-          src={membershipLogo4}
-          alt="member logo"
-        />
+        <Link to="https://www.cncf.io/">
+          <img
+            className={styles.member}
+            src={membershipLogo1}
+            alt="member logo"
+          />
+        </Link>
+        <Link to="https://lfx.linuxfoundation.org/">
+          <img
+            className={styles.member}
+            src={membershipLogo2}
+            alt="member logo"
+          />
+        </Link>
+        <Link to="https://nephio.org/">
+          <img
+            className={styles.member}
+            src={membershipLogo3}
+            alt="member logo"
+          />
+        </Link>
+        <Link to="https://openssf.org/">
+          <img
+            className={styles.member}
+            src={membershipLogo4}
+            alt="member logo"
+          />
+        </Link>
+        <Link to="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2226443&HistoricalAwards=false">
+          <img
+            className={styles.member}
+            src={membershipLogo5}
+            alt="member logo"
+          />
+        </Link>
+        <Link to="https://www.5gsec.com/">
+          <img
+            className={styles.member}
+            src={membershipLogo6}
+            alt="member logo"
+          />
+        </Link>
       </div>
     </section>
   );

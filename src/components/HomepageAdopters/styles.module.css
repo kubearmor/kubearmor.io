@@ -12,7 +12,7 @@
 .adoptersTitle {
   font-family: var(--font-main-medium);
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: var(--color-font-header);
 }
 .logos {
@@ -20,11 +20,14 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 80%;
 }
 .logo {
   cursor: pointer;
   width: 12rem;
+}
+.accuknox {
+  width: 15rem;
 }
 
 .container {
@@ -80,6 +83,9 @@
 @media screen and (max-width: 1080px) {
   .adoptersLogos {
     padding: 10rem 2rem 0;
+  }
+  .logos {
+    width: 100%;
   }
 }
 @media screen and (max-width: 550px) {

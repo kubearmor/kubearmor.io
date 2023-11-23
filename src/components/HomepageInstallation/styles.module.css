@@ -99,3 +99,16 @@
   opacity: 0.8;
   text-decoration: none;
 }
+@media screen and (max-width: 1080px) {
+  .installation {
+    padding: 10rem 2rem 0;
+  }
+}
+@media screen and (max-width: 880px) {
+  .installationContainer {
+    flex-direction: column;
+  }
+  .guide {
+    width: 100%;
+  }
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./styles.module.css";
-import architectureImage from "../../../static/img/architecture/architecture-illustration.webp";
+import architectureImage from "../../../static/img/architecture/architecture-diagram.webp";
 
 export default function HomepageArchitecture() {
   return (
