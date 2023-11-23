@@ -27,6 +27,9 @@
   justify-content: space-between;
   margin-bottom: 0.5rem;
 }
+.heroAnnouncement:hover {
+  text-decoration: none;
+}
 .heroTitle {
   font-family: var(--font-main-bold);
   font-size: 4rem;

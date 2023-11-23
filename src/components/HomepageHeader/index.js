@@ -13,7 +13,10 @@ export default function HomepageHeader() {
   return (
     <header className={`hero ${styles.hero}`}>
       <div className={styles.container}>
-        <Link className={styles.heroAnnouncement}>
+        <Link
+          className={styles.heroAnnouncement}
+          to="https://github.com/kubearmor/KubeArmor/wiki/v1.0-Release-Blog"
+        >
           <FaLock className={styles.heroIcon} color="var(--color-primary)" />
           KubeArmor v1.0 is here!
           <FaAngleRight
@@ -35,14 +38,9 @@ export default function HomepageHeader() {
             buttonText="Try KubeArmor"
             buttonLink="https://docs.kubearmor.io/kubearmor/quick-links/deployment_guide"
           />
-          <RedirectButton
-            redirectColor="var(--color-primary)"
-            redirectText="Learn More"
-            redirectLink="https://docs.kubearmor.io/kubearmor/"
-          />
         </div>
       </div>
-      <HeroImage className={styles.heroImage}/>
+      <HeroImage className={styles.heroImage} />
     </header>
   );
 }

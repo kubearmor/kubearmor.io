@@ -6,9 +6,7 @@ import RedirectButton from "../RedirectButton";
 export default function HomepageSupport () {
     return (
       <section className={`support ${styles.support}`}>
-        <div
-          className={styles.supportImage}
-        >
+        <div className={styles.supportImage}>
           <div className={styles.supportText}>
             <h1 className={styles.supportHeader}>
               Effortless and Efficient Runtime Security in Minutes
@@ -18,16 +16,10 @@ export default function HomepageSupport () {
             </p>
           </div>
           <div className={styles.supportCTA}>
-            <Button
-              bgColor="var(--color-white)"
-              buttonLink="https://docs.kubearmor.io/kubearmor/"
-              textColor="var(--color-primary)"
-              buttonText="Try KubeArmor"
-            />
             <RedirectButton
               redirectColor="var(--color-white)"
-              redirectLink="https://docs.kubearmor.io/kubearmor/quick-links/deployment_guide"
-              redirectText="Read Documentation"
+              redirectLink="https://killercoda.com/kubearmor/scenario/kubearmor-killercoda"
+              redirectText="Learn KubeArmor Basics"
               className={styles.supportRedirect}
             />
           </div>
