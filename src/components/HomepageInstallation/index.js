@@ -8,21 +8,13 @@ import Link from "@docusaurus/Link";
 export default function HomepageInstallation() {
   const videoId = "CH0qtp5DAhs";
   const code = `
-export HELM_EXPERIMENTAL_OCI=1
+helm repo add kubearmor https://kubearmor.github.io/charts
 
-aws ecr get-login-password \\
-    --region us-east-1 | helm registry login \\
-    --username AWS \\
-    --password-stdin 709825985650.dkr.ecr.us-east-1.amazonaws.com
+helm repo update kubearmor
 
-mkdir awsmp-chart && cd awsmp-chart
+helm upgrade --install kubearmor-operator kubearmor/kubearmor-operator -n kubearmor --create-namespace
 
-helm pull oci://709825985650.dkr.ecr.us-east-1.amazonaws.com/accuknox/kubearmor --version 0.10.3
-
-tar xf $(pwd)/* && find $(pwd) -maxdepth 1 -type f -delete
-
-helm install kubearmor \\
-    --namespace <ENTER_NAMESPACE_HERE> ./* 
+kubectl apply -f https://raw.githubusercontent.com/kubearmor/KubeArmor/main/pkg/KubeArmorOperator/config/samples/sample-config.yml 
     `;
 
   function copyToClipboard() {

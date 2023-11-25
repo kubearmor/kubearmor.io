@@ -27,9 +27,6 @@
   justify-content: space-between;
   margin-bottom: 0.5rem;
 }
-.heroAnnouncement:hover {
-  text-decoration: none;
-}
 .heroTitle {
   font-family: var(--font-main-bold);
   font-size: 4rem;
@@ -72,9 +69,12 @@
     width: 24%;
   }
 }
-@media screen and (max-width: 996px) {
+@media screen and (max-width: 880px) {
   .heroAnnouncement {
     width: 36%;
+  }
+  .heroImage {
+    width: 80vw;
   }
 }
 @media screen and (max-width: 550px) {
