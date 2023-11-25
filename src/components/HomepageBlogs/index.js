@@ -66,7 +66,7 @@ export default function HomepageBlogs() {
               </div>
               <div className={styles.containerData}>
                 <p className={styles.containerAuthor}>
-                  by <span className={styles.author}>Shubham Tatvamasi</span>
+                  by <span className={styles.author}>Prashant Mishra</span>
                 </p>
                 <p className={styles.containerDate}>Aug 17, 2023</p>
               </div>
