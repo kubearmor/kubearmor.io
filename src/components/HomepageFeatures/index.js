@@ -43,17 +43,17 @@ export default function HomepageFeatures() {
       right: 0,
     });
 
-     gsap.to(featuresContentEl, {
-       position: "absolute",
-       top: 0,
-       left: 0,
-       opacity: 1,
-       scrollTrigger: {
-         trigger: featuresEl,
-         start: "top",
-         end: "+100vh",
-       },
-     });
+    gsap.to(featuresContentEl, {
+      position: "absolute",
+      top: 0,
+      left: 0,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: featuresEl,
+        start: "top",
+        end: "+100vh",
+      },
+    });
 
     // Animate the opacity of content elements on scroll
     featuresContent.forEach((item, index) => {
@@ -74,38 +74,45 @@ export default function HomepageFeatures() {
   }, []);
 
   return (
-    <section className={`features ${styles.features}`}>
-      <h2 className={styles.featuresTitle}>FEATURES</h2>
-      <h1 className={styles.featuresHeader}>What Makes KubeArmor Unique?</h1>
-      <div className={`features-container ${styles.container} `}>
-        {/* <div className={`features-progress-bar ${styles.progressBar}`}>0%</div> */}
-        <div
-          className={`features-content ${styles.containerContent}`}
-          ref={featuresRef}
-          id="features-content"
-        >
-          {featuresContent.map((item) => (
-            <Item
-              key={item.id}
-              id={`content-${item.id}`}
-              feature={item.feature}
-              description={item.description}
-              icon={icons[item.icon]}
-            />
-          ))}
+    <section className={`Section features ${styles.features}`}>
+      <div className={`container`}>
+        <div className={`centerSectionHeading`}>
+          <h2>FEATURES</h2>
+          <h1>What Makes KubeArmor Unique?</h1>
         </div>
-        <img
-          src={featuresImage}
-          className={styles.featuresImage}
-          alt="feature image"
-          id="features-image"
-        />
-      </div>
-      <div className={styles.creator}>
-        Created By
-        <Link to="https://www.accuknox.com/" className={styles.creatorContainer}>
-          <CreatorLogo className={styles.creatorLogo} />
-        </Link>
+        <div className={`section-margin features-container ${styles.container} `}>
+          {/* <div className={`features-progress-bar ${styles.progressBar}`}>0%</div> */}
+          <div
+            className={`features-content ${styles.containerContent}`}
+            ref={featuresRef}
+            id="features-content"
+          >
+            {featuresContent.map((item) => (
+              <Item
+                key={item.id}
+                id={`content-${item.id}`}
+                feature={item.feature}
+                description={item.description}
+                icon={icons[item.icon]}
+              />
+            ))}
+          </div>
+          <img
+            src={featuresImage}
+            className={styles.featuresImage}
+            alt="feature image"
+            id="features-image"
+          />
+        </div>
+        <div className={styles.creator}>
+          Created By
+          <Link
+            to="https://www.accuknox.com/"
+            className={styles.creatorContainer}
+          >
+            <CreatorLogo className={styles.creatorLogo} />
+          </Link>
+        </div>
       </div>
     </section>
   );

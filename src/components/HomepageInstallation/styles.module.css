@@ -1,29 +1,12 @@
 .installation {
   display: flex;
   flex-direction: column;
-  padding: 16rem 5.625rem 0;
   background: var(--color-bg);
-}
-.installationTitle {
-  font-family: var(--font-main-medium);
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--color-primary);
-  letter-spacing: 0.18rem;
-  align-self: center;
-}
-.installationHeader {
-  font-family: var(--font-main-semibold);
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--color-font-header);
-  align-self: center;
 }
 .installationContainer {
   display: flex;
   flex-direction: row;
   gap: 4rem;
-  margin-top: 3rem;
   align-items: center;
 }
 .guide {
@@ -98,11 +81,6 @@
   color: var(--color-primary);
   opacity: 0.8;
   text-decoration: none;
-}
-@media screen and (max-width: 1080px) {
-  .installation {
-    padding: 10rem 2rem 0;
-  }
 }
 @media screen and (max-width: 880px) {
   .installationContainer {

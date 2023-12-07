@@ -1,10 +1,15 @@
+.heroBannerSection{
+  padding: 4rem 0;
+  background: var(--color-bg);
+}
 .hero {
-  padding: 5rem 5.625rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   background: var(--color-bg);
+  padding: 0;
+  gap: 2rem;
 }
 .container {
   display: flex;
@@ -17,7 +22,7 @@
   font-family: var(--font-main-medium);
   font-size: 0.875rem;
   border-radius: 0.75rem;
-  width: 32%;
+  width: 36%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -26,6 +31,9 @@
   cursor: pointer;
   justify-content: space-between;
   margin-bottom: 0.5rem;
+}
+.heroAnnouncement svg:first-child{
+  margin-right: 1rem;
 }
 .heroTitle {
   font-family: var(--font-main-bold);
@@ -45,8 +53,16 @@
 }
 .callToAction {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 2rem;
+  align-items: flex-start;
+}
+.createdBy img{
+  width: 16rem;
+  /* height: 4rem; */
+}
+.createdBy p{
+  margin: 0;
 }
 @media screen and (max-width: 1300px){
   .heroAnnouncement {
@@ -56,7 +72,6 @@
 @media screen and (max-width: 1080px) {
   .hero {
     flex-direction: column;
-    padding: 5rem 2rem;
     align-items: center;
   }
   .container {
@@ -66,7 +81,7 @@
     width: 80%;
   }
   .heroAnnouncement {
-    width: 24%;
+    width: 30%;
   }
 }
 @media screen and (max-width: 880px) {
@@ -83,5 +98,10 @@
   }
   .heroAnnouncement {
     width: 72%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .heroAnnouncement {
+    width: 90%;
   }
 }

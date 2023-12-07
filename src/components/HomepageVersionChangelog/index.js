@@ -39,78 +39,88 @@ export default function HomepageVersionChangelog() {
     ],
   };
   return (
-    <section className={`version-changelog ${styles.version}`}>
-      <h2 className={styles.versionTitle}>VERSION CHANGELOG</h2>
-      <h1 className={styles.versionHeader}>
-        Exciting Updates and Announcements
-      </h1>
-      <div className={styles.versionSlider}>
-        <Slider {...settings}>
-          <Link
-            to="https://github.com/kubearmor/KubeArmor/wiki/v1.0.0-Release-Blog"
-            className={styles.container}
-          >
-            <div className={styles.containerWrapper}>
-              <img
-                src={versionImage1}
-                alt="version image 1"
-                className={styles.containerImage}
-              />
-            </div>
-            <div className={styles.containerText}>
-              <h4 className={styles.containerTitle}>KubeArmor v1.0 Release</h4>
-              <p className={styles.containerDate}>Nov 6, 2023</p>
-            </div>
-          </Link>
-          <Link
-            to="https://github.com/kubearmor/KubeArmor/wiki/v0.11-Release-Blog"
-            className={styles.container}
-          >
-            <div className={styles.containerWrapper}>
-              <img
-                src={versionImage2}
-                alt="version image 2"
-                className={styles.containerImage}
-              />
-            </div>
-            <div className={styles.containerText}>
-              <h4 className={styles.containerTitle}>KubeArmor v0.11 Release</h4>
-              <p className={styles.containerDate}>Aug 17, 2023</p>
-            </div>
-          </Link>
-          <Link
-            to="https://github.com/kubearmor/KubeArmor/wiki/v0.10-Release-Blog"
-            className={styles.container}
-          >
-            <div className={styles.containerWrapper}>
-              <img
-                src={versionImage3}
-                alt="version image 3"
-                className={styles.containerImage}
-              />
-            </div>
-            <div className={styles.containerText}>
-              <h4 className={styles.containerTitle}>KubeArmor v0.10 Release</h4>
-              <p className={styles.containerDate}>Jul 4, 2023</p>
-            </div>
-          </Link>
-          <Link
-            to="https://github.com/kubearmor/KubeArmor/wiki/v0.9-Release-Blog"
-            className={styles.container}
-          >
-            <div className={styles.containerWrapper}>
-              <img
-                src={versionImage4}
-                alt="version image 4"
-                className={styles.containerImage}
-              />
-            </div>
-            <div className={styles.containerText}>
-              <h4 className={styles.containerTitle}>KubeArmor v0.9 Release</h4>
-              <p className={styles.containerDate}>Mar 9, 2023</p>
-            </div>
-          </Link>
-        </Slider>
+    <section className={`Section version-changelog ${styles.version}`}>
+      <div className={`container`}>
+        <div className={`centerSectionHeading`}>
+          <h2>VERSION CHANGELOG</h2>
+          <h1>Exciting Updates and Announcements</h1>
+        </div>
+        <div className={`section-margin ${styles.versionSlider}`}>
+          <Slider {...settings}>
+            <Link
+              to="https://github.com/kubearmor/KubeArmor/wiki/v1.0.0-Release-Blog"
+              className={styles.container}
+            >
+              <div className={styles.containerWrapper}>
+                <img
+                  src={versionImage1}
+                  alt="version image 1"
+                  className={styles.containerImage}
+                />
+              </div>
+              <div className={styles.containerText}>
+                <h4 className={styles.containerTitle}>
+                  KubeArmor v1.0 Release
+                </h4>
+                <p className={styles.containerDate}>Nov 6, 2023</p>
+              </div>
+            </Link>
+            <Link
+              to="https://github.com/kubearmor/KubeArmor/wiki/v0.11-Release-Blog"
+              className={styles.container}
+            >
+              <div className={styles.containerWrapper}>
+                <img
+                  src={versionImage2}
+                  alt="version image 2"
+                  className={styles.containerImage}
+                />
+              </div>
+              <div className={styles.containerText}>
+                <h4 className={styles.containerTitle}>
+                  KubeArmor v0.11 Release
+                </h4>
+                <p className={styles.containerDate}>Aug 17, 2023</p>
+              </div>
+            </Link>
+            <Link
+              to="https://github.com/kubearmor/KubeArmor/wiki/v0.10-Release-Blog"
+              className={styles.container}
+            >
+              <div className={styles.containerWrapper}>
+                <img
+                  src={versionImage3}
+                  alt="version image 3"
+                  className={styles.containerImage}
+                />
+              </div>
+              <div className={styles.containerText}>
+                <h4 className={styles.containerTitle}>
+                  KubeArmor v0.10 Release
+                </h4>
+                <p className={styles.containerDate}>Jul 4, 2023</p>
+              </div>
+            </Link>
+            <Link
+              to="https://github.com/kubearmor/KubeArmor/wiki/v0.9-Release-Blog"
+              className={styles.container}
+            >
+              <div className={styles.containerWrapper}>
+                <img
+                  src={versionImage4}
+                  alt="version image 4"
+                  className={styles.containerImage}
+                />
+              </div>
+              <div className={styles.containerText}>
+                <h4 className={styles.containerTitle}>
+                  KubeArmor v0.9 Release
+                </h4>
+                <p className={styles.containerDate}>Mar 9, 2023</p>
+              </div>
+            </Link>
+          </Slider>
+        </div>
       </div>
     </section>
   );

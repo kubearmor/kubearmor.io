@@ -1,26 +1,8 @@
 .blogs {
   display: flex;
   flex-direction: column;
-  padding: 16rem 5.625rem 0;
   background: var(--color-bg);
 }
-.blogsTitle {
-  font-family: var(--font-main-medium);
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--color-primary);
-  letter-spacing: 0.18rem;
-  align-self: center;
-}
-.blogsHeader {
-  font-family: var(--font-main-semibold);
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--color-font-header);
-  align-self: center;
-  text-align: center;
-}
-
 .container {
   height: 24rem;
   padding: 1.5rem;
@@ -33,7 +15,6 @@
   flex-direction: column !important;
   align-items: flex-start !important;
   gap: 0.75rem;
-  margin-top: 2rem;
   cursor: pointer;
 }
 .container:hover {
@@ -89,9 +70,6 @@
 }
 
 @media screen and (max-width: 1080px) {
-  .blogs {
-    padding: 10rem 2rem 0;
-  }
   .container {
     height: 20rem;
   }

@@ -1,7 +1,6 @@
 .market {
   display: flex;
   flex-direction: column;
-  padding: 16rem 5.625rem 0;
   background: var(--color-bg);
   align-items: center;
 }
@@ -13,24 +12,8 @@
   text-align: center;
 }
 .marketImage {
-  width: 50%;
-  height: auto;
-  margin: 1.5rem 0;
-}
-
-@media screen and (max-width: 996px) {
-  .market {
-    padding: 10rem 2rem 0;
-  }
-  .marketImage {
-    margin: 0.5rem 0;
-  }
-  .marketText {
-    margin: 0;
-  }
-}
-@media screen and (max-width: 996px) {
-  .marketImage {
-    width: 70%;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
 }

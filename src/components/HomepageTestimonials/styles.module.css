@@ -1,24 +1,11 @@
 .testimonials {
-  display: flex;
-  flex-direction: column;
-  padding: 16rem 5.625rem 0;
   background: var(--color-bg);
 }
-.testimonialsTitle {
-  font-family: var(--font-main-medium);
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--color-primary);
-  letter-spacing: 0.18rem;
-  align-self: center;
-}
-.testimonialsHeader {
-  font-family: var(--font-main-semibold);
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--color-font-header);
-  align-self: center;
-  text-align: center;
+.tweets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
 }
 .container {
   padding: 1.5rem;
@@ -30,7 +17,7 @@
   border: 0.75rem;
   display: flex;
   flex-direction: column;
-  width: 20rem;
+  width: 30%;
 }
 .container:hover {
   text-decoration: none;
@@ -74,30 +61,8 @@
   color: var(--color-font-sub);
   margin: 0;
 }
-.tweets {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 0 3rem;
-  align-items: start;
-  align-self: center;
-  justify-self: center;
-  margin-top: 3rem;
-}
-@media screen and (max-width: 1080px) {
-  .tweets {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-  }
-  .testimonials {
-    padding: 16rem 2rem 0;
-  }
-}
-@media screen and (max-width: 550px) {
-  .tweets {
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    gap: 1rem 0;
-    align-items: center;
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
   }
 }

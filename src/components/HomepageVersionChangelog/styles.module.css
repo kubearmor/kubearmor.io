@@ -1,26 +1,8 @@
 .version {
   display: flex;
   flex-direction: column;
-  padding: 16rem 5.625rem 0;
   background: var(--color-bg);
 }
-.versionTitle {
-  font-family: var(--font-main-medium);
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--color-primary);
-  letter-spacing: 0.18rem;
-  align-self: center;
-}
-.versionHeader {
-  font-family: var(--font-main-semibold);
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--color-font-header);
-  align-self: center;
-  text-align: center;
-}
-
 .container {
   height: 12rem;
   padding: 1.5rem;
@@ -33,7 +15,6 @@
   flex-direction: row !important;
   align-items: flex-start !important;
   gap: 0.75rem;
-  margin-top: 2rem;
   cursor: pointer;
 }
 
@@ -72,13 +53,4 @@
   font-size: 0.875rem;
   color: var(--color-font-sub) !important;
   margin: 0;
-}
-
-@media screen and (max-width: 1080px) {
-  .version {
-    padding: 10rem 2rem 0;
-  }
-  .container {
-    height: 10rem;
-  }
 }

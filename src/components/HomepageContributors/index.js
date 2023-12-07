@@ -20,32 +20,36 @@ export default function HomepageContributors() {
   }, []);
 
   return (
-    <section className={`contributors ${styles.contributors}`}>
-      <h2 className={styles.contributorsTitle}>CONTRIBUTORS</h2>
-      <h1 className={styles.contributorsHeader}>
-        Shout Out to KubeArmor Contributors
-      </h1>
-      <div className={styles.container}>
-        {contributors.map((contributor) => (
-          <Link
-            key={contributor.id}
-            className={styles.containerImage}
-            to={contributor.html_url}
-          >
-            <img
-              src={contributor.avatar_url}
-              alt={contributor.login}
-              className={styles.image}
-            />
-          </Link>
-        ))}
-      </div>
-      <div className={styles.contributorsButton}>
-        <RedirectButton
-          redirectColor="var(--color-primary)"
-          redirectLink="https://github.com/kubearmor/KubeArmor/graphs/contributors"
-          redirectText="View More"
-        />
+    <section className={`Section contributors ${styles.contributors}`}>
+      <div className={`container`}>
+        <div className={`centerSectionHeading`}>
+          <h2>CONTRIBUTORS</h2>
+          <h1>
+            Shout Out to KubeArmor Contributors
+          </h1>
+        </div>
+        <div className={styles.container}>
+          {contributors.map((contributor) => (
+            <Link
+              key={contributor.id}
+              className={styles.containerImage}
+              to={contributor.html_url}
+            >
+              <img
+                src={contributor.avatar_url}
+                alt={contributor.login}
+                className={styles.image}
+              />
+            </Link>
+          ))}
+        </div>
+        <div className={styles.contributorsButton}>
+          <RedirectButton
+            redirectColor="var(--color-primary)"
+            redirectLink="https://github.com/kubearmor/KubeArmor/graphs/contributors"
+            redirectText="View More"
+          />
+        </div>
       </div>
     </section>
   );

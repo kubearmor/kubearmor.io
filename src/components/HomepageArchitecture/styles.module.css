@@ -1,40 +1,15 @@
 .architecture {
-  padding: 13rem 5.625rem 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   background: var(--color-bg);
 }
-.architectureTitle {
-  font-family: var(--font-main-medium);
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--color-primary);
-  letter-spacing: 0.18rem;
-}
-.architectureHeader {
-  font-family: var(--font-main-semibold);
-  font-size: 3rem;
-  font-weight: 600;
-  color: var(--color-font-header);
-  text-align: center;
-  width: 60%;
-}
-.architectureDescription {
-  font-family: var(--font-main-regular);
-  font-size: 1rem;
-  font-weight: 400;
-  color: var(--color-font-sub);
-  text-align: center;
-  width: 60%;
-  margin-bottom: 0;
-}
 .architectureImage {
   height: auto;
   width: 100%;
 }
-@media screen and (max-width: 1080px) {
+/* @media screen and (max-width: 1080px) {
   .architectureHeader,
   .architectureDescription {
     width: 80%;
@@ -55,4 +30,4 @@
     margin-bottom: 2rem;
     width: 100%;
   }
-}
+} */

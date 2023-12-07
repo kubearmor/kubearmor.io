@@ -32,49 +32,53 @@ kubectl apply -f https://raw.githubusercontent.com/kubearmor/KubeArmor/main/pkg/
     window.alert("Code Copied Successfully!");
   };
   return (
-    <section className={`installation ${styles.installation}`}>
-      <h2 className={styles.installationTitle}>INSTALLATION</h2>
-      <h1 className={styles.installationHeader}>How to Install KubeArmor?</h1>
-      <div className={styles.installationContainer}>
-        <div className={styles.guide}>
-          <h4 className={styles.guideTitle}>
-            Boost your security with KubeArmor in simple steps
-          </h4>
-          <p className={styles.guideText}>
-            Download and install KubeArmor via helm chart{" "}
-          </p>
-          <div className={styles.codeContainer}>
-            <FaRegCopy
-              className={styles.codeCopy}
-              size={20}
-              onClick={handleClick}
-            />
-            <pre id="code-block" className={styles.codeBlock}>
-              <code className={styles.code}>{code}</code>
-            </pre>
-          </div>
-          <p className={styles.guideText}>
-            For configuration options and further information
-          </p>
-          <RedirectButton
-            redirectColor="var(--color-primary)"
-            redirectText="Read Documentation"
-            redirectLink="https://docs.kubearmor.io/kubearmor/quick-links/deployment_guide"
-          />
+    <section className={`Section installation ${styles.installation}`}>
+      <div className={`container`}>
+        <div className={`centerSectionHeading`}>
+          <h2>INSTALLATION</h2>
+          <h1> How to Install KubeArmor?</h1>
         </div>
-        <div className={styles.showcase}>
-          <img
-            className={styles.installationImage}
-            src={installationImage}
-            alt="installation image"
-          />
-          <Link
-            className={styles.installationVideo}
-            to={`https://www.youtube.com/embed/${videoId}`}
-          >
-            <FaCirclePlay className={styles.playIcon} size={32} />
-            Watch Installation Video
-          </Link>
+        <div className={`section-margin ${styles.installationContainer}`}>
+          <div className={styles.guide}>
+            <h4 className={styles.guideTitle}>
+              Boost your security with KubeArmor in simple steps
+            </h4>
+            <p className={styles.guideText}>
+              Download and install KubeArmor via helm chart{" "}
+            </p>
+            <div className={styles.codeContainer}>
+              <FaRegCopy
+                className={styles.codeCopy}
+                size={20}
+                onClick={handleClick}
+              />
+              <pre id="code-block" className={styles.codeBlock}>
+                <code className={styles.code}>{code}</code>
+              </pre>
+            </div>
+            <p className={styles.guideText}>
+              For configuration options and further information
+            </p>
+            <RedirectButton
+              redirectColor="var(--color-primary)"
+              redirectText="Read Documentation"
+              redirectLink="https://docs.kubearmor.io/kubearmor/quick-links/deployment_guide"
+            />
+          </div>
+          <div className={styles.showcase}>
+            <img
+              className={styles.installationImage}
+              src={installationImage}
+              alt="installation image"
+            />
+            <Link
+              className={styles.installationVideo}
+              to={`https://www.youtube.com/embed/${videoId}`}
+            >
+              <FaCirclePlay className={styles.playIcon} size={32} />
+              Watch Installation Video
+            </Link>
+          </div>
         </div>
       </div>
     </section>
