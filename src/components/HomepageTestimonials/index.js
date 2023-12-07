@@ -25,21 +25,25 @@ function Item(props) {
 
 export default function HomepageTestimonials() {
   return (
-    <section className={`testimonials ${styles.testimonials}`}>
-      <h2 className={styles.testimonialsTitle}>TESTIMONIALS</h2>
-      <h1 className={styles.testimonialsHeader}>
-        Developers Love Using KubeArmor
-      </h1>
-      <div className={styles.tweets}>
-        {tweetContent.map((item) => (
-          <Item
-            key={item.id}
-            header={item.header}
-            description={item.description}
-            url={item.url}
-            image={images[item.image]}
-          />
-        ))}
+    <section className={`Section testimonials ${styles.testimonials}`}>
+      <div className={`container-medium`}>
+        <div className={`centerSectionHeading`}>
+          <h2>TESTIMONIALS</h2>
+          <h1>
+            Developers Love Using KubeArmor
+          </h1>
+        </div>
+        <div className={`section-margin ${styles.tweets}`}>
+          {tweetContent.map((item) => (
+            <Item
+              key={item.id}
+              header={item.header}
+              description={item.description}
+              url={item.url}
+              image={images[item.image]}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

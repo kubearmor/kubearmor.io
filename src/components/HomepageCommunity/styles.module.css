@@ -1,24 +1,7 @@
 .community {
   display: flex;
   flex-direction: column;
-  padding: 16rem 5.625rem 0;
   background: var(--color-bg);
-}
-.communityTitle {
-  font-family: var(--font-main-medium);
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--color-primary);
-  letter-spacing: 0.18rem;
-  align-self: center;
-}
-.communityHeader {
-  font-family: var(--font-main-semibold);
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--color-font-header);
-  align-self: center;
-  text-align: center;
 }
 .card {
   height: 20rem;
@@ -71,12 +54,8 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(1, 1fr);
   gap: 5rem;
-  margin-top: 3rem;
 }
 @media screen and (max-width: 1080px) {
-  .community {
-    padding: 10rem 2rem 0;
-  }
   .communityCards {
     gap: 1rem;
   }

@@ -3,10 +3,11 @@ import styles from "./styles.module.css";
 import Button from "../Button";
 import RedirectButton from "../RedirectButton";
 
-export default function HomepageSupport () {
-    return (
-      <section className={`support ${styles.support}`}>
-        <div className={styles.supportImage}>
+export default function HomepageSupport() {
+  return (
+    <section className={`Section support ${styles.support}`}>
+      <div className={`container`}>
+        <div className={` ${styles.supportImage}`}>
           <div className={styles.supportText}>
             <h1 className={styles.supportHeader}>
               Effortless and Efficient Runtime Security in Minutes
@@ -24,6 +25,7 @@ export default function HomepageSupport () {
             />
           </div>
         </div>
-      </section>
-    );
+      </div>
+    </section>
+  );
 }

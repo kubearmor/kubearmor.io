@@ -20,7 +20,11 @@ function Item(props) {
   return (
     <Link className={styles.container} to={props.video}>
       <div className={styles.containerContent}>
-        <FaPlay color="var(--color-white)" size={20} className={styles.containerIcon} />
+        <FaPlay
+          color="var(--color-white)"
+          size={20}
+          className={styles.containerIcon}
+        />
         <p className={styles.containerTitle}>{truncatedTitle}</p>
       </div>
       {Image && (
@@ -59,23 +63,27 @@ export default function HomepageVideos() {
     ],
   };
   return (
-    <section className={`videos ${styles.videos}`}>
-      <h2 className={styles.videosTitle}>FIRESIDE CHAT</h2>
-      <h1 className={styles.videosHeader}>
-        Securing Kubernetes Clusters Effectively
-      </h1>
-      <div className={styles.videosSlider}>
-        <Slider {...settings}>
-          {videoContent.map((item) => (
-            <Item
-              key={item.id}
-              title={item.title}
-              alt={item.alt}
-              video={item.video}
-              image={videos[item.image]}
-            />
-          ))}
-        </Slider>
+    <section className={`Section videos ${styles.videos}`}>
+      <div className={`container`}>
+        <div className={`centerSectionHeading`}>
+          <h2>FIRESIDE CHAT</h2>
+          <h1>
+            Securing Kubernetes Clusters Effectively
+          </h1>
+        </div>
+        <div className={`section-margin ${styles.videosSlider}`}>
+          <Slider {...settings}>
+            {videoContent.map((item) => (
+              <Item
+                key={item.id}
+                title={item.title}
+                alt={item.alt}
+                video={item.video}
+                image={videos[item.image]}
+              />
+            ))}
+          </Slider>
+        </div>
       </div>
     </section>
   );

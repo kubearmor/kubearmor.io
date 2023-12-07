@@ -22,20 +22,22 @@ function Item(props) {
 
 export default function HomepageUseCases() {
   return (
-    <section className={`use-cases ${styles.useCases}`}>
-      <h2 className={styles.useCasesTitle}>USE CASES</h2>
-      <h1 className={styles.useCasesHeader}>
-        Monitor and Enforce Policies To Prevent Sophisticated Attacks
-      </h1>
-      <div className={styles.useCasesContainer}>
-        {useCasesContent.map((item) => (
-          <Item
-            key={item.id}
-            header={item.header}
-            description={item.description}
-            icon={icons[item.icon]}
-          />
-        ))}
+    <section className={`Section use-cases ${styles.useCases}`}>
+      <div className={`container`}>
+        <div className={`centerSectionHeading`}>
+          <h2>USE CASES</h2>
+          <h1>Monitor and Enforce Policies To Prevent Sophisticated Attacks</h1>
+        </div>
+        <div className={`section-margin ${styles.useCasesContainer}`}>
+          {useCasesContent.map((item) => (
+            <Item
+              key={item.id}
+              header={item.header}
+              description={item.description}
+              icon={icons[item.icon]}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -1,24 +1,7 @@
 .videos {
   display: flex;
   flex-direction: column;
-  padding: 16rem 5.625rem 0;
   background: var(--color-bg);
-}
-.videosTitle {
-  font-family: var(--font-main-medium);
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--color-primary);
-  letter-spacing: 0.18rem;
-  align-self: center;
-}
-.videosHeader {
-  font-family: var(--font-main-semibold);
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--color-font-header);
-  align-self: center;
-  text-align: center;
 }
 .container {
   height: 16rem;
@@ -68,10 +51,4 @@
   align-items: center;
   gap: 0.5rem;
   z-index: 1;
-}
-
-@media screen and (max-width: 1080px) {
-  .videos {
-    padding: 10rem 2rem 0;
-  }
 }

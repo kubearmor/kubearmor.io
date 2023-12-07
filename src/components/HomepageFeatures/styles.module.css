@@ -1,23 +1,8 @@
 .features {
   display: flex;
   flex-direction: column;
-  padding: 16rem 5.625rem 0;
   background: var(--color-bg);
 }
-.featuresTitle {
-  font-family: var(--font-main-medium);
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--color-primary);
-  letter-spacing: 0.18rem;
-}
-.featuresHeader {
-  font-family: var(--font-main-semibold);
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--color-font-header);
-}
-
 .featuresImage {
   display: none;
   width: 50%;
@@ -30,18 +15,11 @@
   align-items: center;
 }
 .containerContent {
-  /* width: 40%; */
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
-  /* display: flex;
-  flex-direction: column; */
-  margin-top: 3rem;
 }
 .content {
-  /* height: 18rem; */
-  height: 15rem;
   padding: 1.5rem;
   color: var(--color-white);
   box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.1),
@@ -51,7 +29,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 .icon {
   height: 2rem;
@@ -76,6 +54,7 @@
   flex-direction: row;
   gap: 1rem;
   align-items: center;
+  margin-bottom: 1rem;
 }
 .contentHeader {
   font-family: var(--font-main-semibold);
@@ -108,15 +87,9 @@
 .containerDesktop {
   display: none !important;
 }
-@media screen and (max-width: 1080px) {
+@media (max-width: 767px) {
   .containerContent {
-    /* width: 40%; */
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-  }
-  .features {
-    padding: 16rem 2rem 0;
+    grid-template-columns: 1fr;
   }
 }
 @media screen and (max-width: 550px) {

@@ -39,119 +39,122 @@ export default function HomepageBlogs() {
     ],
   };
   return (
-    <section className={`blogs ${styles.blogs}`}>
-      <h2 className={styles.blogsTitle}>BLOGS</h2>
-      <h1 className={styles.blogsHeader}>
-        Open Source Solutions for Kubernetes Security
-      </h1>
-      <div className={styles.blogsSlider}>
-        <Slider {...settings}>
-          <Link
-            to="https://github.com/kubearmor/KubeArmor/wiki/v0.11-Release-Blog"
-            className={styles.container}
-          >
-            <div className={styles.containerWrapper}>
-              <img
-                src={blogsImage1}
-                alt="blogs image 1"
-                className={styles.containerImage}
-              />
-            </div>
-            <div className={styles.containerContent}>
-              <div className={styles.containerMain}>
-                <p className={styles.containerTags}>Release</p>
-                <h4 className={styles.containerTitle}>
-                  KubeArmor v0.11 Release
-                </h4>
+    <section className={`Section blogs ${styles.blogs}`}>
+      <div className={`container`}>
+        <div className={`centerSectionHeading`}>
+          <h2>BLOGS</h2>
+          <h1>Open Source Solutions for Kubernetes Security</h1>
+        </div>
+        <div className={`section-margin ${styles.blogsSlider}`}>
+        {/* <div className={styles.blogsSlider}> */}
+          <Slider {...settings}>
+            <Link
+              to="https://github.com/kubearmor/KubeArmor/wiki/v0.11-Release-Blog"
+              className={styles.container}
+            >
+              <div className={styles.containerWrapper}>
+                <img
+                  src={blogsImage1}
+                  alt="blogs image 1"
+                  className={styles.containerImage}
+                />
               </div>
-              <div className={styles.containerData}>
-                <p className={styles.containerAuthor}>
-                  by <span className={styles.author}>Prashant Mishra</span>
-                </p>
-                <p className={styles.containerDate}>Aug 17, 2023</p>
+              <div className={styles.containerContent}>
+                <div className={styles.containerMain}>
+                  <p className={styles.containerTags}>Release</p>
+                  <h4 className={styles.containerTitle}>
+                    KubeArmor v0.11 Release
+                  </h4>
+                </div>
+                <div className={styles.containerData}>
+                  <p className={styles.containerAuthor}>
+                    by <span className={styles.author}>Prashant Mishra</span>
+                  </p>
+                  <p className={styles.containerDate}>Aug 17, 2023</p>
+                </div>
               </div>
-            </div>
-          </Link>
-          <Link
-            to="https://github.com/kubearmor/KubeArmor/wiki/KubeArmor-support-for-Oracle-Container-Engine-for-Kubernetes-(OKE)"
-            className={styles.container}
-          >
-            <div className={styles.containerWrapper}>
-              <img
-                src={blogsImage2}
-                alt="blogs image 2"
-                className={styles.containerImage}
-              />
-            </div>
-            <div className={styles.containerContent}>
-              <div className={styles.containerMain}>
-                <p className={styles.containerTags}>Container</p>
-                <h4 className={styles.containerTitle}>
-                  KubeArmor support for Oracle Container Engine for Kubernetes
-                  (OKE)
-                </h4>
+            </Link>
+            <Link
+              to="https://github.com/kubearmor/KubeArmor/wiki/KubeArmor-support-for-Oracle-Container-Engine-for-Kubernetes-(OKE)"
+              className={styles.container}
+            >
+              <div className={styles.containerWrapper}>
+                <img
+                  src={blogsImage2}
+                  alt="blogs image 2"
+                  className={styles.containerImage}
+                />
               </div>
-              <div className={styles.containerData}>
-                <p className={styles.containerAuthor}>
-                  by <span className={styles.author}>Rahul Jadav</span>
-                </p>
-                <p className={styles.containerDate}>Feb 11, 2023</p>
+              <div className={styles.containerContent}>
+                <div className={styles.containerMain}>
+                  <p className={styles.containerTags}>Container</p>
+                  <h4 className={styles.containerTitle}>
+                    KubeArmor support for Oracle Container Engine for Kubernetes
+                    (OKE)
+                  </h4>
+                </div>
+                <div className={styles.containerData}>
+                  <p className={styles.containerAuthor}>
+                    by <span className={styles.author}>Rahul Jadav</span>
+                  </p>
+                  <p className={styles.containerDate}>Feb 11, 2023</p>
+                </div>
               </div>
-            </div>
-          </Link>
-          <Link
-            to="https://github.com/kubearmor/KubeArmor/wiki/Introduction-to-Linux-Security-Modules-(LSMs)"
-            className={styles.container}
-          >
-            <div className={styles.containerWrapper}>
-              <img
-                src={blogsImage3}
-                alt="blogs image 3"
-                className={styles.containerImage}
-              />
-            </div>
-            <div className={styles.containerContent}>
-              <div className={styles.containerMain}>
-                <p className={styles.containerTags}>Security</p>
-                <h4 className={styles.containerTitle}>
-                  Introduction to Linux Security Modules (LSMs)
-                </h4>
+            </Link>
+            <Link
+              to="https://github.com/kubearmor/KubeArmor/wiki/Introduction-to-Linux-Security-Modules-(LSMs)"
+              className={styles.container}
+            >
+              <div className={styles.containerWrapper}>
+                <img
+                  src={blogsImage3}
+                  alt="blogs image 3"
+                  className={styles.containerImage}
+                />
               </div>
-              <div className={styles.containerData}>
-                <p className={styles.containerAuthor}>
-                  by <span className={styles.author}>Barun Acharya</span>
-                </p>
-                <p className={styles.containerDate}>June 23, 2023</p>
+              <div className={styles.containerContent}>
+                <div className={styles.containerMain}>
+                  <p className={styles.containerTags}>Security</p>
+                  <h4 className={styles.containerTitle}>
+                    Introduction to Linux Security Modules (LSMs)
+                  </h4>
+                </div>
+                <div className={styles.containerData}>
+                  <p className={styles.containerAuthor}>
+                    by <span className={styles.author}>Barun Acharya</span>
+                  </p>
+                  <p className={styles.containerDate}>June 23, 2023</p>
+                </div>
               </div>
-            </div>
-          </Link>
-          <Link
-            to="https://github.com/kubearmor/KubeArmor/wiki/KubeArmor-Performance-Benchmarking-Data"
-            className={styles.container}
-          >
-            <div className={styles.containerWrapper}>
-              <img
-                src={blogsImage4}
-                alt="blogs image 4"
-                className={styles.containerImage}
-              />
-            </div>
-            <div className={styles.containerContent}>
-              <div className={styles.containerMain}>
-                <p className={styles.containerTags}>LSM</p>
-                <h4 className={styles.containerTitle}>
-                  KubeArmor Performance Benchmarking Data
-                </h4>
+            </Link>
+            <Link
+              to="https://github.com/kubearmor/KubeArmor/wiki/KubeArmor-Performance-Benchmarking-Data"
+              className={styles.container}
+            >
+              <div className={styles.containerWrapper}>
+                <img
+                  src={blogsImage4}
+                  alt="blogs image 4"
+                  className={styles.containerImage}
+                />
               </div>
-              <div className={styles.containerData}>
-                <p className={styles.containerAuthor}>
-                  by <span className={styles.author}>Rudraksh Pareek</span>
-                </p>
-                <p className={styles.containerDate}>Mar 13, 2023</p>
+              <div className={styles.containerContent}>
+                <div className={styles.containerMain}>
+                  <p className={styles.containerTags}>LSM</p>
+                  <h4 className={styles.containerTitle}>
+                    KubeArmor Performance Benchmarking Data
+                  </h4>
+                </div>
+                <div className={styles.containerData}>
+                  <p className={styles.containerAuthor}>
+                    by <span className={styles.author}>Rudraksh Pareek</span>
+                  </p>
+                  <p className={styles.containerDate}>Mar 13, 2023</p>
+                </div>
               </div>
-            </div>
-          </Link>
-        </Slider>
+            </Link>
+          </Slider>
+        </div>
       </div>
     </section>
   );

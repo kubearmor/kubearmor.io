@@ -1,18 +1,16 @@
 .support {
-  background: var(--color-primary);
-  margin: 16rem 5.625rem 8rem;
-  border: none;
-  border-radius: 2rem;
-  height: 30rem;
-  display: flex;
   overflow: hidden;
 }
 .supportImage {
-  background-size: 100% 100%;
+  background-size: contain;
   background-image: url(../../../static/img/cloud-support/Cloud-support.webp);
-  width: 100%;
+  background-color: var(--color-primary);
+  gap: 6rem;
+  background-repeat: no-repeat;
+  background-position: right center;
   padding: 2.25rem;
-  height: 100%;
+  border: none;
+  border-radius: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -37,11 +35,6 @@
   flex-direction: row;
   gap: 1rem;
   width: 50%;
-}
-@media screen and (max-width: 1080px) {
-  .support {
-    margin: 10rem 2rem 8rem;
-  }
 }
 @media screen and (max-width: 880px) {
   .supportText,
