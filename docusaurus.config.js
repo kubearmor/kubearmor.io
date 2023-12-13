@@ -229,7 +229,7 @@ const config = {
               },
               {
                 label: "GitHub",
-                to: "https://github.com/kubearmor/kubearmor.io",
+                to: "https://github.com/kubearmor",
               },
               {
                 label: "Slack",
