@@ -46,7 +46,7 @@ export default function HomepageBlogs() {
           <h1>Open Source Solutions for Kubernetes Security</h1>
         </div>
         <div className={`section-margin ${styles.blogsSlider}`}>
-        {/* <div className={styles.blogsSlider}> */}
+          {/* <div className={styles.blogsSlider}> */}
           <Slider {...settings}>
             <Link
               to="https://github.com/kubearmor/KubeArmor/wiki/v0.11-Release-Blog"
@@ -95,7 +95,7 @@ export default function HomepageBlogs() {
                 </div>
                 <div className={styles.containerData}>
                   <p className={styles.containerAuthor}>
-                    by <span className={styles.author}>Rahul Jadav</span>
+                    by <span className={styles.author}>Rahul Jadhav</span>
                   </p>
                   <p className={styles.containerDate}>Feb 11, 2023</p>
                 </div>

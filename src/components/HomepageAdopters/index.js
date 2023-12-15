@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import AdoptersLogo1 from "../../../static/img/adopters/adopter-accuknox.svg";
 import adoptersLogo2 from "../../../static/img/adopters/adopter-openhorizon.webp";
 import adoptersLogo3 from "../../../static/img/adopters/adopter-intel-smart-edge.webp";
+import adoptersLogo4 from "../../../static/img/adopters/adopter-se.png";
 import Link from "@docusaurus/Link";
 import { FaAngleRight } from "react-icons/fa6";
 
@@ -32,6 +33,13 @@ export default function HomepageAdopters() {
               <img
                 className={styles.logo}
                 src={adoptersLogo3}
+                alt="adopter logo"
+              />
+            </Link>
+            <Link to="https://www.5gsec.com/">
+              <img
+                className={styles.logo}
+                src={adoptersLogo4}
                 alt="adopter logo"
               />
             </Link>
