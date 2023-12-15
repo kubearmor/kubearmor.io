@@ -168,7 +168,11 @@ const config = {
             label: "Home",
             position: "left",
           },
-          { to: "https://github.com/kubearmor/KubeArmor/wiki", label: "Blog", position: "left" },
+          {
+            to: "https://github.com/kubearmor/KubeArmor/wiki",
+            label: "Blog",
+            position: "left",
+          },
           {
             to: "https://docs.kubearmor.io/kubearmor/",
             label: "Documentation",
@@ -225,7 +229,7 @@ const config = {
               },
               {
                 label: "GitHub",
-                to: "https://github.com/facebook/docusaurus",
+                to: "https://github.com/kubearmor",
               },
               {
                 label: "Slack",
