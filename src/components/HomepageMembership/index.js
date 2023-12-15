@@ -13,7 +13,7 @@ export default function HomepageMembership() {
     <section className={`Section membership ${styles.membership}`}>
       <div className={`container-medium`}>
         <div className={`centerSectionHeading`}>
-          <h1>Open Source Membership</h1>
+          <h1>Open Source Partners</h1>
         </div>
         <div className={styles.members}>
           <Link to="https://www.cncf.io/">

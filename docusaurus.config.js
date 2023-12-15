@@ -178,7 +178,11 @@ const config = {
             label: "Documentation",
             position: "left",
           },
-          { to: "/community", label: "Community", position: "left" },
+          {
+            to: "https://community.cncf.io/cloud-native-security-india/",
+            label: "Community",
+            position: "left",
+          },
           {
             type: "custom-GitHubStarButton",
             position: "right",
@@ -216,7 +220,7 @@ const config = {
               },
               {
                 label: "Community",
-                to: `${url + baseUrl}/community`,
+                to: "https://community.cncf.io/cloud-native-security-india/",
               },
             ],
           },
