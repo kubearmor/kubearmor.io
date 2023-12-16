@@ -25,7 +25,7 @@ export default function HomepageUseCases() {
     <section className={`Section use-cases ${styles.useCases}`}>
       <div className={`container`}>
         <div className={`centerSectionHeading`}>
-          <h2>USE CASES</h2>
+          <h2>FEATURES</h2>
           <h1>Monitor and Enforce Policies To Prevent Sophisticated Attacks</h1>
         </div>
         <div className={`section-margin ${styles.useCasesContainer}`}>
