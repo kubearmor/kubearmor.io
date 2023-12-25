@@ -49,7 +49,7 @@ export default function HomepageBlogs() {
           {/* <div className={styles.blogsSlider}> */}
           <Slider {...settings}>
             <Link
-              to="https://github.com/kubearmor/KubeArmor/wiki/v0.11-Release-Blog"
+              to={`/blog/Annotation-controller`}
               className={styles.container}
             >
               <div className={styles.containerWrapper}>
@@ -61,21 +61,21 @@ export default function HomepageBlogs() {
               </div>
               <div className={styles.containerContent}>
                 <div className={styles.containerMain}>
-                  <p className={styles.containerTags}>Release</p>
+                  <p className={styles.containerTags}>controller</p>
                   <h4 className={styles.containerTitle}>
-                    KubeArmor v0.11 Release
+                    Annotation controller
                   </h4>
                 </div>
                 <div className={styles.containerData}>
                   <p className={styles.containerAuthor}>
-                    by <span className={styles.author}>Prashant Mishra</span>
+                    by <span className={styles.author}>Achref Ben Saad</span>
                   </p>
-                  <p className={styles.containerDate}>Aug 17, 2023</p>
+                  <p className={styles.containerDate}>July 14, 2022</p>
                 </div>
               </div>
             </Link>
             <Link
-              to="https://github.com/kubearmor/KubeArmor/wiki/KubeArmor-support-for-Oracle-Container-Engine-for-Kubernetes-(OKE)"
+              to={`/blog/KubeArmor-support-for-Oracle-Container-Engine-for-Kubernetes`}
               className={styles.container}
             >
               <div className={styles.containerWrapper}>
@@ -87,7 +87,7 @@ export default function HomepageBlogs() {
               </div>
               <div className={styles.containerContent}>
                 <div className={styles.containerMain}>
-                  <p className={styles.containerTags}>Container</p>
+                  <p className={styles.containerTags}>container, engine</p>
                   <h4 className={styles.containerTitle}>
                     KubeArmor support for Oracle Container Engine for Kubernetes
                     (OKE)
@@ -102,7 +102,7 @@ export default function HomepageBlogs() {
               </div>
             </Link>
             <Link
-              to="https://github.com/kubearmor/KubeArmor/wiki/Introduction-to-Linux-Security-Modules-(LSMs)"
+              to={`/blog/Introduction-to-Linux-Security-Modules`}
               className={styles.container}
             >
               <div className={styles.containerWrapper}>
@@ -128,7 +128,7 @@ export default function HomepageBlogs() {
               </div>
             </Link>
             <Link
-              to="https://github.com/kubearmor/KubeArmor/wiki/KubeArmor-Performance-Benchmarking-Data"
+              to={`/blog/KubeArmor-Performance-Benchmarking-Data`}
               className={styles.container}
             >
               <div className={styles.containerWrapper}>
@@ -140,7 +140,7 @@ export default function HomepageBlogs() {
               </div>
               <div className={styles.containerContent}>
                 <div className={styles.containerMain}>
-                  <p className={styles.containerTags}>LSM</p>
+                  <p className={styles.containerTags}>performance</p>
                   <h4 className={styles.containerTitle}>
                     KubeArmor Performance Benchmarking Data
                   </h4>
