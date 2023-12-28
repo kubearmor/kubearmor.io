@@ -77,10 +77,12 @@ export default function HomepageFeatures() {
     <section className={`Section features ${styles.features}`}>
       <div className={`container`}>
         <div className={`centerSectionHeading`}>
-          <h2>FEATURES</h2>
+          <h2>USE CASES</h2>
           <h1>What Makes KubeArmor Unique?</h1>
         </div>
-        <div className={`section-margin features-container ${styles.container} `}>
+        <div
+          className={`section-margin features-container ${styles.container} `}
+        >
           {/* <div className={`features-progress-bar ${styles.progressBar}`}>0%</div> */}
           <div
             className={`features-content ${styles.containerContent}`}

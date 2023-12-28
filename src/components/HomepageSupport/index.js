@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./styles.module.css";
 import Button from "../Button";
-import RedirectButton from "../RedirectButton";
 
 export default function HomepageSupport() {
   return (
@@ -17,10 +16,11 @@ export default function HomepageSupport() {
             </p>
           </div>
           <div className={styles.supportCTA}>
-            <RedirectButton
-              redirectColor="var(--color-white)"
-              redirectLink="https://killercoda.com/kubearmor/scenario/kubearmor-killercoda"
-              redirectText="Learn KubeArmor Basics"
+            <Button
+              bgColor="var(--color-white)"
+              textColor="var(--color-primary)"
+              buttonLink="https://killercoda.com/kubearmor/scenario/usecases"
+              buttonText="Learn KubeArmor Basics"
               className={styles.supportRedirect}
             />
           </div>
