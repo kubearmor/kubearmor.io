@@ -42,7 +42,7 @@ export default function HomepageCommunity() {
             cardIcon={communityLogo1}
           />
           <Card
-            cardLink="https://join.slack.com/t/kubearmor/shared_invite/zt-1ltmqdbc6-rSHw~LM6MesZZasmP2hAcA/"
+            cardLink="https://join.slack.com/t/kubearmor/shared_invite/zt-2bhlgoxw1-WTLMm_ica8PIhhNBNr2GfA"
             cardData="600+ Members"
             cardTitle="Slack Channel"
             cardIcon={communityLogo2}
