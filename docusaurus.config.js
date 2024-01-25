@@ -238,7 +238,7 @@ const config = {
               },
               {
                 label: "Slack",
-                to: "https://join.slack.com/t/kubearmor/shared_invite/zt-1ltmqdbc6-rSHw~LM6MesZZasmP2hAcA/",
+                to: "https://join.slack.com/t/kubearmor/shared_invite/zt-2bhlgoxw1-WTLMm_ica8PIhhNBNr2GfA",
               },
               {
                 label: "LinkedIn",
