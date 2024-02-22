@@ -15,6 +15,9 @@ export default function HomepageSandbox() {
         <Link to="https://www.cncf.io/projects/kubearmor/">
           <img className={styles.logo} src={sandboxImage} alt="logo" />
         </Link>
+        <h4 className={styles.sandboxText}>
+          The Linux Foundation® (TLF) has registered trademarks and uses trademarks. For a list of TLF trademarks, see <Link to="https://www.linuxfoundation.org/trademark-usage/">Trademark Usage</Link>.
+        </h4>
       </div>
     </section>
   );
