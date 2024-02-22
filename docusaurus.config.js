@@ -180,7 +180,7 @@ const config = {
             position: "left",
           },
           {
-            to: "https://community.cncf.io/cloud-native-security-india/",
+            to: "https://www.meetup.com/kubernetes-cloud-native-security-india/",
             label: "Community",
             position: "left",
           },
@@ -221,7 +221,7 @@ const config = {
               },
               {
                 label: "Community",
-                to: "https://community.cncf.io/cloud-native-security-india/",
+                to: "https://www.meetup.com/kubernetes-cloud-native-security-india/",
               },
             ],
           },
