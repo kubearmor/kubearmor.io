@@ -1,0 +1,23 @@
+daemon1024:
+  name: Barun Acharya
+  title: Maintainer @KubeArmor | Software Engineer @ Accuknox
+  url: https://github.com/daemon1024
+  image_url: https://kubearmor.io/img/authors/Barun-Acharya.jpeg
+
+nyrahul:
+  name: Rahul Jadhav
+  title: CNCF Ambassador | Co-founder @ Accuknox
+  url: https://github.com/nyrahul
+  image_url: https://kubearmor.io/img/authors/Rahul-Jadhav.jpeg
+
+DelusionalOptimist:
+  name: Rudraksh Pareek
+  title: Maintainer @KubeArmor | Software Engineer @ Accuknox
+  url: https://github.com/DelusionalOptimist
+  image_url: https://kubearmor.io/img/authors/Rudraksh-Pareek.jpeg
+
+achrefbensaad:
+  name: Achref Ben Saad
+  title: Maintainer @KubeArmor
+  url: https://github.com/achrefbensaad
+  image_url: https://kubearmor.io/img/authors/Achref-Ben-Saad.jpeg
