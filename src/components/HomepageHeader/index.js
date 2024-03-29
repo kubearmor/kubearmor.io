@@ -44,7 +44,7 @@ export default function HomepageHeader() {
               <Button
                 bgColor="var(--color-primary)"
                 textColor="var(--color-white)"
-                buttonText="Try KubeArmor"
+                buttonText="Install KubeArmor"
                 buttonLink="https://docs.kubearmor.io/kubearmor/quick-links/deployment_guide"
               />
               <div className={styles.createdBy}>
