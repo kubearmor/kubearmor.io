@@ -51,42 +51,14 @@ export default function Home() {
       description="Runtime Cloud Native Security Engine. Workload hardening and implementing least-permissive policies made easy. Leveraging eBPF and Linux Security Modules(LSM) for protecting workloads on Cloud,  Containers, IoT/Edge, and 5G networks."
     >
       <Head>
-        <link
-          rel="dns-prefetch"
-          href="//t.visitorqueue.com"
-          style={{ display: "none !important" }}
-        />
         <script>
           {`
-          function vqTrackId(){return '189b9b40-687b-463a-b3fe-b8466827688d';}
-          (function(d, e) {
-            var el = d.createElement(e);
-            el.sa = function(an, av){this.setAttribute(an, av); return this;};
-            el.sa('id', 'vq_tracking').sa('src', '//t.visitorqueue.com/p/tracking.min.js?id='+vqTrackId()).sa('async', 1).sa('data-id', vqTrackId());
-            d.getElementsByTagName(e)[0].parentNode.appendChild(el);
-          })(document, 'script');
-        `}
-        </script>
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://p.visitorqueue.com/styles/189b9b40-687b-463a-b3fe-b8466827688d.css"
-          id="vq_flick_styles"
-        />
-        <script>
-          {`
-          function vqTrackPc(){return 1;}
-        `}
-        </script>
-        <script>
-          {`
-          (function(d, e) {
-            var el = d.createElement(e);
-            el.sa = function(an, av){this.setAttribute(an, av); return this;};
-            el.sa('id', 'vq_personalisation').sa('src', '//personalisation.visitorqueue.com/p/personalisation.min.js?id='+vqTrackId()).sa('async', 1).sa('data-id', vqTrackId());
-            d.getElementsByTagName(e)[0].parentNode.appendChild(el);
-          })(document, 'script');
-        `}
+            !function(s,n,i,t,c,h){s.SnitchObject=i;s[i]||(s[i]=function(){
+              (s[i].q=s[i].q||[]).push(arguments)});s[i].l=+new Date;c=n.createElement(t);
+              h=n.getElementsByTagName(t)[0];c.src='//snid.snitcher.com/8426246.js';
+              h.parentNode.insertBefore(c,h)}(window,document,'snid','script');      
+              snid('verify', '8426246');
+          `}
         </script>
       </Head>
       <HomepageHeader />
