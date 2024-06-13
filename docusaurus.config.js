@@ -168,11 +168,11 @@ const config = {
           //   position: "left",
           //   label: "Tutorial",
           // },
-          {
-            to: "/",
-            label: "Home",
-            position: "left",
-          },
+          // {
+          //   to: "/",
+          //   label: "Home",
+          //   position: "left",
+          // },
           {
             to: "/blog",
             label: "Blog",
@@ -183,10 +183,22 @@ const config = {
             label: "Documentation",
             position: "left",
           },
+          // {
+          //   to: "https://www.meetup.com/kubernetes-cloud-native-security-india/",
+          //   label: "Community",
+          //   position: "left",
+          // },
           {
-            to: "https://www.meetup.com/kubernetes-cloud-native-security-india/",
-            label: "Community",
-            position: "left",
+            type: "html",
+            position: "right",
+            value: "<a href='https://www.meetup.com/kubernetes-cloud-native-security-india/' target='_blank'><img src='img/cloudnative.webp' alt='Cloudnative Logo'></a>",
+            className: 'header-partnerlogo',
+          },
+          {
+            type: "html",
+            position: "right",
+            value: "<a href='https://community.cncf.io/kubearmor/' target='_blank'><img src='img/meetup.webp' alt='Meetuo Logo'></a>",
+            className: 'header-partnerlogo',
           },
           {
             type: "custom-GitHubStarButton",
