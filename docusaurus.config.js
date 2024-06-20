@@ -191,13 +191,13 @@ const config = {
           {
             type: "html",
             position: "right",
-            value: "<a href='https://www.meetup.com/kubernetes-cloud-native-security-india/' target='_blank'><img src='img/cloudnative.webp' alt='Cloudnative Logo'></a>",
+            value: "<a href='https://community.cncf.io/kubearmor/' target='_blank'><img src='img/cloudnative.webp' alt='Cloudnative Logo'></a>",
             className: 'header-partnerlogo',
           },
           {
             type: "html",
             position: "right",
-            value: "<a href='https://community.cncf.io/kubearmor/' target='_blank'><img src='img/meetup.webp' alt='Meetuo Logo'></a>",
+            value: "<a href='https://www.meetup.com/kubernetes-cloud-native-security-india/' target='_blank'><img src='img/meetup.webp' alt='Meetuo Logo'></a>",
             className: 'header-partnerlogo',
           },
           {
