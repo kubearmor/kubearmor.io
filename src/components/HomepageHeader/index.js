@@ -19,14 +19,14 @@ export default function HomepageHeader() {
           <div className={styles.container}>
             <Link
               className={styles.heroAnnouncement}
-              to="https://github.com/kubearmor/KubeArmor/wiki/v1.0-Release-Blog"
+              to="https://github.com/kubearmor/KubeArmor/wiki/v1.3.0-Release-Blog"
             >
               <div>
                 <FaLock
                   className={styles.heroIcon}
                   color="var(--color-primary)"
                 />
-                KubeArmor v1.0 is here!
+                KubeArmor v1.3.0 is here!
               </div>
               <FaAngleRight
                 className={styles.heroIcon}
@@ -47,20 +47,21 @@ export default function HomepageHeader() {
                 buttonText="Install KubeArmor"
                 buttonLink="https://docs.kubearmor.io/kubearmor/quick-links/deployment_guide"
               />
-              <div className={styles.createdBy}>
-                <p>Created By</p>
-                <Link
-                  to="https://www.accuknox.com/"
-                  className={styles.creatorContainer}
-                >
-                  <img
-                    aria-label="accuknox image"
-                    src={creatorLogo}
-                    alt="accuknox image"
-                  />
-                  {/* <CreatorLogo className={styles.creatorLogo} /> */}
-                </Link>
-              </div>
+              <p>1 Million+ Downloads</p>
+            </div>
+            <div className={styles.createdBy}>
+              <p>Created By</p>
+              <Link
+                to="https://www.accuknox.com/"
+                className={styles.creatorContainer}
+              >
+                <img
+                  aria-label="accuknox image"
+                  src={creatorLogo}
+                  alt="accuknox image"
+                />
+                {/* <CreatorLogo className={styles.creatorLogo} /> */}
+              </Link>
             </div>
           </div>
           <div>

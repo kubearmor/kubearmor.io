@@ -12,6 +12,7 @@ import HomepageArchitecture from "../components/HomepageArchitecture";
 import HomepageInstallation from "../components/HomepageInstallation";
 import HomepageUseCases from "../components/HomepageUseCases";
 import HomepageMarketplaces from "../components/HomepageMarketplaces";
+import HomepageSupportMatrix from "../components/HomepageSupportMatrix";
 import HomepageExpansions from "../components/HomepageExpansions";
 import HomepageVersionChangelog from "../components/HomepageVersionChangelog";
 import HomepageBlogs from "../components/HomepageBlogs";
@@ -68,6 +69,7 @@ export default function Home() {
         <HomepageInstallation />
         <HomepageUseCases />
         <HomepageMarketplaces />
+        <HomepageSupportMatrix />
         <HomepageVersionChangelog />
         <HomepageExpansions />
         <HomepageBlogs />

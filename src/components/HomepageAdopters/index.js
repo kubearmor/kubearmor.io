@@ -4,6 +4,8 @@ import AdoptersLogo1 from "../../../static/img/adopters/adopter-accuknox.svg";
 import adoptersLogo2 from "../../../static/img/adopters/adopter-openhorizon.webp";
 import adoptersLogo3 from "../../../static/img/adopters/adopter-intel-smart-edge.webp";
 import adoptersLogo4 from "../../../static/img/adopters/adopter-se.png";
+import adoptersLogo5 from "../../../static/img/adopters/anylog.webp";
+import adoptersLogo6 from "../../../static/img/adopters/phoenix.webp";
 import Link from "@docusaurus/Link";
 import { FaAngleRight } from "react-icons/fa6";
 
@@ -40,6 +42,20 @@ export default function HomepageAdopters() {
               <img
                 className={styles.logo}
                 src={adoptersLogo4}
+                alt="adopter logo"
+              />
+            </Link>
+            <Link to="https://r6security.com/">
+              <img
+                className={styles.logo}
+                src={adoptersLogo5}
+                alt="adopter logo"
+              />
+            </Link>
+            <Link to="https://anylog.co/">
+              <img
+                className={styles.logo}
+                src={adoptersLogo6}
                 alt="adopter logo"
               />
             </Link>
