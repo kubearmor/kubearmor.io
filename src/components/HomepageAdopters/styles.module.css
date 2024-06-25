@@ -3,11 +3,9 @@
   flex-direction: column;
   background: var(--color-bg);
 }
-.adoptersLogos {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between; */
+.adoptersLogos a{
+  text-align: center;
+  justify-content: center;
 }
 .adoptersTitle {
   font-family: var(--font-main-medium);

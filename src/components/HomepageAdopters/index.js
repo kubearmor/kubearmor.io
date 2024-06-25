@@ -7,6 +7,7 @@ import adoptersLogo4 from "../../../static/img/adopters/adopter-se.png";
 import adoptersLogo5 from "../../../static/img/adopters/anylog.webp";
 import adoptersLogo6 from "../../../static/img/adopters/phoenix.webp";
 import Link from "@docusaurus/Link";
+import RedirectButton from "../RedirectButton";
 import { FaAngleRight } from "react-icons/fa6";
 
 export default function HomepageAdopters() {
@@ -60,21 +61,11 @@ export default function HomepageAdopters() {
               />
             </Link>
           </div>
-        </div>
-        <div className={styles.container}>
-          <div className={styles.containerContent}>
-            <h3 className={styles.containerTitle}>Want to Add Your Logo ?</h3>
-            <p className={styles.containerDescription}>
-              Be one of the adopters for our organization
-            </p>
-          </div>
-          <Link
-            to="https://github.com/kubearmor/KubeArmor/blob/main/ADOPTERS.md"
-            className={styles.containerButton}
-          >
-            Apply
-            <FaAngleRight color="var(--color-primary)" />
-          </Link>
+          <RedirectButton
+            redirectColor="var(--color-primary)"
+            redirectText="Add your Logo"
+            redirectLink="https://github.com/kubearmor/KubeArmor/blob/main/ADOPTERS.md"
+          />
         </div>
       </div>
     </section>
