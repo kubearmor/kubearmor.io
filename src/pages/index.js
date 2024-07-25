@@ -21,6 +21,7 @@ import HomepageTestimonials from "../components/HomepageTestimonials";
 import HomepageAdopters from "../components/HomepageAdopters";
 import HomepageCommunity from "../components/HomepageCommunity";
 import HomepageMembership from "../components/HomepageMembership";
+import HomepageMilestones from "../components/HomepageMilestones";
 import HomepageSupport from "../components/HomepageSupport";
 import HomepageContributors from "../components/HomepageContributors";
 import HomepageSandbox from "../components/HomepageSandbox";
@@ -76,6 +77,7 @@ export default function Home() {
         <HomepageVideos />
         <HomepageTestimonials />
         <HomepageAdopters />
+        <HomepageMilestones />
         <HomepageCommunity />
         <HomepageMembership />
         <HomepageContributors />
