@@ -19,8 +19,8 @@ export default function HomepageMilestones() {
           <div>
             <h3>2021</h3>
             <ul>
-                <li>Released v0.1, stable version</li>
                 <li>CNCF Sandbox Acceptance (November 16)</li>
+                <li>Dec 17, Released v0.1 - stable version</li>
             </ul>
           </div>
           <div>
@@ -28,6 +28,7 @@ export default function HomepageMilestones() {
             <ul>
                 <li>Surpassed 300K+ downloads</li>
                 <li>Gained traction in the open-source community</li>
+                <li>Host Policy Enforcement support </li>
             </ul>
           </div>
           <div>
