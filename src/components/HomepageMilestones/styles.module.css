@@ -1,20 +1,10 @@
 .mileStones {
   background-color: #082c74;
   color: white;
-  h1,
-  h3 {
-    color: white;
-  }
-  .milestoneCards {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 1.5rem;
-    @media screen and (max-width: 1024px) {
-      grid-template-columns: 1fr;
-      text-align: left;
-      border-left: 2px solid #5096ff;
-    }
-  }
+}
+.mileStones h1,
+h3 {
+  color: white;
 }
 .mileStones h3 {
   position: relative;
@@ -25,6 +15,11 @@
 }
 .mileStones ul {
   margin-bottom: 0;
+}
+.mileStones .milestoneCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 1.5rem;
 }
 .mileStones h3::before {
   position: absolute;
@@ -50,6 +45,12 @@
     top: 50%;
     transform: translate(-51%, -50%);
   }
+  .mileStones .milestoneCards{
+    grid-template-columns: 1fr;
+    text-align: left;
+    border-left: 2px solid #5096ff;
+  }
+
 }
 @media screen and (max-width: 767px) {
   .mileStones h3 {

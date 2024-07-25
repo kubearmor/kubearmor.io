@@ -13,7 +13,7 @@ export default function HomepageMilestones() {
             <h3>2020</h3>
             <ul>
                 <li>KubeArmor project architecture</li>
-                <li>MVP Launch </li>
+                <li>MVP Launch</li>
             </ul>
           </div>
           <div>
