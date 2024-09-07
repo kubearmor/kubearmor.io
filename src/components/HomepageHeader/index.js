@@ -19,7 +19,7 @@ export default function HomepageHeader() {
           <div className={styles.container}>
             <Link
               className={styles.heroAnnouncement}
-              to="https://github.com/kubearmor/KubeArmor/wiki/v1.3.0-Release-Blog"
+              to="https://github.com/kubearmor/KubeArmor/wiki/v1.4.0-Release-Blog"
             >
               <div>
                 <FaLock
