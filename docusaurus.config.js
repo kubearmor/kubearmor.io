@@ -254,7 +254,7 @@ const config = {
               },
               {
                 label: "Slack",
-                to: "https://join.slack.com/t/kubearmor/shared_invite/zt-2bhlgoxw1-WTLMm_ica8PIhhNBNr2GfA",
+                to: "https://cloud-native.slack.com/archives/C07EF44HWQM",
               },
               {
                 label: "LinkedIn",
