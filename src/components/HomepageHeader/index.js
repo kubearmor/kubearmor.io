@@ -26,7 +26,7 @@ export default function HomepageHeader() {
                   className={styles.heroIcon}
                   color="var(--color-primary)"
                 />
-                KubeArmor v1.3.0 is here!
+                KubeArmor v1.4.0 is here!
               </div>
               <FaAngleRight
                 className={styles.heroIcon}
