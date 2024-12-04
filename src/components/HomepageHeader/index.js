@@ -4,6 +4,8 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 // import heroImage from "../../../static/img/hero/hero-mascot.svg";
 import heroImage from "../../../static/img/hero/hero-mascot.webp";
 import creatorLogo from "../../../static/img/hero/accuknox-logo.png";
+import ctaKubearmor from "../../../static/img/hero/cta-kubearmor.webp";
+import ctaModelarmor from "../../../static/img/hero/cta-modelarmor.webp";
 import Button from "../Button/index";
 import styles from "./styles.module.css";
 import { FaLock, FaAngleRight } from "react-icons/fa6";
@@ -41,13 +43,26 @@ export default function HomepageHeader() {
               policy-based controls.
             </p>
             <div className={styles.callToAction}>
-              <Button
-                bgColor="var(--color-primary)"
-                textColor="var(--color-white)"
-                buttonText="Install KubeArmor"
-                buttonLink="https://docs.kubearmor.io/kubearmor/quick-links/deployment_guide"
-              />
-              <p>1 Million+ Downloads</p>
+              <Link
+                to="https://docs.kubearmor.io/kubearmor/quick-links/deployment_guide"
+                className={styles.creatorContainer}
+              >
+                <img
+                  aria-label="ctaKubearmor"
+                  src={ctaKubearmor}
+                  alt="ctaKubearmor"
+                />
+              </Link>
+              <Link
+                to="https://help.accuknox.com/use-cases/modelarmor/"
+                className={styles.creatorContainer}
+              >
+                <img
+                  aria-label="ctaModelarmor"
+                  src={ctaModelarmor}
+                  alt="ctaModelarmor"
+                />
+              </Link>
             </div>
             <div className={styles.createdBy}>
               <p>Created By</p>
