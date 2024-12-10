@@ -19,22 +19,25 @@ export default function HomepageHeader() {
       <div className={`container`}>
         <div className={`hero ${styles.hero}`}>
           <div className={styles.container}>
-            <Link
-              className={styles.heroAnnouncement}
-              to="https://github.com/kubearmor/KubeArmor/wiki/v1.4.0-Release-Blog"
-            >
-              <div>
-                <FaLock
+            <div className={styles.heroAnnouncementWrapper}>
+              <Link
+                className={styles.heroAnnouncement}
+                to="https://github.com/kubearmor/KubeArmor/wiki/v1.4.0-Release-Blog"
+              >
+                <div>
+                  <FaLock
+                    className={styles.heroIcon}
+                    color="var(--color-primary)"
+                  />
+                  KubeArmor v1.4.0 is here!
+                </div>
+                <FaAngleRight
                   className={styles.heroIcon}
                   color="var(--color-primary)"
                 />
-                KubeArmor v1.4.0 is here!
-              </div>
-              <FaAngleRight
-                className={styles.heroIcon}
-                color="var(--color-primary)"
-              />
-            </Link>
+              </Link>
+              <p>1.2 Million+ Downloads</p>
+            </div>
             <h1 className={styles.heroTitle}>{siteConfig.tagline}</h1>
             <p className={styles.heroSubtitle}>
               KubeArmor is a runtime Kubernetes security engine. It uses eBPF
