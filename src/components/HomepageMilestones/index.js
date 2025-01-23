@@ -40,7 +40,7 @@ export default function HomepageMilestones() {
             </ul>
           </div>
           <div>
-            <h3>2024</h3>
+            <h3>2025</h3>
             <ul>
                 <li>Over 1+ Million downloads</li>
                 <li>Earned 1,300+ GitHub stars, showcasing community engagement</li>
