@@ -71,12 +71,19 @@
   align-items: center;
   margin-bottom: 2rem;
 }
+.createdBy{
+  display: flex;
+  gap: 1rem;
+}
 .createdBy img{
   width: 16rem;
   /* height: 4rem; */
 }
 .createdBy p{
   margin: 0;
+}
+.createdBy .maintained{
+  padding-bottom: 12px;
 }
 @media screen and (max-width: 1300px){
   .heroAnnouncement {

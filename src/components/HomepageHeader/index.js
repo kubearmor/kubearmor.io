@@ -3,7 +3,8 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 // import heroImage from "../../../static/img/hero/hero-mascot.svg";
 import heroImage from "../../../static/img/hero/hero-mascot.webp";
-import creatorLogo from "../../../static/img/hero/accuknox-logo.png";
+import accuknoxLogo from "../../../static/img/hero/accuknox-logo.png";
+import creatorLogo from "../../../static/img/os-membership/membership-cncf.png";
 import ctaKubearmor from "../../../static/img/hero/cta-kubearmor.webp";
 import ctaModelarmor from "../../../static/img/hero/cta-modelarmor.webp";
 import Button from "../Button/index";
@@ -40,7 +41,10 @@ export default function HomepageHeader() {
             </div>
             <h1 className={styles.heroTitle}>{siteConfig.tagline}</h1>
             <p className={styles.heroSubtitle}>
-            KubeArmor (CNCF Sandbox open-source project) is cloud native runtime security enforcement engine. It helps with workload hardening and sandboxing by leveraging eBPF and Linux Security Modules, preemptively mitigating any potential security attacks.
+              KubeArmor (CNCF Sandbox open-source project) is cloud native
+              runtime security enforcement engine. It helps with workload
+              hardening and sandboxing by leveraging eBPF and Linux Security
+              Modules, preemptively mitigating any potential security attacks.
             </p>
             <div className={styles.callToAction}>
               <Link
@@ -65,18 +69,33 @@ export default function HomepageHeader() {
               </Link>
             </div>
             <div className={styles.createdBy}>
-              <p>Created By</p>
-              <Link
-                to="https://www.accuknox.com/"
-                className={styles.creatorContainer}
-              >
-                <img
-                  aria-label="accuknox image"
-                  src={creatorLogo}
-                  alt="accuknox image"
-                />
-                {/* <CreatorLogo className={styles.creatorLogo} /> */}
-              </Link>
+              <div>
+                <p>Created By</p>
+                <Link
+                  to="https://www.accuknox.com/"
+                  className={styles.creatorContainer}
+                >
+                  <img
+                    aria-label="accuknox image"
+                    src={accuknoxLogo}
+                    alt="accuknox image"
+                  />
+                  {/* <CreatorLogo className={styles.creatorLogo} /> */}
+                </Link>
+              </div>
+              <div>
+              <p className={styles.maintained}>Maintained by</p>
+                <Link
+                  to="https://www.cncf.io/projects/kubearmor/"
+                  className={styles.creatorContainer}
+                >
+                  <img
+                    aria-label="accuknox image"
+                    src={creatorLogo}
+                    alt="accuknox image"
+                  />
+                </Link>
+              </div>
             </div>
           </div>
           <div>
