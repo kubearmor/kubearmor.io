@@ -40,10 +40,7 @@ export default function HomepageHeader() {
             </div>
             <h1 className={styles.heroTitle}>{siteConfig.tagline}</h1>
             <p className={styles.heroSubtitle}>
-              KubeArmor is a runtime Kubernetes security engine. It uses eBPF
-              and Linux Security Modules(LSM) for fortifying workloads based on
-              Cloud Containers, IoT/Edge, and 5G networks. It enforces
-              policy-based controls.
+            KubeArmor (CNCF Sandbox open-source project) is cloud native runtime security enforcement engine. It helps with workload hardening and sandboxing by leveraging eBPF and Linux Security Modules, preemptively mitigating any potential security attacks.
             </p>
             <div className={styles.callToAction}>
               <Link
