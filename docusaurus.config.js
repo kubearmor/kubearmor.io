@@ -184,7 +184,7 @@ const config = {
             position: "left",
           },
            {
-            to: "http://help.accuknox.com/use-cases/modelarmor/",
+            to: "https://docs.kubearmor.io/kubearmor/use-cases/modelarmor",
             label: "ModelArmor",
             position: "left",
           },

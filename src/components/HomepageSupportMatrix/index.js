@@ -20,7 +20,7 @@ export default function HomepageSupportMatrix() {
           <RedirectButton
             redirectColor="var(--color-primary)"
             redirectText="Learn More"
-            redirectLink="https://help.accuknox.com/support-matrix/kubearmor-support-matrix/"
+            redirectLink="https://docs.kubearmor.io/kubearmor/quick-links/support_matrix"
           />
         </div>
       </div>

@@ -58,7 +58,7 @@ export default function HomepageHeader() {
                 />
               </Link>
               <Link
-                to="https://help.accuknox.com/use-cases/modelarmor/"
+                to="https://docs.kubearmor.io/kubearmor/use-cases/modelarmor"
                 className={styles.creatorContainer}
               >
                 <img
