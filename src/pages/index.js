@@ -80,13 +80,12 @@ export default function Home() {
           `}
         </script>
 
-
-    {/* Start of Reo Javascript */}
-    <script type="text/javascript">
-      !function(){var e,t,n;e="ab7a909d0af3d55",t=function(){Reo.init({clientID:"ab7a909d0af3d55"})},(n=document.createElement("script")).src="https://static.reo.dev/"+e+"/reo.js",n.defer=!0,n.onload=t,document.head.appendChild(n)}();
-    </script>
-    {/* End of Reo Javascript */}
-
+        {/* Start of Reo Javascript */}
+        <script type="text/javascript">
+          {`
+      !function(){var e,t,n;e="ab7a909d0af3d55",t=function(){Reo.init({clientID:"ab7a909d0af3d55"})},(n=document.createElement("script")).src="https://static.reo.dev/"+e+"/reo.js",n.defer=!0,n.onload=t,document.head.appendChild(n)}();`}
+        </script>
+        {/* End of Reo Javascript */}
       </Head>
       <HomepageHeader />
       <main>
