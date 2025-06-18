@@ -13,7 +13,7 @@ export default function HomepageArchitecture() {
           flexDirection: "row",
           width: "100%",
           height: "100px",
-          margin: "-3rem 0",
+          margin: "0rem 0",
         }}
       >
         {/* KubeArmor Column */}
