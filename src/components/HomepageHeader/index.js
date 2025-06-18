@@ -69,7 +69,7 @@ export default function HomepageHeader() {
               </Link>
             </div>
             <div className={styles.createdBy}>
-              <div>
+              {/* <div>
                 <p>Created By</p>
                 <Link
                   to="https://www.accuknox.com/"
@@ -80,9 +80,9 @@ export default function HomepageHeader() {
                     src={accuknoxLogo}
                     alt="accuknox image"
                   />
-                  {/* <CreatorLogo className={styles.creatorLogo} /> */}
+
                 </Link>
-              </div>
+              </div> */}
               <div>
               <p className={styles.maintained}>Maintained by</p>
                 <Link

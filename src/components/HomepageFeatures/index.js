@@ -106,7 +106,7 @@ export default function HomepageFeatures() {
             id="features-image"
           />
         </div>
-        <div className={styles.creator}>
+        {/* <div className={styles.creator}>
           Created By
           <Link
             to="https://www.accuknox.com/"
@@ -114,7 +114,7 @@ export default function HomepageFeatures() {
           >
             <CreatorLogo className={styles.creatorLogo} />
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   );
