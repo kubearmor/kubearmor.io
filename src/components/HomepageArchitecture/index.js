@@ -34,9 +34,9 @@ export default function HomepageArchitecture() {
             style={{ height: "60px", objectFit: "contain" }}
           />
           <div>
-            <h2 style={{ margin: "0 0 0.3rem 0" }}>KubeArmor 1-Pager</h2>
+            <h2 style={{ margin: "0 0 0.3rem 0" }}>KubeArmor DataSheet</h2>
             <a
-              href="../pdfs/kubearmor1pager.pdf"
+              href="../pdfs/kubearmor-datasheet.pdf"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -72,9 +72,9 @@ export default function HomepageArchitecture() {
             style={{ height: "60px", objectFit: "contain" }}
           />
           <div>
-            <h2 style={{ margin: "0 0 0.3rem 0" }}>ModelArmor 1-Pager</h2>
+            <h2 style={{ margin: "0 0 0.3rem 0" }}>ModelArmor DataSheet</h2>
             <a
-              href="../pdfs/modelarmor1pager.pdf"
+              href="../pdfs/modelarmor-datasheet.pdf"
               target="_blank"
               rel="noopener noreferrer"
               style={{
