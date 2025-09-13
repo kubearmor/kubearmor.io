@@ -322,3 +322,7 @@ kubectl exec -it [MYSQL_POD_NAME] -c mysql -- cat /var/lib/mysql/any-file
 * Path-based network and process output restrictions pending kata-agent integration
 * Validate on production CoCo/Kata environments
 * Protect against service termination attacks inside enclaves
+
+## Acknowledgements
+
+This work was made possible through close collaboration with the [Confidential Containers (CoCo) community](https://github.com/confidential-containers). We thank all contributors and maintainers for their guidance, feedback, and support throughout the development and integration process.
