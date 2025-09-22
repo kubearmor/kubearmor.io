@@ -7,47 +7,21 @@ import modelarmorLogo from "../../../static/img/architecture/memblem.png";
 export default function HomepageArchitecture() {
   return (
     <>
-      <section
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          width: "100%",
-          height: "100px",
-          margin: "0rem 0",
-        }}
-      >
+      <section className={styles.datasheetSection}>
         {/* KubeArmor Column */}
-        <div
-          style={{
-            flex: 1,
-            backgroundColor: "#082C75",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-around",
-            padding: "0rem 12rem",
-            color: "white",
-          }}
-        >
+        <div className={styles.kubearmorColumn}>
           <img
             src={kubearmorLogo}
             alt="KubeArmor Logo"
-            style={{ height: "60px", objectFit: "contain" }}
+            className={styles.kubearmorLogo}
           />
-          <div>
-            <h2 style={{ margin: "0 0 0.3rem 0" }}>KubeArmor DataSheet</h2>
+          <div className={styles.kubearmorContent}>
+            <h2>KubeArmor DataSheet</h2>
             <a
               href="../pdfs/kubearmor-datasheet.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              style={{
-                backgroundColor: "#ffffff",
-                color: "#082C75",
-                padding: "0.4rem 0.8rem",
-                textDecoration: "none",
-                borderRadius: "4px",
-                fontWeight: "500",
-                fontSize: "0.85rem",
-              }}
+              className={styles.kubearmorDownload}
             >
               Download PDF
             </a>
@@ -55,37 +29,19 @@ export default function HomepageArchitecture() {
         </div>
 
         {/* ModelArmor Column */}
-        <div
-          style={{
-            flex: 1,
-            backgroundColor: "#8FBBFE",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-around",
-            padding: "0 12rem",
-            color: "#082C75",
-          }}
-        >
+        <div className={styles.modelarmorColumn}>
           <img
             src={modelarmorLogo}
             alt="ModelArmor Logo"
-            style={{ height: "60px", objectFit: "contain" }}
+            className={styles.modelarmorLogo}
           />
-          <div>
-            <h2 style={{ margin: "0 0 0.3rem 0" }}>ModelArmor DataSheet</h2>
+          <div className={styles.modelarmorContent}>
+            <h2>ModelArmor DataSheet</h2>
             <a
               href="../pdfs/modelarmor-datasheet.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              style={{
-                backgroundColor: "#ffffff",
-                color: "#082C75",
-                padding: "0.4rem 0.8rem",
-                textDecoration: "none",
-                borderRadius: "4px",
-                fontWeight: "500",
-                fontSize: "0.85rem",
-              }}
+              className={styles.modelarmorDownload}
             >
               Download PDF
             </a>
