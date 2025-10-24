@@ -48,17 +48,20 @@ This mechanism ensures that even if a device is physically plugged in, it cannot
 
 To enable this feature, you need to update your KubeArmor configuration.
 
-1.  **Enable the Handler:** You must set two flags to `true`:
+1. **Enable the Handler:** You must set two flags to `true`:
 
       * `enableKubeArmorHostPolicy: true`
       * `enableUSBDeviceHandler: true`
 
     If you are running KubeArmor in Kubernetes, you will need to patch the DaemonSet. For systemd (non-Kubernetes) mode, you will add these flags to your configuration file.
 
-2.  **Set the Default Posture:** A new flag, `hostDefaultDevicePosture`, is also available. This flag (which defaults to `audit`) determines the action KubeArmor will take on devices that *do not* match any `allow`-based policy.
+2. **Set the Default Posture:**
+   A new flag, `hostDefaultDevicePosture`, is also available.
+   This flag (which defaults to `audit`) determines the action KubeArmor will take on devices that do not match any policy **when running in allow-list mode** (when there is at least one allow-based policy applied).
 
       * `audit` (Default): Unmatched devices are audited.
-      * `block`: If you are using allow-list policies, setting this to `block` ensures any unknown or un-allowed device is automatically blocked.
+      * `block`: Unmatched devices are automatically blocked.
+
 
 ## Monitoring Device Events
 
