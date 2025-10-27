@@ -12,7 +12,7 @@ We're excited to announce a powerful new security capability in KubeArmor: **USB
 
 > **Want to see it in action? Check out this demo video:**
 
-<iframe width="650" height="415" src="https://www.youtube.com/embed/jUjvr9ru6ds" title="USB Device Enforcement Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="650" height="415" src="https://www.youtube.com/embed/NDguhHUBpqk" title="USB Device Enforcement Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 ## How USBs are a Physical Attack Vector
