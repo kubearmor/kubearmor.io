@@ -10,9 +10,9 @@ import NavbarMobileSidebarSecondaryMenu from '@theme/Navbar/MobileSidebar/Second
 export default function NavbarMobileSidebar() {
   const mobileSidebar = useNavbarMobileSidebar();
   useLockBodyScroll(mobileSidebar.shown);
-  if (!mobileSidebar.shouldRender) {
-    return null;
-  }
+  // if (!mobileSidebar.shouldRender) {
+  //   return null;
+  // }
   return (
     <NavbarMobileSidebarLayout
       header={<NavbarMobileSidebarHeader />}

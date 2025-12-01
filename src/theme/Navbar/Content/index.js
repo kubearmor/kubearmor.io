@@ -53,7 +53,8 @@ export default function NavbarContent() {
       left={
         // TODO stop hardcoding items?
         <>
-          {!mobileSidebar.disabled && <NavbarMobileSidebarToggle />}
+          {/* {!mobileSidebar.disabled && <NavbarMobileSidebarToggle />} */}
+          <NavbarMobileSidebarToggle />
           <NavbarLogo />
           <NavbarItems items={leftItems} />
         </>
