@@ -23,14 +23,14 @@ export default function HomepageHeader() {
             <div className={styles.heroAnnouncementWrapper}>
               <Link
                 className={styles.heroAnnouncement}
-                to="https://github.com/kubearmor/KubeArmor/wiki/v1.6.0-Release-Blog"
+                to="https://github.com/kubearmor/KubeArmor/releases/tag/v1.6.5"
               >
                 <div>
                   <FaLock
                     className={styles.heroIcon}
                     color="var(--color-primary)"
                   />
-                  KubeArmor v1.6.1 is here!
+                  KubeArmor v1.6.5 is here!
                 </div>
                 <FaAngleRight
                   className={styles.heroIcon}
