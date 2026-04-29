@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">All contestants certificate placeholder</title>
+  <desc id="desc">Placeholder visual for participation certificate reward.</desc>
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#edf3fe"/>
+      <stop offset="1" stop-color="#dce7fb"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" rx="32" fill="url(#bg3)"/>
+  <rect x="144" y="62" width="672" height="416" rx="22" fill="#f9fbff" stroke="#b9cae7" stroke-width="4"/>
+  <rect x="190" y="120" width="580" height="36" rx="12" fill="#0a4195" opacity="0.22"/>
+  <rect x="190" y="188" width="510" height="18" rx="9" fill="#0a4195" opacity="0.2"/>
+  <rect x="190" y="224" width="470" height="18" rx="9" fill="#0a4195" opacity="0.16"/>
+  <rect x="190" y="290" width="580" height="92" rx="16" fill="#e8f0fc"/>
+  <rect x="222" y="322" width="330" height="22" rx="11" fill="#0a4195" opacity="0.9"/>
+  <text x="190" y="430" fill="#0f1d36" font-family="Poppins, Arial, sans-serif" font-size="34" font-weight="700">Participation Certificate</text>
+</svg>

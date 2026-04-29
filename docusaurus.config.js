@@ -69,6 +69,10 @@ const config = {
 
   headTags: [],
   stylesheets: ["./src/css/custom.css"],
+  customFields: {
+    ctfLeadEndpoint: process.env.CTF_LEAD_ENDPOINT || "",
+    ctfLeadTallyUrl: process.env.CTF_LEAD_TALLY_URL || "",
+  },
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */

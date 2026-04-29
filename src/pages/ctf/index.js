@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "@theme/Layout";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./styles.module.css";
 
 const cx = (...names) =>
@@ -107,198 +108,308 @@ const Ic = {
       <path d="M12 2l1.8 6.4L20 10l-6.2 1.6L12 18l-1.8-6.4L4 10l6.2-1.6L12 2z" />
     </svg>
   ),
+  browser: (props) => (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <rect x="3" y="4" width="18" height="16" rx="2" />
+      <path d="M3 9h18" />
+      <path d="M8 6.5h.01M11 6.5h.01" />
+    </svg>
+  ),
+  users: (props) => (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+    </svg>
+  ),
+  share: (props) => (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <circle cx="18" cy="5" r="3" />
+      <circle cx="6" cy="12" r="3" />
+      <circle cx="18" cy="19" r="3" />
+      <path d="M8.6 13.5l6.8 4" />
+      <path d="M15.4 6.5l-6.8 4" />
+    </svg>
+  ),
+  repo: (props) => (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M4 5a2 2 0 0 1 2-2h11l3 3v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" />
+      <path d="M14 3v4h4" />
+      <path d="M8 13h8M8 17h6" />
+    </svg>
+  ),
+  message: (props) => (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z" />
+    </svg>
+  ),
+  route: (props) => (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <circle cx="6" cy="19" r="3" />
+      <path d="M9 19h5a4 4 0 0 0 4-4V5" />
+      <path d="m13 8 5-5 5 5" />
+    </svg>
+  ),
+  key: (props) => (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <circle cx="7.5" cy="15.5" r="5.5" />
+      <path d="m21 2-9.6 9.6" />
+      <path d="m15 8 3 3" />
+      <path d="m17 6 3 3" />
+    </svg>
+  ),
 };
 
-const RegForm = () => {
-  const [data, setData] = useState({
-    name: "",
-    email: "",
-    org: "",
-    role: "",
-    track: "",
-  });
-  const [errors, setErrors] = useState({});
-  const [submitted, setSubmitted] = useState(false);
+const RegForm = ({ tallyUrl }) => {
+  useEffect(() => {
+    const d = document;
+    const scriptSrc = "https://tally.so/widgets/embed.js";
+    const loadEmbeds = () => {
+      if (typeof window.Tally !== "undefined") {
+        window.Tally.loadEmbeds();
+        return;
+      }
 
-  const setField = (key) => (event) => {
-    setData((prev) => ({ ...prev, [key]: event.target.value }));
-  };
+      d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((iframe) => {
+        iframe.src = iframe.dataset.tallySrc;
+      });
+    };
 
-  const submit = (event) => {
-    event.preventDefault();
-    const nextErrors = {};
-
-    if (!data.name.trim()) nextErrors.name = "Required";
-    if (!data.email.trim()) {
-      nextErrors.email = "Required";
-    } else if (!/^\S+@\S+\.\S+$/.test(data.email)) {
-      nextErrors.email = "Enter a valid email";
+    if (typeof window.Tally !== "undefined") {
+      loadEmbeds();
+      return;
     }
-    if (!data.org.trim()) nextErrors.org = "Required";
-    if (!data.role) nextErrors.role = "Required";
 
-    setErrors(nextErrors);
-    if (Object.keys(nextErrors).length === 0) {
-      setSubmitted(true);
+    if (!d.querySelector(`script[src="${scriptSrc}"]`)) {
+      const script = d.createElement("script");
+      script.src = scriptSrc;
+      script.onload = loadEmbeds;
+      script.onerror = loadEmbeds;
+      d.body.appendChild(script);
+      return;
     }
-  };
 
-  if (submitted) {
-    return (
-      <div className={cx("reg-card")} id="register">
-        <div className={cx("reg-success")}>
-          <div className={cx("ok-mark")}>
-            <Ic.check />
-          </div>
-          <h3>You are in.</h3>
-          <p>We have saved your seat. Finish in CTFd to get your team join code.</p>
-          <a
-            className={cx("btn", "btn-primary", "btn-block", "btn-lg")}
-            href="https://ctfd.io"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Continue to CTFd <span className={cx("arr")}><Ic.arrow /></span>
-          </a>
-        </div>
-      </div>
-    );
-  }
+    loadEmbeds();
+  }, [tallyUrl]);
 
   return (
-    <form className={cx("reg-card")} id="register" onSubmit={submit} noValidate>
+    <div className={cx("reg-card")} id="register">
       <div className={cx("reg-body")}>
-        <h3 className={cx("reg-title")}>Reserve your seat</h3>
-        <p className={cx("reg-sub")}>
-          Official scoring happens in CTFd. We will route you there next.
-        </p>
-
-        <div className={cx("form-grid")}>
-          <div className={cx("field", "full")}>
-            <label htmlFor="r-name">Full name</label>
-            <input
-              id="r-name"
-              className={cx(errors.name && "invalid")}
-              type="text"
-              placeholder="Ada Lovelace"
-              value={data.name}
-              onChange={setField("name")}
-            />
-            {errors.name && <div className={cx("err")}>{errors.name}</div>}
-          </div>
-
-          <div className={cx("field", "full")}>
-            <label htmlFor="r-email">Work email</label>
-            <input
-              id="r-email"
-              className={cx(errors.email && "invalid")}
-              type="email"
-              placeholder="ada@company.com"
-              value={data.email}
-              onChange={setField("email")}
-            />
-            {errors.email && <div className={cx("err")}>{errors.email}</div>}
-          </div>
-
-          <div className={cx("field")}>
-            <label htmlFor="r-org">Organization</label>
-            <input
-              id="r-org"
-              className={cx(errors.org && "invalid")}
-              type="text"
-              placeholder="Company / school"
-              value={data.org}
-              onChange={setField("org")}
-            />
-            {errors.org && <div className={cx("err")}>{errors.org}</div>}
-          </div>
-
-          <div className={cx("field")}>
-            <label htmlFor="r-role">Role</label>
-            <select
-              id="r-role"
-              className={cx(errors.role && "invalid")}
-              value={data.role}
-              onChange={setField("role")}
-            >
-              <option value="">Select role</option>
-              <option>AppSec / Security</option>
-              <option>AI / ML Engineer</option>
-              <option>Developer</option>
-              <option>Student</option>
-              <option>Other</option>
-            </select>
-            {errors.role && <div className={cx("err")}>{errors.role}</div>}
-          </div>
-
-          <div className={cx("field", "full")}>
-            <label htmlFor="r-track">
-              Track interest <span className={cx("opt")}>optional</span>
-            </label>
-            <select id="r-track" value={data.track} onChange={setField("track")}>
-              <option value="">No preference</option>
-              <option>Track 1 · Prompt Injection</option>
-              <option>Track 2 · Agent Hijack</option>
-              <option>Track 3 · Hidden API</option>
-            </select>
-          </div>
-        </div>
-
-        <div className={cx("reg-foot")}>
-          <button className={cx("btn", "btn-primary", "btn-block", "btn-lg")} type="submit">
-            Register in CTFd <span className={cx("arr")}><Ic.arrow /></span>
-          </button>
-        </div>
+        <h3 className={cx("reg-title")}>Join the challenger list</h3>
+        <p className={cx("reg-sub")}>Coming next month: 4-day CTF event. Save your spot now.</p>
+        <iframe
+          data-tally-src={tallyUrl}
+          loading="lazy"
+          width="100%"
+          height="590"
+          frameBorder="0"
+          marginHeight="0"
+          marginWidth="0"
+          title="KubeArmor AI-CTF"
+          style={{ border: "none", display: "block" }}
+        />
       </div>
-    </form>
+    </div>
   );
 };
 
-const Hero = () => (
+const Hero = ({ tallyUrl }) => (
   <section className={cx("hero")} id="overview">
     <div className={cx("hero-grid-bg")} />
     <div className={cx("shell", "hero-inner")}>
       <div>
         <div className={cx("eyebrow")}>
-          <span className={cx("dot")} /> Registration open
+          <span className={cx("dot")} /> Coming soon next month | 4-day CTF event
         </div>
         <h1 className={cx("hero-title")}>
-          Hack the AI. <span className={cx("grad")}>From your browser.</span>
+          Break AI attack paths. <span className={cx("hero-mark")}>Defend with clarity.</span>
         </h1>
         <p className={cx("hero-sub")}>
-          Three tracks. Eighteen flags. Solved entirely in your browser.
-          <b> No setup, no kubeconfig, no cluster.</b>
+          Three tracks and eighteen flags, live in a 4-day event next month.
         </p>
-        <div className={cx("cta-row")}>
-          <a className={cx("btn", "btn-primary", "btn-lg")} href="#register">
-            Register in CTFd <span className={cx("arr")}><Ic.arrow /></span>
-          </a>
-          <a className={cx("btn", "btn-ghost", "btn-lg")} href="#tracks">
-            View tracks
-          </a>
-        </div>
 
         <div className={cx("proof-strip")}>
           <div className={cx("proof-cell")}>
-            <div className={cx("proof-num")}>3</div>
-            <div className={cx("proof-label")}>Tracks</div>
+            <div className={cx("proof-ic")}>
+              <Ic.message />
+            </div>
+            <div>
+              <div className={cx("proof-title")}>18 flags across 3 tracks</div>
+              <div className={cx("proof-copy")}>Prompt Injection, Agent Hijack, and Hidden API.</div>
+            </div>
           </div>
           <div className={cx("proof-cell")}>
-            <div className={cx("proof-num")}>18</div>
-            <div className={cx("proof-label")}>Flags</div>
+            <div className={cx("proof-ic")}>
+              <Ic.browser />
+            </div>
+            <div>
+              <div className={cx("proof-title")}>4-day event window</div>
+              <div className={cx("proof-copy")}>Planned for next month.</div>
+            </div>
           </div>
           <div className={cx("proof-cell")}>
-            <div className={cx("proof-num")}>3,000</div>
-            <div className={cx("proof-label")}>Points</div>
+            <div className={cx("proof-ic")}>
+              <Ic.medal />
+            </div>
+            <div>
+              <div className={cx("proof-title")}>Sandbox platform: ctf.kubearmor.io</div>
+              <div className={cx("proof-copy")}>Work in progress, launch aligned with event kickoff.</div>
+            </div>
           </div>
           <div className={cx("proof-cell")}>
-            <div className={cx("proof-num")}>0</div>
-            <div className={cx("proof-label")}>Setup</div>
+            <div className={cx("proof-ic")}>
+              <Ic.check />
+            </div>
+            <div>
+              <div className={cx("proof-title")}>Flag submission: kubearmor.ctfd.io</div>
+              <div className={cx("proof-copy")}>Work in progress, scores and ranking will be handled there.</div>
+            </div>
           </div>
         </div>
       </div>
 
-      <RegForm />
+      <RegForm tallyUrl={tallyUrl} />
+    </div>
+  </section>
+);
+
+const eventFlowSteps = [
+  {
+    id: "01",
+    title: "Save your spot",
+    copy: "Submit your interest form now and get notified when the event opens next month.",
+    icon: <Ic.users />,
+  },
+  {
+    id: "02",
+    title: "Join CTF platform",
+    copy: "Use ctf.kubearmor.io to enter the challenge sandbox. This platform is work in progress.",
+    icon: <Ic.browser />,
+  },
+  {
+    id: "03",
+    title: "Solve and submit flags",
+    copy: "Solve in ctf.kubearmor.io, then submit in kubearmor.ctfd.io. Both are currently work in progress.",
+    icon: <Ic.flag />,
+  },
+  {
+    id: "04",
+    title: "Rank and claim rewards",
+    copy: "Final leaderboard positions unlock rewards and swag after eligibility checks.",
+    icon: <Ic.medal />,
+  },
+];
+
+const EventFlow = () => (
+  <section className={cx("event-flow")} id="event-flow">
+    <div className={cx("shell")}>
+      <div className={cx("section-head")}>
+        <div className={cx("kicker")}>4-day event flow</div>
+        <h2>
+          Clear path to <span className={cx("tone")}>play and submit.</span>
+        </h2>
+        <p>
+          Coming soon next month. Challenges run in ctf.kubearmor.io and submissions run in
+          kubearmor.ctfd.io, both platforms are currently work in progress.
+        </p>
+      </div>
+
+      <div className={cx("platform-split")}>
+        <article className={cx("platform-card", "platform-ctf")}>
+          <span className={cx("platform-chip")}>CTF platform</span>
+          <h3>ctf.kubearmor.io</h3>
+          <p>Challenge sandbox and exploration surface (work in progress).</p>
+        </article>
+        <article className={cx("platform-card", "platform-submit")}>
+          <span className={cx("platform-chip")}>Flag submission platform</span>
+          <h3>kubearmor.ctfd.io</h3>
+          <p>Flag submission, scoring, and leaderboard surface (work in progress).</p>
+        </article>
+      </div>
+
+      <div className={cx("event-step-grid")}>
+        {eventFlowSteps.map((step) => (
+          <article className={cx("event-step-card")} key={step.id}>
+            <div className={cx("event-step-top")}>
+              <span className={cx("event-step-id")}>{step.id}</span>
+              <span className={cx("event-step-ic")}>{step.icon}</span>
+            </div>
+            <h3>{step.title}</h3>
+            <p>{step.copy}</p>
+          </article>
+        ))}
+      </div>
     </div>
   </section>
 );
@@ -307,14 +418,15 @@ const trackData = [
   {
     cls: "",
     num: "01",
+    icon: <Ic.message />,
     name: "Prompt Injection",
-    desc: "Bend a chatbot to your will - override system prompts, drift personas, leak secrets.",
+    desc: "Override system prompts, drift personas, and recover leaked secrets.",
     posterTitle: (
       <>
         Prompt <span className={cx("accent")}>Injection</span>
       </>
     ),
-    posterSub: "Adversarial chat - indirect inputs",
+    posterSub: "Adversarial chat, indirect inputs",
     challenges: [
       "System Override",
       "Persona Drift",
@@ -324,16 +436,17 @@ const trackData = [
     ],
   },
   {
-    cls: "t-green",
+    cls: "",
     num: "02",
+    icon: <Ic.route />,
     name: "Agent Hijack",
-    desc: "Reroute autonomous agents - poison search, swap tools, slip past approval gates.",
+    desc: "Poison search, reroute tools, and bypass approval checks.",
     posterTitle: (
       <>
         Agent <span className={cx("accent")}>Hijack</span>
       </>
     ),
-    posterSub: "Tool calls - multi-step coercion",
+    posterSub: "Tool calls, multi-step coercion",
     challenges: [
       "Tool Roulette",
       "Search Poison",
@@ -343,16 +456,17 @@ const trackData = [
     ],
   },
   {
-    cls: "t-amber",
+    cls: "",
     num: "03",
+    icon: <Ic.key />,
     name: "Hidden API & Guardrail Bypass",
-    desc: "Use the browser as your inspector - find shadow endpoints and flip safety modes.",
+    desc: "Inspect browser traffic to find hidden endpoints and flip safety modes.",
     posterTitle: (
       <>
         Hidden <span className={cx("accent")}>API</span>
       </>
     ),
-    posterSub: "Shadow endpoints - safety toggles",
+    posterSub: "Shadow endpoints, safety toggles",
     challenges: [
       "Debug Echo",
       "Safety Mode Tamper",
@@ -369,7 +483,7 @@ const Tracks = () => (
       <div className={cx("section-head")}>
         <div className={cx("kicker")}>Three tracks</div>
         <h2>
-          Pick one. Or <em>play all three.</em>
+          Pick one. Or <span className={cx("tone")}>play all three.</span>
         </h2>
         <p>Five challenges plus a bonus completion flag in each track. 1,000 points apiece.</p>
       </div>
@@ -382,6 +496,7 @@ const Tracks = () => (
               <span className={cx("poster-tag")}>
                 <span className={cx("dot")} /> TRACK {track.num}
               </span>
+              <span className={cx("poster-icon")}>{track.icon}</span>
               <div className={cx("poster-title")}>{track.posterTitle}</div>
               <div className={cx("poster-sub")}>{track.posterSub}</div>
             </div>
@@ -417,11 +532,13 @@ const Tracks = () => (
 const rewardTiers = [
   {
     key: "tier-1",
-    className: "tier-one",
+    className: "tier-highlight",
     rank: "Top 3",
     title: "$100 Amazon + premium swag",
     value: "$140-$160 value each",
     icon: <Ic.trophy />,
+    image: "/img/ctf/rewards/reward-top3.svg",
+    imageAlt: "Reward placeholder card for top three winners",
     details: [
       "$100 Amazon gift card",
       "One premium swag item (hoodie or T-shirt)",
@@ -430,11 +547,13 @@ const rewardTiers = [
   },
   {
     key: "tier-2",
-    className: "tier-two",
+    className: "",
     rank: "Ranks 4-8",
     title: "$30 Amazon gift card",
     value: "$150 total allocation",
     icon: <Ic.medal />,
+    image: "/img/ctf/rewards/reward-rank4-8.svg",
+    imageAlt: "Reward placeholder card for ranks four through eight",
     details: [
       "$30 Amazon gift card each",
       "Priority certificate delivery",
@@ -443,11 +562,13 @@ const rewardTiers = [
   },
   {
     key: "tier-3",
-    className: "tier-three",
+    className: "",
     rank: "All contestants",
     title: "Participation certificate",
     value: "Digital, verifiable certificate",
     icon: <Ic.check />,
+    image: "/img/ctf/rewards/reward-all.svg",
+    imageAlt: "Reward placeholder card for all contestants",
     details: [
       "Name, date, completion note",
       "Event title and organizer signature",
@@ -456,22 +577,22 @@ const rewardTiers = [
   },
 ];
 
-const swagPreview = [
+const eligibilityRules = [
   {
-    name: "KubeArmor T-shirt",
-    image: "https://placehold.co/640x420/e9f1ff/082c74?text=KubeArmor+T-Shirt",
+    text: "Participated in the CTF",
+    icon: <Ic.users />,
   },
   {
-    name: "KubeArmor Hoodie",
-    image: "https://placehold.co/640x420/e7efff/082c74?text=KubeArmor+Hoodie",
+    text: "Ranked on the leaderboard",
+    icon: <Ic.medal />,
   },
   {
-    name: "Sticker + Notebook Pack",
-    image: "https://placehold.co/640x420/ecf3ff/082c74?text=Sticker+%2B+Notebook+Pack",
+    text: "Starred the KubeArmor GitHub repository",
+    icon: <Ic.repo />,
   },
   {
-    name: "Bottle + Cap Combo",
-    image: "https://placehold.co/640x420/f0f5ff/082c74?text=Bottle+%2B+Cap+Combo",
+    text: "Shared feedback in CNCF Slack #kubearmor or on LinkedIn/Twitter with #KubeArmorCTF tagging @kubearmor",
+    icon: <Ic.share />,
   },
 ];
 
@@ -482,17 +603,19 @@ const Rewards = () => (
       <div className={cx("section-head")}>
         <div className={cx("kicker")}><Ic.spark /> Rewards</div>
         <h2>
-          Tiered rewards. <em>Zero ambiguity.</em>
+          Rewards with clear terms.
         </h2>
         <p>
-          Total reward budget is $900 with fixed rank-based tiers. Swag details are visible up
-          front so participants know what each placement unlocks.
+          Rank-based rewards with explicit rules, plus certificates for all contestants.
         </p>
       </div>
 
       <div className={cx("tier-grid")}>
         {rewardTiers.map((tier) => (
           <article className={cx("tier-card", tier.className)} key={tier.key}>
+            <div className={cx("tier-media")}>
+              <img src={tier.image} alt={tier.imageAlt} loading="lazy" />
+            </div>
             <div className={cx("tier-icon")}>{tier.icon}</div>
             <p className={cx("tier-rank")}>{tier.rank}</p>
             <h3>{tier.title}</h3>
@@ -506,179 +629,40 @@ const Rewards = () => (
         ))}
       </div>
 
-      <div className={cx("swag-showcase")}>
-        <div className={cx("swag-head")}>Swag preview (placeholder images)</div>
-        <div className={cx("swag-grid")}>
-          {swagPreview.map((item) => (
-            <figure className={cx("swag-card")} key={item.name}>
-              <img src={item.image} alt={`${item.name} placeholder preview`} loading="lazy" />
-              <figcaption>{item.name}</figcaption>
-            </figure>
+      <div className={cx("eligibility-wrap")}>
+        <div className={cx("eligibility-head")}>Unlock checklist (all four required)</div>
+        <div className={cx("eligibility-grid")}>
+          {eligibilityRules.map((rule) => (
+            <article className={cx("eligibility-card")} key={rule.text}>
+              <span className={cx("eligibility-check")}>
+                <Ic.check />
+              </span>
+              <h4>{rule.text}</h4>
+            </article>
           ))}
-        </div>
-      </div>
-
-      <div className={cx("rewards-grid")}>
-        <div className={cx("rw-card", "rw-points")}>
-          <div className={cx("label")}>
-            <Ic.flag /> Reward eligibility
-          </div>
-          <h3>Unlock criteria (must meet all)</h3>
-          <p>Reward claims require every condition below.</p>
-          <div className={cx("rw-ladder")}>
-            <div className={cx("rw-rung")}>
-              <span className={cx("lbl")}>
-                <span className={cx("ldot")} /> Participated in the CTF
-              </span>
-              <span className={cx("pts")}>Required</span>
-            </div>
-            <div className={cx("rw-rung")}>
-              <span className={cx("lbl")}>
-                <span className={cx("ldot")} /> Ranked on the leaderboard
-              </span>
-              <span className={cx("pts")}>Required</span>
-            </div>
-            <div className={cx("rw-rung")}>
-              <span className={cx("lbl")}>
-                <span className={cx("ldot")} /> Starred the KubeArmor GitHub repository
-              </span>
-              <span className={cx("pts")}>Required</span>
-            </div>
-            <div className={cx("rw-rung")}>
-              <span className={cx("lbl")}>
-                <span className={cx("ldot")} /> Shared feedback in CNCF Slack #kubearmor or on
-                LinkedIn/Twitter with #KubeArmorCTF tagging @kubearmor
-              </span>
-              <span className={cx("pts")}>Required</span>
-            </div>
-          </div>
-        </div>
-
-        <div className={cx("rw-card", "rw-leader")}>
-          <h3 className={cx("rw-title")}>
-            <span className={cx("ico")}>
-              <Ic.gift />
-            </span>
-            Budget allocation ($900 cap)
-          </h3>
-          <p>Suggested split from the published rewards plan.</p>
-          <div className={cx("lb")}>
-            <div className={cx("lb-row", "first")}>
-              <span className={cx("rk")}>A</span>
-              <span className={cx("nm")}>Top 3 winners</span>
-              <span className={cx("pt")}>$420-$480</span>
-            </div>
-            <div className={cx("lb-row", "second")}>
-              <span className={cx("rk")}>B</span>
-              <span className={cx("nm")}>Next 5 winners</span>
-              <span className={cx("pt")}>$150</span>
-            </div>
-            <div className={cx("lb-row", "third")}>
-              <span className={cx("rk")}>C</span>
-              <span className={cx("nm")}>Swag + shipping buffer</span>
-              <span className={cx("pt")}>$210-$300</span>
-            </div>
-            <div className={cx("lb-row", "fourth")}>
-              <span className={cx("rk")}>D</span>
-              <span className={cx("nm")}>Certificates (digital)</span>
-              <span className={cx("pt")}>Distribution cost only</span>
-            </div>
-          </div>
-          <p className={cx("rw-note")}>
-            Terms apply: reward eligibility is tied to participation, leaderboard rank, GitHub
-            star, and community or social proof.
-          </p>
         </div>
       </div>
     </div>
   </section>
 );
 
-const How = () => {
-  const lanes = [
-    {
-      surface: "CTFd",
-      helper: "Identity + leaderboard surface",
-      tone: "ctfd",
-      steps: [
-        { n: 1, title: "Register and join the event", desc: "Create your account and team." },
-        { n: 6, title: "Submit each recovered flag", desc: "Validate flags and lock points." },
-      ],
-    },
-    {
-      surface: "Browser challenge app",
-      helper: "Exploit and solve surface",
-      tone: "app",
-      steps: [
-        { n: 2, title: "Launch challenge workspace", desc: "Everything runs in-browser." },
-        { n: 3, title: "Pick a track", desc: "Prompt Injection, Agent Hijack, or Hidden API." },
-        { n: 4, title: "Investigate and exploit", desc: "Use hints, logs, and UI clues." },
-        { n: 5, title: "Recover the flag", desc: "Capture the exact flag string." },
-      ],
-    },
-  ];
-
-  return (
-    <section className={cx("workflow")} id="how">
-      <div className={cx("shell")}>
-        <div className={cx("section-head", "workflow-head")}>
-          <div className={cx("kicker")}>How it works</div>
-          <h2>
-            One mission. <em>Two clear surfaces.</em>
-          </h2>
-          <p>
-            CTFd handles identity and scoring, while all challenge solving happens inside the
-            browser app.
-          </p>
-        </div>
-
-        <div className={cx("workflow-grid")}>
-          {lanes.map((lane) => (
-            <article className={cx("surface-card", lane.tone)} key={lane.surface}>
-              <div className={cx("surface-top")}>
-                <span className={cx("surface-chip")}>{lane.surface}</span>
-                <p>{lane.helper}</p>
-              </div>
-              <div className={cx("surface-steps")}>
-                {lane.steps.map((step) => (
-                  <div className={cx("flow-step")} key={`${lane.surface}-${step.n}`}>
-                    <div className={cx("flow-num")}>{step.n}</div>
-                    <div>
-                      <h4>{step.title}</h4>
-                      <p>{step.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <div className={cx("workflow-note")}>
-          Flow summary: start in CTFd, solve in browser app, then return to CTFd for scoring.
-        </div>
-      </div>
-    </section>
-  );
-};
-
 const FAQ = () => {
   const items = [
     {
       q: "Where do I register?",
-      a: "In hosted CTFd. The form on this page captures your details and routes you there.",
+      a: "Use the lead form on this page. The event is coming next month and runs for 4 days.",
     },
     {
       q: "Do I need Kubernetes or local tools?",
-      a: "No. No kubeconfig, no kubectl, no cluster. Everything runs in your browser.",
+      a: "No. Everything runs in browser, no kubeconfig, kubectl, or local cluster setup.",
     },
     {
       q: "Can I play all three tracks?",
-      a: "Yes. Attempt one, two, or all three. The all-track total is 3,000 points.",
+      a: "Yes. Play one track or all three, total points across tracks are 3,000.",
     },
     {
       q: "What are the reward eligibility requirements?",
-      a: "To unlock rewards you must participate in the CTF, be ranked on the leaderboard, star the KubeArmor GitHub repository, and share your experience in CNCF Slack #kubearmor or on LinkedIn/Twitter with #KubeArmorCTF tagging @kubearmor.",
+      a: "You must complete all four checklist items: participate in the event, rank on leaderboard, star the KubeArmor GitHub repository, and share your experience in CNCF Slack #kubearmor or on LinkedIn/Twitter with #KubeArmorCTF tagging @kubearmor.",
     },
     {
       q: "Who receives certificates and what is included?",
@@ -686,7 +670,11 @@ const FAQ = () => {
     },
     {
       q: "How do I submit flags?",
-      a: "Each challenge yields a FLAG string. Paste it into CTFd to claim points.",
+      a: "Each challenge yields a FLAG string. Submit flags at kubearmor.ctfd.io, which is currently work in progress.",
+    },
+    {
+      q: "Which platforms are used for event flow?",
+      a: "Challenges run on ctf.kubearmor.io and flag submission runs on kubearmor.ctfd.io. Both platforms are currently work in progress and will be active for next month's 4-day event.",
     },
   ];
   const [openIndex, setOpenIndex] = useState(0);
@@ -722,6 +710,49 @@ const FAQ = () => {
 };
 
 export default function CTFPage() {
+  useEffect(() => {
+    const isResizeObserverNoise = (message) =>
+      typeof message === "string" &&
+      message.includes("ResizeObserver loop completed with undelivered notifications");
+
+    const handleWindowError = (event) => {
+      const message = event?.message || event?.error?.message;
+      if (!isResizeObserverNoise(message)) {
+        return;
+      }
+
+      // Prevent webpack dev overlay from surfacing this known browser warning as a hard error.
+      event.stopImmediatePropagation?.();
+      event.preventDefault?.();
+    };
+
+    const handleUnhandledRejection = (event) => {
+      const reasonMessage =
+        typeof event?.reason === "string" ? event.reason : event?.reason?.message;
+      if (!isResizeObserverNoise(reasonMessage)) {
+        return;
+      }
+
+      event.preventDefault?.();
+    };
+
+    window.addEventListener("error", handleWindowError);
+    window.addEventListener("unhandledrejection", handleUnhandledRejection);
+
+    return () => {
+      window.removeEventListener("error", handleWindowError);
+      window.removeEventListener("unhandledrejection", handleUnhandledRejection);
+    };
+  }, []);
+
+  const { siteConfig } = useDocusaurusContext();
+  const customFields = siteConfig.customFields || {};
+  const tallyUrlFromConfig =
+    typeof customFields.ctfLeadTallyUrl === "string" ? customFields.ctfLeadTallyUrl.trim() : "";
+  const tallyUrl =
+    tallyUrlFromConfig ||
+    "https://tally.so/embed/ob0WJx?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1";
+
   return (
     <Layout
       title="KubeArmor AI Security CTF"
@@ -730,10 +761,10 @@ export default function CTFPage() {
       noFooter
     >
       <div className={styles.ctfPage}>
-        <Hero />
+        <Hero tallyUrl={tallyUrl} />
+        <EventFlow />
         <Tracks />
         <Rewards />
-        <How />
         <FAQ />
       </div>
     </Layout>
