@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Layout from "@theme/Layout";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { FaGithub, FaLinkedinIn, FaSlack, FaXTwitter } from "react-icons/fa6";
 import styles from "./styles.module.css";
 
 const cx = (...names) =>
@@ -323,7 +324,7 @@ const Hero = ({ tallyUrl }) => (
               <Ic.medal />
             </div>
             <div>
-              <div className={cx("proof-title")}>Sandbox platform: ctf.kubearmor.io</div>
+              <div className={cx("proof-title")}>Sandbox platform</div>
               <div className={cx("proof-copy")}>Work in progress, launch aligned with event kickoff.</div>
             </div>
           </div>
@@ -332,7 +333,7 @@ const Hero = ({ tallyUrl }) => (
               <Ic.check />
             </div>
             <div>
-              <div className={cx("proof-title")}>Flag submission: kubearmor.ctfd.io</div>
+              <div className={cx("proof-title")}>Flag submission platform</div>
               <div className={cx("proof-copy")}>Work in progress, scores and ranking will be handled there.</div>
             </div>
           </div>
@@ -501,8 +502,6 @@ const Tracks = () => (
               <div className={cx("poster-sub")}>{track.posterSub}</div>
             </div>
             <div className={cx("track-body")}>
-              <h3>{track.name}</h3>
-              <p>{track.desc}</p>
               <ul className={cx("track-challenges")}>
                 {track.challenges.map((challenge, index) => (
                   <li key={challenge}>
@@ -535,7 +534,7 @@ const rewardTiers = [
     className: "tier-highlight",
     rank: "Top 3",
     title: "$100 Amazon + premium swag",
-    value: "$140-$160 value each",
+    value: "Winner bundle with community spotlight",
     icon: <Ic.trophy />,
     image: "/img/ctf/rewards/reward-top3.svg",
     imageAlt: "Reward placeholder card for top three winners",
@@ -550,7 +549,7 @@ const rewardTiers = [
     className: "",
     rank: "Ranks 4-8",
     title: "$30 Amazon gift card",
-    value: "$150 total allocation",
+    value: "Gift card tier for strong finishers",
     icon: <Ic.medal />,
     image: "/img/ctf/rewards/reward-rank4-8.svg",
     imageAlt: "Reward placeholder card for ranks four through eight",
@@ -565,7 +564,7 @@ const rewardTiers = [
     className: "",
     rank: "All contestants",
     title: "Participation certificate",
-    value: "Digital, verifiable certificate",
+    value: "Verified digital certificate",
     icon: <Ic.check />,
     image: "/img/ctf/rewards/reward-all.svg",
     imageAlt: "Reward placeholder card for all contestants",
@@ -579,20 +578,46 @@ const rewardTiers = [
 
 const eligibilityRules = [
   {
+    key: "participate",
     text: "Participated in the CTF",
-    icon: <Ic.users />,
+    helper: "Submit at least one valid flag during the event window.",
+    icon: <Ic.flag />,
   },
   {
-    text: "Ranked on the leaderboard",
-    icon: <Ic.medal />,
+    key: "slack",
+    text: "Join the KubeArmor CNCF Slack channel",
+    helper: "Be present in the channel for announcements and updates.",
+    icon: <FaSlack />,
+    actionLabel: "Open #kubearmor",
+    actionHref: "https://cloud-native.slack.com/archives/C02R319HVL3",
   },
   {
+    key: "github",
     text: "Starred the KubeArmor GitHub repository",
-    icon: <Ic.repo />,
+    helper: "Use your GitHub account before reward verification.",
+    icon: <FaGithub />,
+    actionLabel: "github.com/kubearmor/kubearmor",
+    actionHref: "https://github.com/kubearmor/kubearmor",
+    brandLogo: "/img/kubearmor/kubearmor-light-bg.svg",
+    brandLogoAlt: "KubeArmor logo",
   },
   {
-    text: "Shared feedback in CNCF Slack #kubearmor or on LinkedIn/Twitter with #KubeArmorCTF tagging @kubearmor",
+    key: "share",
+    text: "Share feedback with #KubeArmorCTF and tag @kubearmor",
+    helper: "Post on both platforms to complete this requirement.",
     icon: <Ic.share />,
+    socialLinks: [
+      {
+        label: "X",
+        href: "https://x.com",
+        icon: <FaXTwitter />,
+      },
+      {
+        label: "LinkedIn",
+        href: "https://www.linkedin.com",
+        icon: <FaLinkedinIn />,
+      },
+    ],
   },
 ];
 
@@ -616,8 +641,10 @@ const Rewards = () => (
             <div className={cx("tier-media")}>
               <img src={tier.image} alt={tier.imageAlt} loading="lazy" />
             </div>
-            <div className={cx("tier-icon")}>{tier.icon}</div>
-            <p className={cx("tier-rank")}>{tier.rank}</p>
+            <div className={cx("tier-top")}>
+              <div className={cx("tier-icon")}>{tier.icon}</div>
+              <p className={cx("tier-rank")}>{tier.rank}</p>
+            </div>
             <h3>{tier.title}</h3>
             <p className={cx("tier-value")}>{tier.value}</p>
             <ul>
@@ -633,11 +660,44 @@ const Rewards = () => (
         <div className={cx("eligibility-head")}>Unlock checklist (all four required)</div>
         <div className={cx("eligibility-grid")}>
           {eligibilityRules.map((rule) => (
-            <article className={cx("eligibility-card")} key={rule.text}>
-              <span className={cx("eligibility-check")}>
-                <Ic.check />
-              </span>
-              <h4>{rule.text}</h4>
+            <article className={cx("eligibility-card")} key={rule.key}>
+              <div className={cx("eligibility-card-top")}>
+                <span className={cx("eligibility-check")}>
+                  {rule.icon}
+                </span>
+                <h4>{rule.text}</h4>
+              </div>
+              <p>{rule.helper}</p>
+              {rule.brandLogo && (
+                <img className={cx("eligibility-brand")} src={rule.brandLogo} alt={rule.brandLogoAlt} loading="lazy" />
+              )}
+              {rule.actionHref && (
+                <a
+                  className={cx("eligibility-link")}
+                  href={rule.actionHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>{rule.actionLabel}</span>
+                  <Ic.arrow className={cx("arr")} />
+                </a>
+              )}
+              {rule.socialLinks && (
+                <div className={cx("eligibility-social")}>
+                  {rule.socialLinks.map((item) => (
+                    <a
+                      key={item.label}
+                      className={cx("social-chip")}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {item.icon}
+                      <span>{item.label}</span>
+                    </a>
+                  ))}
+                </div>
+              )}
             </article>
           ))}
         </div>
@@ -662,7 +722,7 @@ const FAQ = () => {
     },
     {
       q: "What are the reward eligibility requirements?",
-      a: "You must complete all four checklist items: participate in the event, rank on leaderboard, star the KubeArmor GitHub repository, and share your experience in CNCF Slack #kubearmor or on LinkedIn/Twitter with #KubeArmorCTF tagging @kubearmor.",
+      a: "You must complete all four checklist items: participate in the event, join the KubeArmor CNCF Slack channel, star the KubeArmor GitHub repository, and share your experience on X and LinkedIn with #KubeArmorCTF tagging @kubearmor.",
     },
     {
       q: "Who receives certificates and what is included?",
@@ -677,7 +737,7 @@ const FAQ = () => {
       a: "Challenges run on ctf.kubearmor.io and flag submission runs on kubearmor.ctfd.io. Both platforms are currently work in progress and will be active for next month's 4-day event.",
     },
   ];
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(-1);
 
   return (
     <section className={cx("faq")} id="faq">
@@ -688,21 +748,30 @@ const FAQ = () => {
         </div>
 
         <div className={cx("faq-list")}>
-          {items.map((item, index) => (
-            <div key={item.q} className={cx("faq-item", openIndex === index && "open")}>
-              <button
-                className={cx("faq-q")}
-                type="button"
-                onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
-              >
-                <span>{item.q}</span>
-                <span className={cx("plus")}>+</span>
-              </button>
-              <div className={cx("faq-a")}>
-                <div className={cx("faq-a-inner")}>{item.a}</div>
+          {items.map((item, index) => {
+            const isOpen = openIndex === index;
+            const buttonId = `faq-q-${index}`;
+            const panelId = `faq-a-${index}`;
+
+            return (
+              <div key={item.q} className={cx("faq-item", isOpen && "open")}>
+                <button
+                  className={cx("faq-q")}
+                  type="button"
+                  id={buttonId}
+                  aria-expanded={isOpen}
+                  aria-controls={panelId}
+                  onClick={() => setOpenIndex(isOpen ? -1 : index)}
+                >
+                  <span className={cx("faq-q-label")}>{item.q}</span>
+                  <span className={cx("plus")} aria-hidden="true">+</span>
+                </button>
+                <div className={cx("faq-a")} id={panelId} role="region" aria-labelledby={buttonId}>
+                  <div className={cx("faq-a-inner")}>{item.a}</div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

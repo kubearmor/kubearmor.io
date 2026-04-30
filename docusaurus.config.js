@@ -97,6 +97,12 @@ const config = {
           //   position: "left",
           // },
           {
+            to: "/ctf",
+            label: "AI-CTF",
+            position: "left",
+            className: "nav-ai-ctf",
+          },
+          {
             to: "/blog",
             label: "Blog",
             position: "left",

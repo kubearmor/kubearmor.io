@@ -103,6 +103,42 @@
 .navbar__link:hover {
   color: var(--color-primary-light);
 }
+
+.nav-ai-ctf {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-main-semibold);
+  color: var(--color-primary);
+}
+
+.nav-ai-ctf::after {
+  content: "NEW";
+  border-radius: 4px;
+  padding: 0.15rem 0.4rem;
+  font-size: 0.58rem;
+  line-height: 1.3;
+  letter-spacing: 0.07em;
+  font-family: var(--font-main-semibold);
+  color: #0a4195;
+  background: #dbeafe;
+  border: 1px solid #bdd3f3;
+  vertical-align: middle;
+  animation: aiCtfFade 3.6s ease-in-out infinite;
+}
+
+@keyframes aiCtfFade {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-ai-ctf::after {
+    animation: none;
+  }
+}
+
 .navbar-sidebar__item {
   height: 100vh;
   width: 100%;
