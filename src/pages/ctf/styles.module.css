@@ -840,11 +840,12 @@ h1.hero-title .hero-mark {
   letter-spacing: 0.07em;
   text-transform: uppercase;
   font-family: var(--font-main-medium), sans-serif;
-  color: var(--blue);
+  color: #0a4195; /* hardcoded — prevents dark-mode variable cascade from making text invisible */
   border: 1px solid #c7d9f5;
   background: #edf4ff;
   border-radius: 6px;
   padding: 5px 9px;
+  white-space: nowrap;
 }
 
 .tier-card h3 {
@@ -853,6 +854,7 @@ h1.hero-title .hero-mark {
   line-height: 1.15;
   font-family: var(--font-main-semibold), sans-serif;
   color: var(--text);
+  min-height: 74px; /* 2 lines × 32px × 1.15 — keeps all card titles at the same vertical level */
 }
 
 .tier-card .tier-value {
@@ -947,9 +949,22 @@ h1.hero-title .hero-mark {
   color: var(--muted);
 }
 
+.brand-logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px 3px 7px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  margin-top: 8px;
+  gap: 5px;
+}
+
 .eligibility-brand {
-  width: 110px;
-  max-width: 100%;
+  height: 18px;
+  width: auto;
+  max-width: 120px;
+  display: block;
 }
 
 .eligibility-link {
@@ -1644,6 +1659,28 @@ h1.hero-title .hero-mark {
   font-family: var(--font-main-regular), sans-serif;
 }
 
+.reg-reward-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+  padding: 6px 13px;
+  font-size: 12.5px;
+  font-family: var(--font-main-semibold), sans-serif;
+  color: #7a3e00;
+  text-decoration: none;
+  border: 1px solid rgba(180, 100, 0, 0.32);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  white-space: nowrap;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.reg-reward-cta:hover {
+  background: rgba(255, 255, 255, 0.78);
+  border-color: rgba(180, 100, 0, 0.5);
+}
+
 /* ─── Event flow horizontal ─────────────────────────────────────────────── */
 .flow-wrap {
   display: flex;
@@ -1657,13 +1694,28 @@ h1.hero-title .hero-mark {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 20px 16px;
+  justify-content: space-evenly; /* distribute kicker, card, and label evenly across the panel height */
+  gap: 0;
+  padding: 16px 14px;
   background: linear-gradient(160deg, #fff8ef 0%, #fff3e0 100%);
   border: 1px solid #f0d8a8;
   border-radius: 16px;
   box-shadow: 0 4px 14px rgba(200, 120, 0, 0.08);
+}
+
+.flow-reward-panel-kicker {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(255, 190, 60, 0.22);
+  border: 1px solid rgba(180, 100, 0, 0.22);
+  font-size: 9.5px;
+  font-family: var(--font-main-semibold), sans-serif;
+  color: #8a4a00;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
 }
 
 .flow-reward-panel-text {
@@ -2399,7 +2451,8 @@ h1.hero-title .hero-mark {
 
 .flow-reward-panel {
   width: 152px;
-  padding: 18px 12px;
+  padding: 14px 12px;
+  gap: 0;
 }
 
 .flow-node-body {

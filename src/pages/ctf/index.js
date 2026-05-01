@@ -427,6 +427,9 @@ const Hero = ({ tallyUrl }) => (
             <span className={cx("reg-reward-text")}>Win $100 + premium swag</span>
             <span className={cx("reg-reward-sub")}>Top 3 finishers</span>
           </div>
+          <a href="#register" className={cx("reg-reward-cta")}>
+            Save spot <Ic.arrow className={cx("arr")} />
+          </a>
         </div>
       </div>
       <RegForm tallyUrl={tallyUrl} />
@@ -520,9 +523,9 @@ const EventFlow = () => (
           ))}
         </div>
         <div className={cx("flow-reward-panel")}>
+          <span className={cx("flow-reward-panel-kicker")}>Top 3 Win</span>
           <AmazonCardVisual />
           <div className={cx("flow-reward-panel-text")}>
-            <span className={cx("flow-reward-panel-label")}>Top 3 Win</span>
             <span className={cx("flow-reward-panel-value")}>$100 + Premium Swag</span>
           </div>
         </div>
@@ -764,7 +767,9 @@ const UnlockChecklist = () => (
                 <h4 className={cx("unlock-item-title")}>{rule.text}</h4>
                 <p className={cx("unlock-item-desc")}>{rule.helper}</p>
                 {rule.brandLogo && (
-                  <img className={cx("eligibility-brand")} src={rule.brandLogo} alt={rule.brandLogoAlt} loading="lazy" />
+                  <span className={cx("brand-logo-wrap")}>
+                    <img className={cx("eligibility-brand")} src={rule.brandLogo} alt={rule.brandLogoAlt} loading="lazy" />
+                  </span>
                 )}
               </div>
             </div>
