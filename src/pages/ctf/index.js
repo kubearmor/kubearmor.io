@@ -322,20 +322,6 @@ const RegForm = ({ tallyUrl }) => {
 
   return (
     <div className={cx("reg-card")} id="register">
-      <div className={cx("reg-reward-strip")}>
-        <div className={cx("reg-reward-item")}>
-          <AmazonCardVisual />
-        </div>
-        <div className={cx("reg-reward-swag")}>
-          <HoodieIcon />
-          <StickerIcon />
-          <BottleIcon />
-        </div>
-        <div className={cx("reg-reward-label")}>
-          <span className={cx("reg-reward-text")}>Win $100 + premium swag</span>
-          <span className={cx("reg-reward-sub")}>Top 3 finishers</span>
-        </div>
-      </div>
       <div className={cx("reg-body")}>
         <h3 className={cx("reg-title")}>Join the challenger list</h3>
         <p className={cx("reg-sub")}>Coming next month: 4-day CTF event. Save your spot now.</p>
@@ -385,13 +371,6 @@ const Hero = ({ tallyUrl }) => (
     </div>
     <div className={cx("shell", "hero-inner")}>
       <div>
-        <div className={cx("hero-badge")}>
-          <Ic.trophy width="13" height="13" />
-          Top 3 win $100 + swag
-        </div>
-        <div className={cx("eyebrow")}>
-          <span className={cx("dot")} /> Coming soon next month | 4-day CTF event
-        </div>
         <h1 className={cx("hero-title")}>
           Break AI Attack Paths.{" "}
           <span className={cx("hero-mark")}>Defend With Clarity.</span>
@@ -435,8 +414,66 @@ const Hero = ({ tallyUrl }) => (
             </div>
           </div>
         </div>
+        <div className={cx("reg-reward-strip", "hero-reward-strip")}>
+          <div className={cx("reg-reward-item")}>
+            <AmazonCardVisual />
+          </div>
+          <div className={cx("reg-reward-swag")}>
+            <HoodieIcon />
+            <StickerIcon />
+            <BottleIcon />
+          </div>
+          <div className={cx("reg-reward-label")}>
+            <span className={cx("reg-reward-text")}>Win $100 + premium swag</span>
+            <span className={cx("reg-reward-sub")}>Top 3 finishers</span>
+          </div>
+        </div>
       </div>
       <RegForm tallyUrl={tallyUrl} />
+    </div>
+  </section>
+);
+
+const platformShowcaseCards = [
+  {
+    key: "leaderboard",
+    image: "/img/ctf/img4.png",
+    imageAlt: "CTF leaderboard preview",
+  },
+  {
+    key: "sandbox",
+    image: "/img/ctf/img1.png",
+    imageAlt: "CTF platform sandbox preview",
+  },
+  {
+    key: "submission",
+    image: "/img/ctf/img3.png",
+    imageAlt: "CTF flag submission preview",
+  },
+  {
+    key: "challenge",
+    image: "/img/ctf/img2.png",
+    imageAlt: "CTF challenge runner preview",
+  },
+];
+
+const PlatformShowcase = () => (
+  <section className={cx("platform-showcase")} id="platform-preview">
+    <div className={cx("shell")}>
+      <div className={cx("section-head", "platform-showcase-head")}>
+        <div className={cx("kicker")}>Platform screens</div>
+        <h2>Inside the <span className={cx("tone")}>Actual Experience.</span></h2>
+        <p>These are real CTF platform views across sandbox, challenge runner, workflow, and dashboard moments.</p>
+      </div>
+      <div className={cx("platform-showcase-grid")}>
+        {platformShowcaseCards.map((card) => (
+          <figure key={card.key} className={cx("platform-showcase-card")}>
+            <div className={cx("platform-showcase-frame")}>
+              <img src={card.image} alt={card.imageAlt} loading="lazy" />
+            </div>
+          </figure>
+        ))}
+      </div>
     </div>
   </section>
 );
@@ -455,7 +492,7 @@ const EventFlow = () => (
       <div className={cx("section-head")}>
         <div className={cx("kicker")}>4-day event flow</div>
         <h2>Clear Path to <span className={cx("tone")}>Play and Submit.</span></h2>
-        <p>Both platforms are work in progress, launching alongside the event.</p>
+        <p>From registration to ranking, each step is sequenced so participants know exactly where to work and submit.</p>
       </div>
       <div className={cx("flow-wrap")}>
         <div className={cx("flow-horizontal")}>
@@ -464,8 +501,10 @@ const EventFlow = () => (
               <div className={cx("flow-node", step.workHere && "flow-node-highlight", step.isEnd && "flow-node-end")}>
                 <div className={cx("flow-node-ic")}>{step.icon}</div>
                 <div className={cx("flow-node-id")}>{step.id}</div>
-                <div className={cx("flow-node-title")}>{step.title}</div>
-                <div className={cx("flow-node-copy")}>{step.copy}</div>
+                <div className={cx("flow-node-body")}>
+                  <div className={cx("flow-node-title")}>{step.title}</div>
+                  <div className={cx("flow-node-copy")}>{step.copy}</div>
+                </div>
                 {step.platform === "ctf" && <div className={cx("flow-platform-badge", "flow-badge-ctf")}>ctf.kubearmor.io</div>}
                 {step.platform === "ctfd" && <div className={cx("flow-platform-badge", "flow-badge-ctfd")}>kubearmor.ctfd.io</div>}
               </div>
@@ -856,9 +895,10 @@ export default function CTFPage() {
     <Layout title="KubeArmor AI Security CTF" description="Browser-first CTF landing page for KubeArmor AI security challenges." noNavbar noFooter>
       <div className={styles.ctfPage}>
         <Hero tallyUrl={tallyUrl} />
-        <EventFlow />
+        <PlatformShowcase />
         <Tracks />
         <Rewards />
+        <EventFlow />
         <UnlockChecklist />
         <FAQ />
       </div>
