@@ -343,32 +343,8 @@ const RegForm = ({ tallyUrl }) => {
 
 const Hero = ({ tallyUrl }) => (
   <section className={cx("hero")} id="overview">
+    <img className={cx("hero-poster-bg")} src="/img/ctf/AI CTF Poster.jpg" alt="" aria-hidden="true" />
     <div className={cx("hero-grid-bg")} />
-    <div className={cx("hero-float-shield")} aria-hidden="true">
-      <Ic.shield width="68" height="68" />
-    </div>
-    <div className={cx("hero-float-api")} aria-hidden="true">
-      <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
-        <circle cx="26" cy="26" r="24" stroke="currentColor" strokeWidth="0.8" strokeDasharray="3 3" />
-        <circle cx="26" cy="26" r="4" fill="currentColor" opacity="0.35" />
-        <circle cx="26" cy="3" r="2.5" fill="currentColor" opacity="0.25" />
-        <circle cx="49" cy="26" r="2.5" fill="currentColor" opacity="0.25" />
-        <circle cx="26" cy="49" r="2.5" fill="currentColor" opacity="0.25" />
-        <circle cx="3" cy="26" r="2.5" fill="currentColor" opacity="0.25" />
-        <line x1="26" y1="6" x2="26" y2="22" stroke="currentColor" strokeWidth="0.5" opacity="0.2" />
-        <line x1="30" y1="26" x2="46" y2="26" stroke="currentColor" strokeWidth="0.5" opacity="0.2" />
-      </svg>
-    </div>
-    <div className={cx("hero-float-term")} aria-hidden="true">
-      <svg width="56" height="34" viewBox="0 0 56 34" fill="none">
-        <rect width="56" height="34" rx="5" fill="currentColor" fillOpacity="0.06" stroke="currentColor" strokeWidth="0.7" strokeOpacity="0.18" />
-        <circle cx="8" cy="8" r="2" fill="currentColor" opacity="0.2" />
-        <circle cx="14" cy="8" r="2" fill="currentColor" opacity="0.15" />
-        <circle cx="20" cy="8" r="2" fill="currentColor" opacity="0.1" />
-        <path d="M8 17l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeOpacity="0.4" />
-        <path d="M19 27h12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeOpacity="0.3" />
-      </svg>
-    </div>
     <div className={cx("shell", "hero-inner")}>
       <div>
         <h1 className={cx("hero-title")}>
@@ -497,43 +473,31 @@ const EventFlow = () => (
         <h2>Clear Path to <span className={cx("tone")}>Play and Submit.</span></h2>
         <p>From registration to ranking, each step is sequenced so participants know exactly where to work and submit.</p>
       </div>
-      <div className={cx("flow-wrap")}>
-        <div className={cx("flow-horizontal")}>
-          {flowSteps.map((step, i) => (
-            <React.Fragment key={step.id}>
-              <div className={cx("flow-node", step.workHere && "flow-node-highlight", step.isEnd && "flow-node-end")}>
-                <div className={cx("flow-node-ic")}>{step.icon}</div>
-                <div className={cx("flow-node-id")}>{step.id}</div>
-                <div className={cx("flow-node-body")}>
-                  <div className={cx("flow-node-title")}>{step.title}</div>
-                  <div className={cx("flow-node-copy")}>{step.copy}</div>
-                </div>
-                {step.platform === "ctf" && <div className={cx("flow-platform-badge", "flow-badge-ctf")}>ctf.kubearmor.io</div>}
-                {step.platform === "ctfd" && <div className={cx("flow-platform-badge", "flow-badge-ctfd")}>kubearmor.ctfd.io</div>}
-              </div>
-              {i < flowSteps.length - 1 && (
-                <div className={cx("flow-arrow")} aria-hidden="true">
-                  <svg width="28" height="14" viewBox="0 0 28 14">
-                    <path d="M0 7h22" stroke="currentColor" strokeWidth="1.5" strokeDasharray="3 2" />
-                    <path d="M19 3l6 4-6 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-                  </svg>
-                </div>
-              )}
-            </React.Fragment>
-          ))}
-        </div>
-        <div className={cx("flow-reward-panel")}>
+      <div className={cx("bento-flow")}>
+        {flowSteps.map((step) => (
+          <div
+            className={cx("bento-flow-card", step.workHere && "bento-flow-featured", step.isEnd && "bento-flow-end")}
+            key={step.id}
+          >
+            <div className={cx("bento-flow-head")}>
+              <div className={cx("bento-flow-ic")}>{step.icon}</div>
+              <span className={cx("bento-flow-id")}>{step.id}</span>
+            </div>
+            <div className={cx("bento-flow-body")}>
+              <h4 className={cx("bento-flow-title")}>{step.title}</h4>
+              <p className={cx("bento-flow-copy")}>{step.copy}</p>
+            </div>
+            {step.platform === "ctf" && <div className={cx("flow-platform-badge", "flow-badge-ctf")}>ctf.kubearmor.io</div>}
+            {step.platform === "ctfd" && <div className={cx("flow-platform-badge", "flow-badge-ctfd")}>kubearmor.ctfd.io</div>}
+          </div>
+        ))}
+        <div className={cx("bento-flow-reward")}>
           <span className={cx("flow-reward-panel-kicker")}>Top 3 Win</span>
           <AmazonCardVisual />
           <div className={cx("flow-reward-panel-text")}>
             <span className={cx("flow-reward-panel-value")}>$100 + Premium Swag</span>
           </div>
         </div>
-      </div>
-      <div className={cx("flow-annotation")}>
-        <span className={cx("flow-annotation-line")} />
-        <span className={cx("flow-annotation-text")}><Ic.terminal width="12" height="12" /> Work happens here (steps 02-03)</span>
-        <span className={cx("flow-annotation-line")} />
       </div>
     </div>
   </section>
@@ -642,21 +606,21 @@ const rewardTiers = [
   {
     key: "tier-1", className: "tier-highlight", rank: "Top 3", title: "$100 + Premium Swag",
     value: "Winner bundle with community spotlight", icon: <Ic.trophy />,
-    image: "/img/ctf/rewards/reward-top3.svg", imageAlt: "Reward placeholder card for top three winners",
+    image: "/img/ctf/Prizes/Prize 1.jpg", imageAlt: "Top 3 prize bundle with $100 Amazon gift card, KubeArmor t-shirt, stickers, notebook, and water bottle",
     bulletIcon: "gift",
     details: ["$100 Amazon gift card", "One premium swag item (hoodie or T-shirt)", "Stickers + notebook or bottle"],
   },
   {
     key: "tier-2", className: "", rank: "Ranks 4-8", title: "$30 Gift Card",
     value: "Strong finishers", icon: <Ic.medal />,
-    image: "/img/ctf/rewards/reward-rank4-8.svg", imageAlt: "Reward placeholder card for ranks four through eight",
+    image: "/img/ctf/Prizes/Prize 2.jpg", imageAlt: "Ranks 4-8 prize showing Certificate of Achievement with $30 Amazon gift card",
     bulletIcon: "gift",
     details: ["$30 Amazon gift card each", "Priority certificate delivery", "Included in post-event shoutout"],
   },
   {
     key: "tier-3", className: "", rank: "All contestants", title: "Verified Certificate",
     value: "Digital certificate for every participant", icon: <Ic.certDoc />,
-    image: "/img/ctf/rewards/reward-all.svg", imageAlt: "Reward placeholder card for all contestants",
+    image: "/img/ctf/Prizes/Prize 3.jpg", imageAlt: "Certificate of Participation for all contestants showing name, event details, and organizer signature",
     bulletIcon: "cert",
     details: ["Name, date, completion note", "Event title and organizer signature", "Shared after challenge window closes"],
   },
@@ -675,10 +639,6 @@ const Rewards = () => (
         <div className={cx("kicker")}><Ic.spark /> Rewards</div>
         <h2>Rewards With Clear Terms.</h2>
         <p>Rank-based rewards with explicit rules, plus certificates for all contestants.</p>
-      </div>
-      <div className={cx("tier-validation-bar")}>
-        <Ic.check width="13" height="13" />
-        Rewards distributed after leaderboard validation
       </div>
       <div className={cx("tier-grid")}>
         {rewardTiers.map((tier) => (
@@ -712,8 +672,7 @@ const eligibilityRules = [
   {
     key: "participate", text: "Participate in the CTF",
     helper: "Submit at least one valid flag during the event window.",
-    icon: <Ic.flag width="18" height="18" />, actionLabel: "Submit flag",
-    actionHref: "https://kubearmor.ctfd.io",
+    icon: <Ic.flag width="18" height="18" />,
   },
   {
     key: "slack", text: "Join KubeArmor CNCF Slack",
@@ -739,63 +698,70 @@ const eligibilityRules = [
   },
 ];
 
-const UnlockChecklist = () => (
-  <section className={cx("unlock-section")} id="unlock">
-    <div className={cx("shell")}>
-      <div className={cx("section-head")}>
-        <div className={cx("kicker")}>Unlock rewards</div>
-        <h2>Complete <span className={cx("tone")}>All Four.</span></h2>
-        <p>All four steps required to be eligible for ranked rewards and certificates.</p>
-      </div>
-      <div className={cx("unlock-progress-wrap")}>
-        <div className={cx("unlock-progress-label")}>Complete 4/4 to unlock rewards</div>
-        <div className={cx("unlock-progress-track")}>
-          <div className={cx("unlock-progress-fill")} />
+const UnlockChecklist = () => {
+  const [checked, setChecked] = useState([false, false, false, false]);
+  const toggleCheck = (i) => setChecked((prev) => { const next = [...prev]; next[i] = !next[i]; return next; });
+  const checkedCount = checked.filter(Boolean).length;
+
+  return (
+    <section className={cx("unlock-section")} id="unlock">
+      <div className={cx("shell")}>
+        <div className={cx("section-head")}>
+          <div className={cx("kicker")}>Eligibility checklist</div>
+          <h2>Complete <span className={cx("tone")}>All Four</span> to Unlock Rewards.</h2>
         </div>
-      </div>
-      <div className={cx("unlock-grid")}>
-        {eligibilityRules.map((rule, i) => (
-          <article className={cx("unlock-item")} key={rule.key}>
-            <div className={cx("unlock-item-left")}>
-              <div className={cx("unlock-status")}>
-                <span className={cx("unlock-status-num")}>{String(i + 1).padStart(2, "0")}</span>
-              </div>
-            </div>
-            <div className={cx("unlock-item-center")}>
-              <div className={cx("unlock-item-icon")}>{rule.icon}</div>
-              <div>
-                <h4 className={cx("unlock-item-title")}>{rule.text}</h4>
-                <p className={cx("unlock-item-desc")}>{rule.helper}</p>
-                {rule.brandLogo && (
-                  <span className={cx("brand-logo-wrap")}>
-                    <img className={cx("eligibility-brand")} src={rule.brandLogo} alt={rule.brandLogoAlt} loading="lazy" />
-                  </span>
+        <div className={cx("unlock-progress-inline")}>
+          <div className={cx("unlock-progress-track")}>
+            <div className={cx("unlock-progress-fill")} style={{ width: `${(checkedCount / 4) * 100}%` }} />
+          </div>
+          <span className={cx("unlock-progress-count")}>{checkedCount}/4</span>
+        </div>
+        <div className={cx("bento-unlock")}>
+          {eligibilityRules.map((rule, i) => (
+            <article className={cx("bento-unlock-card", checked[i] && "bento-card-done")} key={rule.key}>
+              <button
+                className={cx("bento-checkbox")}
+                onClick={() => toggleCheck(i)}
+                role="checkbox"
+                aria-checked={checked[i]}
+                aria-label={`Mark "${rule.text}" as ${checked[i] ? "incomplete" : "complete"}`}
+                type="button"
+              >
+                {checked[i] && <Ic.check width="14" height="14" />}
+              </button>
+              <div className={cx("bento-unlock-num")}>{String(i + 1).padStart(2, "0")}</div>
+              <div className={cx("bento-unlock-icon")}>{rule.icon}</div>
+              <h4 className={cx("bento-unlock-title")}>{rule.text}</h4>
+              <p className={cx("bento-unlock-desc")}>{rule.helper}</p>
+              {rule.brandLogo && (
+                <span className={cx("brand-logo-wrap")}>
+                  <img className={cx("eligibility-brand")} src={rule.brandLogo} alt={rule.brandLogoAlt} loading="lazy" />
+                </span>
+              )}
+              <div className={cx("bento-unlock-actions")}>
+                {rule.socialLinks ? (
+                  <div className={cx("eligibility-social")}>
+                    {rule.socialLinks.map((item) => (
+                      <a key={item.label} className={cx("social-chip")} href={item.href} target="_blank" rel="noopener noreferrer">
+                        {item.icon}<span>{item.label}</span>
+                      </a>
+                    ))}
+                  </div>
+                ) : (
+                  rule.actionHref && (
+                    <a className={cx("unlock-action-btn")} href={rule.actionHref} target="_blank" rel="noopener noreferrer">
+                      <span>{rule.actionLabel}</span><Ic.arrow className={cx("arr")} />
+                    </a>
+                  )
                 )}
               </div>
-            </div>
-            <div className={cx("unlock-item-right")}>
-              {rule.socialLinks ? (
-                <div className={cx("eligibility-social")}>
-                  {rule.socialLinks.map((item) => (
-                    <a key={item.label} className={cx("social-chip")} href={item.href} target="_blank" rel="noopener noreferrer">
-                      {item.icon}<span>{item.label}</span>
-                    </a>
-                  ))}
-                </div>
-              ) : (
-                rule.actionHref && (
-                  <a className={cx("unlock-action-btn")} href={rule.actionHref} target="_blank" rel="noopener noreferrer">
-                    <span>{rule.actionLabel}</span><Ic.arrow className={cx("arr")} />
-                  </a>
-                )
-              )}
-            </div>
-          </article>
-        ))}
+            </article>
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 const faqCategories = [
   {
@@ -867,6 +833,48 @@ const FAQ = () => {
   );
 };
 
+const PosterBanner = () => (
+  <section className={cx("poster-banner")} aria-label="AI-CTF 2026 event banner">
+    <img
+      src="/img/ctf/AI CTF Poster.jpg"
+      alt="KubeArmor AI-CTF 2026 event poster: 3 tracks, 18 flags, 4-day event with over $1,000 in prizes"
+      loading="lazy"
+    />
+  </section>
+);
+
+const CertificateShowcase = () => (
+  <section className={cx("cert-section")} id="certificates">
+    <div className={cx("cert-grid-bg")} aria-hidden="true" />
+    <div className={cx("cert-glow")} aria-hidden="true" />
+    <div className={cx("shell")}>
+      <div className={cx("section-head")}>
+        <div className={cx("kicker")}>Certificates</div>
+        <h2>Proof You Were <span className={cx("cert-accent")}>Here.</span></h2>
+        <p>Signed digital certificates for every contestant. Winners receive a ranked Achievement certificate.</p>
+      </div>
+      <div className={cx("cert-grid")}>
+        <figure className={cx("cert-card", "cert-tilt-left")}>
+          <div className={cx("cert-frame")}>
+            <img src="/img/ctf/Certificates/Certificate Participant.jpg" alt="KubeArmor AI-CTF Certificate of Participation template" loading="lazy" />
+          </div>
+          <figcaption className={cx("cert-caption")}>
+            <span className={cx("cert-type")}>All participants</span>
+          </figcaption>
+        </figure>
+        <figure className={cx("cert-card", "cert-tilt-right")}>
+          <div className={cx("cert-frame")}>
+            <img src="/img/ctf/Certificates/Certificate Winner.jpg" alt="KubeArmor AI-CTF Certificate of Achievement template with rank" loading="lazy" />
+          </div>
+          <figcaption className={cx("cert-caption")}>
+            <span className={cx("cert-type", "cert-type-winner")}>Ranked winners</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+);
+
 export default function CTFPage() {
   useEffect(() => {
     const isResizeObserverNoise = (message) =>
@@ -901,9 +909,10 @@ export default function CTFPage() {
       <div className={styles.ctfPage}>
         <Hero tallyUrl={tallyUrl} />
         <PlatformShowcase />
+        <PosterBanner />
         <Tracks />
         <Rewards />
-        <EventFlow />
+        <CertificateShowcase />
         <UnlockChecklist />
         <FAQ />
       </div>

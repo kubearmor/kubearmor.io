@@ -1498,6 +1498,11 @@ h1.hero-title .hero-mark {
   .track-card:hover {
     transform: none;
   }
+
+  .cert-tilt-left .cert-frame,
+  .cert-tilt-right .cert-frame {
+    transform: none;
+  }
 }
 
 @media (max-width: 1100px) {
@@ -2018,28 +2023,19 @@ h1.hero-title .hero-mark {
 /* ─── Unlock checklist section ──────────────────────────────────────────── */
 .unlock-section {
   background: var(--surface-soft);
-  padding: var(--space-section) 0;
+  padding: var(--space-section-tight) 0;
 }
 
-.unlock-progress-wrap {
-  max-width: 520px;
-  margin: 0 auto 36px;
+.unlock-progress-inline {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
   align-items: center;
-}
-
-.unlock-progress-label {
-  font-size: 12.5px;
-  font-family: var(--font-main-medium), sans-serif;
-  color: var(--blue);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  gap: 12px;
+  max-width: 860px;
+  margin: 0 auto 20px;
 }
 
 .unlock-progress-track {
-  width: 100%;
+  flex: 1;
   height: 5px;
   border-radius: 999px;
   background: #d8e8fb;
@@ -2052,6 +2048,14 @@ h1.hero-title .hero-mark {
   border-radius: 999px;
   background: linear-gradient(to right, var(--blue), var(--blue-light));
   transition: width 0.5s var(--ease-out-quart);
+}
+
+.unlock-progress-count {
+  font-family: var(--font-terminal-regular), monospace;
+  font-size: 13px;
+  color: var(--blue);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .unlock-grid {
@@ -2272,6 +2276,15 @@ h1.hero-title .hero-mark {
     grid-column: 2;
     justify-content: flex-start;
     padding-left: 0;
+  }
+
+  .bento-flow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bento-flow-featured {
+    grid-row: auto;
+    grid-column: 1 / -1;
   }
 }
 
@@ -2519,5 +2532,437 @@ h1.hero-title .hero-mark {
   .flow-horizontal {
     overflow-x: auto;
     padding-bottom: 6px;
+  }
+}
+
+/* ─── Hero poster background ──────────────────────────────────────────── */
+.hero-poster-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 65% center;
+  opacity: 0.32;
+  pointer-events: none;
+  z-index: 0;
+  mask-image: linear-gradient(to left, black 0%, black 35%, transparent 55%);
+  -webkit-mask-image: linear-gradient(to left, black 0%, black 35%, transparent 55%);
+}
+
+/* ─── Poster banner section ───────────────────────────────────────────── */
+.poster-banner {
+  position: relative;
+  overflow: hidden;
+  padding: 0 !important;
+  line-height: 0;
+  background: linear-gradient(180deg, #f9fbff 0%, #e4ecf8 50%, var(--bg-soft) 100%);
+}
+
+.poster-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  animation: posterDrift 22s ease-in-out infinite alternate;
+}
+
+@keyframes posterDrift {
+  from { transform: scale(1); }
+  to { transform: scale(1.04); }
+}
+
+.poster-banner::before,
+.poster-banner::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 32px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.poster-banner::before {
+  top: 0;
+  background: linear-gradient(to bottom, #f9fbff, transparent);
+}
+
+.poster-banner::after {
+  bottom: 0;
+  background: linear-gradient(to top, var(--bg-soft), transparent);
+}
+
+/* ─── Certificate showcase section ────────────────────────────────────── */
+.cert-section {
+  position: relative;
+  background: linear-gradient(180deg, #0b1a38 0%, #0e2650 50%, #0b1a38 100%);
+  overflow: hidden;
+}
+
+.cert-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at 50% 50%, black 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 20%, transparent 75%);
+  pointer-events: none;
+}
+
+.cert-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(600px 400px at 30% 50%, rgba(82, 151, 254, 0.12), transparent 70%),
+    radial-gradient(500px 350px at 70% 50%, rgba(47, 108, 204, 0.1), transparent 70%);
+  pointer-events: none;
+}
+
+.cert-section .section-head .kicker {
+  color: #7db4ff;
+}
+
+.cert-section .section-head h2 {
+  color: #e4ecfa;
+}
+
+.cert-accent {
+  color: #7db4ff;
+}
+
+.cert-section .section-head p {
+  color: rgba(180, 200, 230, 0.75);
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.cert-card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cert-frame {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+  transition: transform 0.35s var(--ease-out-quart), box-shadow 0.35s var(--ease-out-quart);
+}
+
+.cert-tilt-left .cert-frame {
+  transform: perspective(1100px) rotateY(5deg) rotateX(-1.5deg);
+}
+
+.cert-tilt-right .cert-frame {
+  transform: perspective(1100px) rotateY(-5deg) rotateX(-1.5deg);
+}
+
+.cert-card:hover .cert-frame {
+  transform: perspective(1100px) rotateY(0) rotateX(0) translateY(-4px);
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    0 0 60px rgba(82, 151, 254, 0.1);
+}
+
+.cert-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.cert-caption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.cert-type {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 12px;
+  color: rgba(180, 200, 230, 0.8);
+  font-family: var(--font-main-medium), sans-serif;
+  letter-spacing: 0.06em;
+}
+
+.cert-type-winner {
+  background: rgba(82, 151, 254, 0.12);
+  border-color: rgba(82, 151, 254, 0.25);
+  color: #7db4ff;
+}
+
+/* ─── Bento flow grid (EventFlow redesign) ───────────────────────────── */
+.bento-flow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr;
+  grid-template-rows: auto auto;
+  gap: 14px;
+}
+
+.bento-flow-card {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s var(--ease-out-quart);
+}
+
+.bento-flow-card:hover {
+  border-color: var(--blue-light);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.bento-flow-featured {
+  grid-row: 1 / 3;
+  border-color: #bdd3f3;
+  background: linear-gradient(160deg, #eef5ff 0%, #f2f7ff 100%);
+  box-shadow: 0 0 0 3px rgba(82, 151, 254, 0.1), var(--shadow-sm);
+}
+
+.bento-flow-end {
+  background: linear-gradient(160deg, #eef5ff 0%, #f8fbff 100%);
+  border-color: #bdd3f3;
+}
+
+.bento-flow-reward {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 22px;
+  background: linear-gradient(160deg, #fff8ef 0%, #fff3e0 100%);
+  border: 1px solid #f0d8a8;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(200, 120, 0, 0.08);
+}
+
+.bento-flow-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bento-flow-ic {
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  display: inline-grid;
+  place-items: center;
+  background: #e8f0fc;
+  color: var(--blue);
+}
+
+.bento-flow-featured .bento-flow-ic {
+  background: #dbeafe;
+}
+
+.bento-flow-id {
+  font-family: var(--font-terminal-regular), monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+
+.bento-flow-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.bento-flow-title {
+  margin: 0;
+  font-size: 16px;
+  font-family: var(--font-main-semibold), sans-serif;
+  color: var(--text);
+  line-height: 1.25;
+}
+
+.bento-flow-copy {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+/* ─── Bento unlock grid (checklist redesign) ─────────────────────────── */
+.bento-unlock {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.bento-unlock-card {
+  position: relative;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+}
+
+.bento-unlock-card:hover {
+  border-color: var(--blue-light);
+  box-shadow: var(--shadow-md);
+}
+
+.bento-card-done {
+  border-color: #9dc2f7;
+  background: linear-gradient(160deg, #eef5ff 0%, #f5f9ff 100%);
+}
+
+.bento-card-done .bento-unlock-title {
+  text-decoration: line-through;
+  text-decoration-color: var(--blue-light);
+  text-decoration-thickness: 1.5px;
+}
+
+.bento-checkbox {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  background: var(--surface);
+  display: inline-grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 0;
+  color: white;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s var(--ease-out-quart);
+}
+
+.bento-checkbox:hover {
+  border-color: var(--blue-light);
+  transform: scale(1.08);
+}
+
+.bento-card-done .bento-checkbox {
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+.bento-unlock-num {
+  font-family: var(--font-terminal-regular), monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+
+.bento-unlock-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: inline-grid;
+  place-items: center;
+  background: #e8f0fc;
+  color: var(--blue);
+  font-size: 17px;
+}
+
+.bento-card-done .bento-unlock-icon {
+  background: #dbeafe;
+}
+
+.bento-unlock-title {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.35;
+  color: var(--text);
+  font-family: var(--font-main-semibold), sans-serif;
+  padding-right: 40px;
+}
+
+.bento-unlock-desc {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.bento-unlock-actions {
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+/* ─── Tier media photo hover ──────────────────────────────────────────── */
+.tier-media img {
+  transition: transform 0.35s var(--ease-out-quart);
+}
+
+.tier-card:hover .tier-media img {
+  transform: scale(1.03);
+}
+
+/* ─── Responsive: poster + certificates ───────────────────────────────── */
+@media (max-width: 1100px) {
+  .cert-grid {
+    max-width: 640px;
+  }
+}
+
+@media (max-width: 640px) {
+  .cert-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 400px;
+  }
+
+  .cert-tilt-left .cert-frame,
+  .cert-tilt-right .cert-frame {
+    transform: none;
+  }
+
+  .poster-banner img {
+    object-position: center center;
+  }
+
+  .hero-poster-bg {
+    opacity: 0.12;
+  }
+
+  .bento-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .bento-flow-featured {
+    grid-row: auto;
+  }
+
+  .bento-unlock {
+    grid-template-columns: 1fr;
   }
 }
