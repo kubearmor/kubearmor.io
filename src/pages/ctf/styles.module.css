@@ -2966,3 +2966,223 @@ h1.hero-title .hero-mark {
     grid-template-columns: 1fr;
   }
 }
+
+/* ─── Countdown strip ──────────────────────────────────────────────────── */
+.countdownStrip {
+  position: relative;
+  overflow: hidden;
+  padding: 36px 0 !important;
+  background: linear-gradient(135deg, #061a3f 0%, #0a2d6e 50%, #061a3f 100%);
+}
+
+.countdownGridBg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 44px 44px;
+  pointer-events: none;
+}
+
+.countdownGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(520px 260px at 50% 50%, rgba(82, 151, 254, 0.14), transparent 70%);
+  pointer-events: none;
+}
+
+.countdownInner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.countdownKicker {
+  display: block;
+  font-size: 10.5px;
+  font-family: var(--font-main-medium), sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(180, 210, 255, 0.65);
+  margin-bottom: 10px;
+}
+
+/* dates column */
+.countdownDates {
+  display: flex;
+  flex-direction: column;
+}
+
+.countdownRange {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.countdownDateItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.countdownDay {
+  font-size: 22px;
+  font-family: var(--font-main-semibold), sans-serif;
+  color: #f0f6ff;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.countdownTime {
+  font-size: 12px;
+  color: rgba(180, 210, 255, 0.6);
+  font-family: var(--font-main-medium), sans-serif;
+}
+
+.countdownArrow {
+  font-size: 20px;
+  color: rgba(180, 210, 255, 0.35);
+  margin-top: -14px;
+}
+
+/* center countdown */
+.countdownCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdownCenter .countdownKicker {
+  text-align: center;
+}
+
+.countdownDigits {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.countdownCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.countdownValue {
+  font-family: var(--font-terminal-regular), monospace;
+  font-size: 40px;
+  color: white;
+  line-height: 1;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  min-width: 68px;
+  text-align: center;
+}
+
+.countdownLabel {
+  font-size: 10px;
+  font-family: var(--font-main-medium), sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(180, 210, 255, 0.5);
+}
+
+.countdownColon {
+  font-family: var(--font-terminal-regular), monospace;
+  font-size: 32px;
+  color: rgba(180, 210, 255, 0.3);
+  line-height: 1;
+  margin-top: 8px;
+}
+
+/* cta column */
+.countdownCtaCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.countdownPlatformBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(180, 210, 255, 0.4);
+  font-size: 13.5px;
+  font-family: var(--font-terminal-regular), monospace;
+  cursor: not-allowed;
+  user-select: none;
+  letter-spacing: 0.02em;
+}
+
+.countdownCtaNote {
+  font-size: 11px;
+  color: rgba(180, 210, 255, 0.35);
+  font-family: var(--font-main-regular), sans-serif;
+}
+
+/* responsive */
+@media (max-width: 1100px) {
+  .countdownInner {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  .countdownCenter {
+    grid-column: 1 / -1;
+    order: -1;
+  }
+
+  .countdownCtaCol {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .countdownStrip {
+    padding: 28px 0 !important;
+  }
+
+  .countdownInner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .countdownDates {
+    align-items: center;
+  }
+
+  .countdownCenter {
+    order: -1;
+  }
+
+  .countdownValue {
+    font-size: 30px;
+    padding: 8px 10px;
+    min-width: 54px;
+  }
+
+  .countdownColon {
+    font-size: 24px;
+    margin-top: 6px;
+  }
+
+  .countdownCtaCol {
+    align-items: center;
+  }
+
+  .countdownDay {
+    font-size: 18px;
+  }
+}

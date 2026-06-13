@@ -413,6 +413,87 @@ const Hero = ({ tallyUrl }) => (
   </section>
 );
 
+const CTF_START = new Date('2026-06-17T18:30:00Z'); // 18 Jun 2026, 00:00 IST
+const CTF_END_LABEL = '21 Jun 2026, 11:59 PM IST';
+
+function calcTimeLeft() {
+  const diff = CTF_START - Date.now();
+  if (diff <= 0) return { d: 0, h: 0, m: 0, s: 0, live: true };
+  return {
+    d: Math.floor(diff / 86400000),
+    h: Math.floor((diff / 3600000) % 24),
+    m: Math.floor((diff / 60000) % 60),
+    s: Math.floor((diff / 1000) % 60),
+    live: false,
+  };
+}
+
+const CountdownStrip = () => {
+  const [t, setT] = useState(calcTimeLeft);
+  useEffect(() => {
+    const id = setInterval(() => setT(calcTimeLeft()), 1000);
+    return () => clearInterval(id);
+  }, []);
+  const pad = (n) => String(n).padStart(2, '0');
+  const units = [
+    { v: t.d, l: 'Days' },
+    { v: t.h, l: 'Hrs' },
+    { v: t.m, l: 'Min' },
+    { v: t.s, l: 'Sec' },
+  ];
+
+  return (
+    <section className={cx('countdownStrip')} aria-label="Event countdown">
+      <div className={cx('countdownGridBg')} aria-hidden="true" />
+      <div className={cx('countdownGlow')} aria-hidden="true" />
+      <div className={cx('shell', 'countdownInner')}>
+        <div className={cx('countdownDates')}>
+          <span className={cx('countdownKicker')}>Event window</span>
+          <div className={cx('countdownRange')}>
+            <div className={cx('countdownDateItem')}>
+              <span className={cx('countdownDay')}>18 Jun</span>
+              <span className={cx('countdownTime')}>Midnight IST</span>
+            </div>
+            <span className={cx('countdownArrow')}>→</span>
+            <div className={cx('countdownDateItem')}>
+              <span className={cx('countdownDay')}>21 Jun</span>
+              <span className={cx('countdownTime')}>11:59 PM IST</span>
+            </div>
+          </div>
+        </div>
+
+        <div className={cx('countdownCenter')}>
+          <span className={cx('countdownKicker')}>
+            {t.live ? 'Event is live' : 'Starts in'}
+          </span>
+          <div className={cx('countdownDigits')}>
+            {units.map((u, i) => (
+              <React.Fragment key={u.l}>
+                {i > 0 && <span className={cx('countdownColon')}>:</span>}
+                <div className={cx('countdownCell')}>
+                  <span className={cx('countdownValue')}>{pad(u.v)}</span>
+                  <span className={cx('countdownLabel')}>{u.l}</span>
+                </div>
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
+
+        <div className={cx('countdownCtaCol')}>
+          <span className={cx('countdownPlatformBtn')}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+            ctf.kubearmor.io
+          </span>
+          <span className={cx('countdownCtaNote')}>Opens when event starts</span>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const platformShowcaseCards = [
   {
     key: "leaderboard",
@@ -908,6 +989,7 @@ export default function CTFPage() {
     <Layout title="KubeArmor AI Security CTF" description="Browser-first CTF landing page for KubeArmor AI security challenges." noNavbar noFooter>
       <div className={styles.ctfPage}>
         <Hero tallyUrl={tallyUrl} />
+        <CountdownStrip />
         <PlatformShowcase />
         <PosterBanner />
         <Tracks />
