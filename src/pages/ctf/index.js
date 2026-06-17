@@ -413,25 +413,104 @@ const Hero = ({ tallyUrl }) => (
   </section>
 );
 
-const CTF_START = new Date('2026-06-17T18:30:00Z'); // 18 Jun 2026, 00:00 IST
-const CTF_END_LABEL = '21 Jun 2026, 11:59 PM IST';
+const CTF_END = new Date('2026-06-21T18:29:00Z'); // 21 Jun 2026, 11:59 PM IST
 
 function calcTimeLeft() {
-  const diff = CTF_START - Date.now();
-  if (diff <= 0) return { d: 0, h: 0, m: 0, s: 0, live: true };
+  const diff = CTF_END - Date.now();
+  if (diff <= 0) return { d: 0, h: 0, m: 0, s: 0, ended: true };
   return {
     d: Math.floor(diff / 86400000),
     h: Math.floor((diff / 3600000) % 24),
     m: Math.floor((diff / 60000) % 60),
     s: Math.floor((diff / 1000) % 60),
-    live: false,
+    ended: false,
   };
 }
 
+const Confetti = () => {
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const container = document.createElement('div');
+    container.style.cssText =
+      'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;overflow:hidden;';
+    document.body.appendChild(container);
+
+    const colors = [
+      '#ff6b6b', '#ffd93d', '#6bcb77', '#4d96ff',
+      '#c77dff', '#ff8fab', '#00d4ff', '#ff9f43', '#00f48a',
+    ];
+    const pieces = [];
+
+    for (let i = 0; i < 120; i++) {
+      const piece = document.createElement('div');
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      const size = Math.random() * 9 + 5;
+      const isRect = Math.random() > 0.45;
+      const delay = Math.random() * 900;
+      piece.style.cssText =
+        `position:absolute;width:${size}px;height:${isRect ? size * 0.55 : size}px;` +
+        `background:${color};left:${Math.random() * 100}%;` +
+        `top:-${20 + Math.random() * 50}px;` +
+        `border-radius:${isRect ? '2px' : '50%'};opacity:0;`;
+      container.appendChild(piece);
+      pieces.push({
+        el: piece,
+        x: parseFloat(piece.style.left),
+        vx: (Math.random() - 0.5) * 1.8,
+        vy: Math.random() * 3.5 + 1.5,
+        rotation: Math.random() * 360,
+        vr: (Math.random() - 0.5) * 9,
+        startAt: delay,
+        started: false,
+      });
+    }
+
+    let frame;
+    let startTs = null;
+    const LIVE_DURATION = 5500;
+
+    const animate = (ts) => {
+      if (!startTs) startTs = ts;
+      const elapsed = ts - startTs;
+      let anyActive = false;
+      pieces.forEach((p) => {
+        if (elapsed < p.startAt) { anyActive = true; return; }
+        if (!p.started) { p.el.style.opacity = '1'; p.started = true; }
+        p.x += p.vx;
+        p.vy += 0.11;
+        const newTop = parseFloat(p.el.style.top) + p.vy;
+        p.rotation += p.vr;
+        p.el.style.top = newTop + 'px';
+        p.el.style.left = p.x + '%';
+        p.el.style.transform = `rotate(${p.rotation}deg)`;
+        if (elapsed > 3000) {
+          p.el.style.opacity = String(Math.max(0, 1 - (elapsed - 3000) / 2200));
+        }
+        if (newTop < window.innerHeight + 60 && elapsed < LIVE_DURATION + 500) anyActive = true;
+      });
+
+      if (anyActive) {
+        frame = requestAnimationFrame(animate);
+      } else {
+        container.remove();
+      }
+    };
+
+    frame = requestAnimationFrame(animate);
+    return () => {
+      cancelAnimationFrame(frame);
+      if (container.parentNode) container.remove();
+    };
+  }, []);
+  return null;
+};
+
 const CountdownStrip = () => {
   const [t, setT] = useState(calcTimeLeft);
+  const [fired, setFired] = useState(false);
   useEffect(() => {
     const id = setInterval(() => setT(calcTimeLeft()), 1000);
+    setFired(true);
     return () => clearInterval(id);
   }, []);
   const pad = (n) => String(n).padStart(2, '0');
@@ -443,54 +522,54 @@ const CountdownStrip = () => {
   ];
 
   return (
-    <section className={cx('countdownStrip')} aria-label="Event countdown">
-      <div className={cx('countdownGridBg')} aria-hidden="true" />
-      <div className={cx('countdownGlow')} aria-hidden="true" />
-      <div className={cx('shell', 'countdownInner')}>
-        <div className={cx('countdownDates')}>
-          <span className={cx('countdownKicker')}>Event window</span>
-          <div className={cx('countdownRange')}>
-            <div className={cx('countdownDateItem')}>
-              <span className={cx('countdownDay')}>18 Jun</span>
-              <span className={cx('countdownTime')}>Midnight IST</span>
-            </div>
-            <span className={cx('countdownArrow')}>→</span>
-            <div className={cx('countdownDateItem')}>
-              <span className={cx('countdownDay')}>21 Jun</span>
-              <span className={cx('countdownTime')}>11:59 PM IST</span>
-            </div>
-          </div>
-        </div>
+    <>
+      {fired && <Confetti />}
+      <section className={cx('countdownStrip')} aria-label="CTF is live">
+        <div className={cx('countdownGridBg')} aria-hidden="true" />
+        <div className={cx('liveGlow')} aria-hidden="true" />
+        <div className={cx('shell', 'countdownInner')}>
 
-        <div className={cx('countdownCenter')}>
-          <span className={cx('countdownKicker')}>
-            {t.live ? 'Event is live' : 'Starts in'}
-          </span>
-          <div className={cx('countdownDigits')}>
-            {units.map((u, i) => (
-              <React.Fragment key={u.l}>
-                {i > 0 && <span className={cx('countdownColon')}>:</span>}
-                <div className={cx('countdownCell')}>
-                  <span className={cx('countdownValue')}>{pad(u.v)}</span>
-                  <span className={cx('countdownLabel')}>{u.l}</span>
-                </div>
-              </React.Fragment>
-            ))}
+          <div className={cx('countdownDates')}>
+            <p className={cx('liveTitle')}>AI CTF is <span>Live!</span></p>
+            <p className={cx('liveDateRange')}>18 Jun &rarr; 21 Jun 2026</p>
           </div>
-        </div>
 
-        <div className={cx('countdownCtaCol')}>
-          <span className={cx('countdownPlatformBtn')}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <rect x="3" y="11" width="18" height="11" rx="2" />
-              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-            </svg>
-            ctf.kubearmor.io
-          </span>
-          <span className={cx('countdownCtaNote')}>Opens when event starts</span>
+          <div className={cx('countdownCenter')}>
+            <span className={cx('liveEndsLabel')}>CTF ends in</span>
+            <div className={cx('countdownDigits')}>
+              {units.map((u, i) => (
+                <React.Fragment key={u.l}>
+                  {i > 0 && <span className={cx('countdownColon')}>:</span>}
+                  <div className={cx('countdownCell')}>
+                    <span className={cx('countdownValue')}>{pad(u.v)}</span>
+                    <span className={cx('countdownLabel')}>{u.l}</span>
+                  </div>
+                </React.Fragment>
+              ))}
+            </div>
+            <span className={cx('liveEndNote')}>21 Jun 2026, 11:59 PM IST</span>
+          </div>
+
+          <div className={cx('countdownCtaCol')}>
+            <a
+              href="https://ctf.kubearmor.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cx('livePlatformLink')}
+            >
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              ctf.kubearmor.io
+            </a>
+            <p className={cx('liveCtaNote')}>Click to open the CTF platform</p>
+          </div>
+
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
@@ -988,8 +1067,8 @@ export default function CTFPage() {
   return (
     <Layout title="KubeArmor AI Security CTF" description="Browser-first CTF landing page for KubeArmor AI security challenges." noNavbar noFooter>
       <div className={styles.ctfPage}>
-        <Hero tallyUrl={tallyUrl} />
         <CountdownStrip />
+        <Hero tallyUrl={tallyUrl} />
         <PlatformShowcase />
         <PosterBanner />
         <Tracks />

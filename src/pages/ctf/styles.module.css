@@ -2994,10 +2994,10 @@ h1.hero-title .hero-mark {
 
 .countdownInner {
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 40px;
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  gap: 40px;
 }
 
 .countdownKicker {
@@ -3014,6 +3014,8 @@ h1.hero-title .hero-mark {
 .countdownDates {
   display: flex;
   flex-direction: column;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .countdownRange {
@@ -3053,6 +3055,7 @@ h1.hero-title .hero-mark {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 0 0 auto;
 }
 
 .countdownCenter .countdownKicker {
@@ -3107,6 +3110,8 @@ h1.hero-title .hero-mark {
   flex-direction: column;
   align-items: flex-end;
   gap: 8px;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .countdownPlatformBtn {
@@ -3134,27 +3139,17 @@ h1.hero-title .hero-mark {
 /* responsive */
 @media (max-width: 1100px) {
   .countdownInner {
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
-  }
-
-  .countdownCenter {
-    grid-column: 1 / -1;
-    order: -1;
-  }
-
-  .countdownCtaCol {
-    align-items: flex-start;
+    gap: 24px;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .countdownStrip {
     padding: 28px 0 !important;
   }
 
   .countdownInner {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 24px;
     text-align: center;
   }
@@ -3163,8 +3158,8 @@ h1.hero-title .hero-mark {
     align-items: center;
   }
 
-  .countdownCenter {
-    order: -1;
+  .countdownCtaCol {
+    align-items: center;
   }
 
   .countdownValue {
@@ -3178,11 +3173,105 @@ h1.hero-title .hero-mark {
     margin-top: 6px;
   }
 
-  .countdownCtaCol {
-    align-items: center;
-  }
-
   .countdownDay {
     font-size: 18px;
+  }
+}
+
+/* ─── Live banner additions ──────────────────────────────────────────────── */
+.liveGlow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(700px 300px at 20% 50%, rgba(82, 151, 254, 0.1), transparent 70%),
+    radial-gradient(700px 300px at 80% 50%, rgba(82, 151, 254, 0.07), transparent 70%);
+  pointer-events: none;
+}
+
+
+.liveTitle {
+  font-size: clamp(26px, 3.5vw, 42px);
+  font-family: var(--font-main-bold), sans-serif;
+  color: #fff;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin: 0 0 6px;
+}
+
+.liveTitle span {
+  color: #5297fe;
+}
+
+.liveDateRange {
+  font-size: 13px;
+  color: rgba(180, 210, 255, 0.5);
+  font-family: var(--font-main-regular), sans-serif;
+  margin: 0;
+}
+
+.liveEndsLabel {
+  display: block;
+  font-size: 10.5px;
+  font-family: var(--font-main-medium), sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(180, 210, 255, 0.6);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.liveEndNote {
+  display: block;
+  font-size: 10.5px;
+  color: rgba(180, 210, 255, 0.38);
+  font-family: var(--font-main-regular), sans-serif;
+  margin-top: 9px;
+  text-align: center;
+}
+
+.livePlatformLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 20px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  color: #082c74;
+  font-size: 13.5px;
+  font-family: var(--font-terminal-regular), monospace;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.18s ease-out, box-shadow 0.18s ease-out, transform 0.15s ease-out;
+}
+
+.livePlatformLink:hover {
+  background: #ffffff;
+  color: #5297fe;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
+}
+
+.liveCtaNote {
+  font-size: 11px;
+  color: rgba(180, 210, 255, 0.42);
+  font-family: var(--font-main-regular), sans-serif;
+  margin: 7px 0 0;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .liveTitle {
+    text-align: center;
+    font-size: clamp(22px, 6vw, 32px);
+  }
+
+  .liveDateRange {
+    text-align: center;
+  }
+
+  .liveCtaNote {
+    text-align: center;
   }
 }
