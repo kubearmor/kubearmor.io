@@ -44,7 +44,7 @@ export default function HomepageMarketplaceImages() {
               target="_blank"
             />
           </Link>
-          <Link to="https://cloudmarketplace.oracle.com/marketplace/en_US/listing/165530897">
+          <Link to="https://marketplace.oracle.com/listings/kubearmor/ocid1.mktpublisting.oc1.iad.amaaaaaa5xp24xqabi66mm36tfgcbrrpkaba74xgy5kjlpkp2nsk6wvjxufa">
             <img
               src={OracleMarketplaceImage}
               alt="Oracle Marketplace logo"
