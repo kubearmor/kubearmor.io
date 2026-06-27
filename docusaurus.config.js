@@ -117,11 +117,11 @@ const config = {
             label: "ModelArmor",
             position: "left",
           },
-          // {
-          //   to: "https://www.meetup.com/kubernetes-cloud-native-security-india/",
-          //   label: "Community",
-          //   position: "left",
-          // },
+          {
+            to: "/community",
+            label: "Community",
+            position: "left",
+          },
           {
             type: "html",
             position: "right",
@@ -159,19 +159,48 @@ const config = {
         },
         links: [
           {
-            title: "Organization",
+            title: "Project",
             items: [
-              {
-                label: "Blog",
-                to: "/blog",
-              },
               {
                 label: "Documentation",
                 to: "https://docs.kubearmor.io/kubearmor/",
               },
               {
+                label: "Blog",
+                to: "/blog",
+              },
+              {
                 label: "Community",
-                to: "https://www.meetup.com/kubernetes-cloud-native-security-india/",
+                to: "/community",
+              },
+              {
+                label: "CNCF",
+                to: "https://www.cncf.io/projects/kubearmor/",
+              },
+            ],
+          },
+          {
+            title: "Governance",
+            items: [
+              {
+                label: "Governance",
+                to: "https://github.com/kubearmor/KubeArmor/blob/main/GOVERNANCE.md",
+              },
+              {
+                label: "Maintainers",
+                to: "https://github.com/kubearmor/KubeArmor/blob/main/MAINTAINERS.md",
+              },
+              {
+                label: "Code of Conduct",
+                to: "https://github.com/cncf/foundation/blob/main/code-of-conduct.md",
+              },
+              {
+                label: "Release Process",
+                to: "https://github.com/kubearmor/KubeArmor/blob/main/RELEASES.md",
+              },
+              {
+                label: "Security Policy",
+                to: "https://github.com/kubearmor/KubeArmor/blob/main/SECURITY.md",
               },
             ],
           },
@@ -194,10 +223,14 @@ const config = {
                 label: "LinkedIn",
                 to: "https://www.linkedin.com/company/kubearmor/",
               },
+              {
+                label: "Meetup (India)",
+                to: "https://www.meetup.com/kubernetes-cloud-native-security-india/",
+              },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} KubeArmor, Powered By AccuKnox.`,
+        copyright: `Copyright © ${new Date().getFullYear()} The KubeArmor Authors. KubeArmor is a Sandbox project of the Cloud Native Computing Foundation.`,
       },
       prism: {
         theme: lightCodeTheme,
