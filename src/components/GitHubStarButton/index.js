@@ -4,7 +4,7 @@ import { FaGithub } from "react-icons/fa6";
 import Link from "@docusaurus/Link";
 
 export default function GitHubStarButton() {
-  const [stars, setStars] = useState(880);
+  const [stars, setStars] = useState(2400);
   useEffect(() => {
     const fetchStars = async () => {
       try {

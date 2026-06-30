@@ -97,10 +97,9 @@ const config = {
           //   position: "left",
           // },
           {
-            to: "/ctf",
-            label: "AI-CTF",
+            to: "https://docs.kubearmor.io/kubearmor/",
+            label: "Documentation",
             position: "left",
-            className: "nav-ai-ctf",
           },
           {
             to: "/blog",
@@ -108,11 +107,6 @@ const config = {
             position: "left",
           },
           {
-            to: "https://docs.kubearmor.io/kubearmor/",
-            label: "Documentation",
-            position: "left",
-          },
-           {
             to: "https://docs.kubearmor.io/kubearmor/use-cases/modelarmor",
             label: "ModelArmor",
             position: "left",
@@ -121,6 +115,12 @@ const config = {
             to: "/community",
             label: "Community",
             position: "left",
+          },
+          {
+            to: "/ctf",
+            label: "AI-CTF",
+            position: "left",
+            className: "nav-ai-ctf",
           },
           {
             type: "html",
@@ -201,6 +201,10 @@ const config = {
               {
                 label: "Security Policy",
                 to: "https://github.com/kubearmor/KubeArmor/blob/main/SECURITY.md",
+              },
+              {
+                label: "Release Notes",
+                to: "https://github.com/kubearmor/KubeArmor/releases",
               },
             ],
           },
