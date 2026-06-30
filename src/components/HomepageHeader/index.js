@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 // import heroImage from "../../../static/img/hero/hero-mascot.svg";
@@ -14,6 +14,17 @@ import RedirectButton from "../RedirectButton";
 
 export default function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
+  const [version, setVersion] = useState("v1.7.3");
+
+  useEffect(() => {
+    fetch("https://raw.githubusercontent.com/kubearmor/KubeArmor/main/STABLE-RELEASE")
+      .then((res) => res.text())
+      .then((text) => {
+        const trimmed = text.trim();
+        if (trimmed) setVersion(trimmed);
+      })
+      .catch(() => {});
+  }, []);
 
   return (
     <div className={styles.heroBannerSection}>
@@ -23,21 +34,21 @@ export default function HomepageHeader() {
             <div className={styles.heroAnnouncementWrapper}>
               <Link
                 className={styles.heroAnnouncement}
-                to="https://github.com/kubearmor/KubeArmor/releases/tag/v1.6.5"
+                to={`https://github.com/kubearmor/KubeArmor/releases/tag/${version}`}
               >
                 <div>
                   <FaLock
                     className={styles.heroIcon}
                     color="var(--color-primary)"
                   />
-                  KubeArmor v1.6.5 is here!
+                  KubeArmor {version} is here!
                 </div>
                 <FaAngleRight
                   className={styles.heroIcon}
                   color="var(--color-primary)"
                 />
               </Link>
-              <p>1.2 Million+ Downloads</p>
+              <p>2 Million+ Downloads</p>
             </div>
             <h1 className={styles.heroTitle}>{siteConfig.tagline}</h1>
             <p className={styles.heroSubtitle}>
