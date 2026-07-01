@@ -177,6 +177,10 @@ const config = {
                 label: "CNCF",
                 to: "https://www.cncf.io/projects/kubearmor/",
               },
+              {
+                label: "Release Notes",
+                to: "https://github.com/kubearmor/KubeArmor/releases",
+              },
             ],
           },
           {
@@ -201,10 +205,6 @@ const config = {
               {
                 label: "Security Policy",
                 to: "https://github.com/kubearmor/KubeArmor/blob/main/SECURITY.md",
-              },
-              {
-                label: "Release Notes",
-                to: "https://github.com/kubearmor/KubeArmor/releases",
               },
             ],
           },
